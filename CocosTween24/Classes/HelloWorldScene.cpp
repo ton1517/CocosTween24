@@ -29,6 +29,15 @@ bool HelloWorld::init()
         return false;
     }
     
+    Size visibleSize = Director::getInstance()->getVisibleSize();
+    Vec2 origin = Director::getInstance()->getVisibleOrigin();
+
+    auto sprite = Sprite::create();
+    sprite->setTextureRect(Rect(0, 0, 100, 100));
+    sprite->setPosition(Point(600, 300));
+    sprite->setColor(Color3B::BLUE);
+    addChild(sprite);
+    auto tween = CocosTween24::tween(sprite, 5)->$xy(300, 300)->play();
 
     return true;
 }

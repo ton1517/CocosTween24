@@ -25,8 +25,23 @@ namespace cocosTween24
         CocosTween24 * $y(float $y);
         CocosTween24 * xy(float x, float y);
         CocosTween24 * $xy(float $x, float $y);
-#pragma mark position
-
+        
+#pragma mark scale
+        CocosTween24 * scaleX(float sx);
+        CocosTween24 * $scaleX(float $sx);
+        CocosTween24 * scaleY(float sy);
+        CocosTween24 * $scaleY(float $sy);
+        CocosTween24 * scaleZ(float sz);
+        CocosTween24 * $scaleZ(float $sz);
+        CocosTween24 * scale(float s);
+        CocosTween24 * $scale(float $s);
+        CocosTween24 * scale(float sx, float sy);
+        CocosTween24 * $scale(float $sx, float $sy);
+        CocosTween24 * scale(float sx, float sy, float sz);
+        CocosTween24 * $scale(float $sx, float $sy, float $sz);
+        
+        
+#pragma mark property
         CC_SYNTHESIZE_READONLY(cocos2d::Node *, _target, Target);
         CC_SYNTHESIZE_READONLY(float, _duration, Duration);
         CC_SYNTHESIZE_READONLY(CocosEase24::EASE, _easing, Easing);

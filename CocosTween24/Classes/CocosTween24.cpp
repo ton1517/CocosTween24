@@ -97,6 +97,104 @@ CocosTween24 * CocosTween24::$xy(float $x, float $y)
     return this;
 }
 
+#pragma mark scale
+
+CocosTween24 * CocosTween24::scaleX(float sx)
+{
+    auto action = ScaleTo::create(_duration, sx, _target->getScaleY());
+    addAction(action);
+    
+    return this;
+}
+
+CocosTween24 * CocosTween24::$scaleX(float $sx)
+{
+    auto action = ScaleBy::create(_duration, $sx, 0);
+    addAction(action);
+    
+    return this;
+}
+
+CocosTween24 * CocosTween24::scaleY(float sy)
+{
+    auto action = ScaleTo::create(_duration, _target->getScaleX(), sy);
+    addAction(action);
+    
+    return this;
+}
+
+CocosTween24 * CocosTween24::$scaleY(float $sy)
+{
+    auto action = ScaleBy::create(_duration, 0, $sy);
+    addAction(action);
+    
+    return this;
+}
+
+CocosTween24 * CocosTween24::scaleZ(float sz)
+{
+    auto action = ScaleTo::create(_duration, _target->getScaleX(), _target->getScaleY(), sz);
+    addAction(action);
+    
+    return this;
+}
+
+CocosTween24 * CocosTween24::$scaleZ(float $sz)
+{
+    auto action = ScaleBy::create(_duration, 0, 0, $sz);
+    addAction(action);
+    
+    return this;
+}
+
+CocosTween24 * CocosTween24::scale(float s)
+{
+    auto action = ScaleTo::create(_duration, s);
+    addAction(action);
+    
+    return this;
+}
+
+CocosTween24 * CocosTween24::$scale(float $s)
+{
+    auto action = ScaleBy::create(_duration, $s);
+    addAction(action);
+    
+    return this;
+}
+
+CocosTween24 * CocosTween24::scale(float sx, float sy)
+{
+    auto action = ScaleTo::create(_duration, sx, sy);
+    addAction(action);
+    
+    return this;
+}
+
+CocosTween24 * CocosTween24::$scale(float $sx, float $sy)
+{
+    auto action = ScaleBy::create(_duration, $sx, $sy);
+    addAction(action);
+    
+    return this;
+}
+
+CocosTween24 * CocosTween24::scale(float sx, float sy, float sz)
+{
+    auto action = ScaleTo::create(_duration, sx, sy, sz);
+    addAction(action);
+    
+    return this;
+}
+
+CocosTween24 * CocosTween24::$scale(float $sx, float $sy, float $sz)
+{
+    auto action = ScaleBy::create(_duration, $sx, $sy, $sz);
+    addAction(action);
+    
+    return this;
+}
+
 #pragma mark ----- protected -----
 
 void CocosTween24::addAction(FiniteTimeAction * action)

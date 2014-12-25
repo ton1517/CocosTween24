@@ -39,8 +39,19 @@ namespace cocosTween24
         CocosTween24 * $scale(float $sx, float $sy);
         CocosTween24 * scale(float sx, float sy, float sz);
         CocosTween24 * $scale(float $sx, float $sy, float $sz);
-        
-        
+
+#pragma mark rorate
+        CocosTween24 * rotateX(float angleX);
+        CocosTween24 * $rotateX(float $angleX);
+        CocosTween24 * rotateY(float angleY);
+        CocosTween24 * $rotateY(float $angleX);
+        CocosTween24 * rotate(float angle);
+        CocosTween24 * $rotate(float angle);
+        CocosTween24 * rotate(float angleX, float angleY);
+        CocosTween24 * $rotate(float $angleX, float $angleY);
+        CocosTween24 * rotate(const cocos2d::Vec3 & angle3D);
+        CocosTween24 * $rotate(const cocos2d::Vec3 & $angle3D);
+
 #pragma mark property
         CC_SYNTHESIZE_READONLY(cocos2d::Node *, _target, Target);
         CC_SYNTHESIZE_READONLY(float, _duration, Duration);

@@ -191,6 +191,88 @@ CocosTween24 * CocosTween24::$scale(float $sx, float $sy, float $sz)
     return this;
 }
 
+#pragma mark rotate
+
+CocosTween24 * CocosTween24::rotateX(float angleX)
+{
+    auto action = RotateTo::create(_duration, angleX, _target->getRotationSkewY());
+    addAction(action);
+
+    return this;
+}
+
+CocosTween24 * CocosTween24::$rotateX(float $angleX)
+{
+    auto action = RotateBy::create(_duration, $angleX, 0);
+    addAction(action);
+
+    return this;
+}
+
+CocosTween24 * CocosTween24::rotateY(float angleY)
+{
+    auto action = RotateTo::create(_duration, _target->getRotationSkewX(), angleY);
+    addAction(action);
+
+    return this;
+}
+
+CocosTween24 * CocosTween24::$rotateY(float $angleY)
+{
+    auto action = RotateBy::create(_duration, 0, $angleY);
+    addAction(action);
+
+    return this;
+}
+
+CocosTween24 * CocosTween24::rotate(float angle)
+{
+    auto action = RotateTo::create(_duration, angle);
+    addAction(action);
+
+    return this;
+}
+
+CocosTween24 * CocosTween24::$rotate(float $angle)
+{
+    auto action = RotateBy::create(_duration, $angle);
+    addAction(action);
+
+    return this;
+}
+
+CocosTween24 * CocosTween24::rotate(float angleX, float angleY)
+{
+    auto action = RotateTo::create(_duration, angleX, angleY);
+    addAction(action);
+
+    return this;
+}
+
+CocosTween24 * CocosTween24::$rotate(float $angleX, float $angleY)
+{
+    auto action = RotateBy::create(_duration, $angleX, $angleY);
+    addAction(action);
+
+    return this;
+}
+
+CocosTween24 * CocosTween24::rotate(const Vec3 & angle3D)
+{
+    auto action = RotateTo::create(_duration, angle3D);
+    addAction(action);
+
+    return this;
+}
+
+CocosTween24 * CocosTween24::$rotate(const Vec3 & $angle3D)
+{
+    auto action = RotateBy::create(_duration, $angle3D);
+    addAction(action);
+
+    return this;
+}
+
 #pragma mark ----- protected -----
 
 void CocosTween24::addAction(FiniteTimeAction * action)

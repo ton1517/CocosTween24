@@ -28,21 +28,17 @@ FiniteTimeAction * CocosTween24::getAction()
     return targetedAction;
 }
 
-CocosTween24 * CocosTween24::play()
+void CocosTween24::play()
 {
     _playingAction = this->getAction();
     _target->runAction(_playingAction);
-
-    return this;
 }
 
-CocosTween24 * CocosTween24::stop()
+void CocosTween24::stop()
 {
     if (_playingAction && !_playingAction->isDone()) {
         _target->stopAction(_playingAction);
     }
-
-    return this;
 }
 
 #pragma mark position

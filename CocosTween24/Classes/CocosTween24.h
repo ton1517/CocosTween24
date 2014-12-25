@@ -15,8 +15,8 @@ namespace cocosTween24
 
         cocos2d::FiniteTimeAction * getAction();
 
-        CocosTween24 * play();
-        CocosTween24 * stop();
+        void play();
+        void stop();
 
 #pragma mark position
         CocosTween24 * x(float x);

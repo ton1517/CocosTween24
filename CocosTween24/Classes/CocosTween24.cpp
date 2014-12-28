@@ -15,6 +15,11 @@ CocosTween24 *CocosTween24::tween(cocos2d::Node *target, float duration, CocosEa
     return tween;
 }
 
+Wait24 *CocosTween24::wait(float waitTime)
+{
+    return new Wait24(waitTime);
+}
+
 #pragma mark----- public -----
 
 CocosTween24::CocosTween24()

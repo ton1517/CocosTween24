@@ -2,18 +2,21 @@
 #define __CocosTween24__CocosTween24__
 
 #include "cocos2d.h"
+#include "ITween24.h"
 #include "CocosEase24.h"
+#include "Wait24.h"
 
 namespace cocosTween24
 {
-class CocosTween24
+class CocosTween24 : public ITween24
 {
 public:
     static CocosTween24 *tween(cocos2d::Node *target, float duration, CocosEase24::EASE easing = CocosEase24::Linear);
+    static Wait24 *wait(float waitTime);
 
     CocosTween24();
 
-    cocos2d::FiniteTimeAction *getAction();
+    cocos2d::FiniteTimeAction *getAction() override;
 
     void play();
     void stop();

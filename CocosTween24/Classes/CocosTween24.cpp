@@ -5,9 +5,9 @@ USING_NS_CC;
 
 #pragma mark----- static -----
 
-CocosTween24 *CocosTween24::tween(cocos2d::Node *target, float duration, CocosEase24::EASE easing)
+Tween24Ptr CocosTween24::tween(cocos2d::Node *target, float duration, CocosEase24::EASE easing)
 {
-    auto tween = new CocosTween24();
+    auto tween = std::make_shared<CocosTween24>();
     tween->_target = target;
     tween->_duration = duration;
     tween->_easing = easing;
@@ -15,9 +15,9 @@ CocosTween24 *CocosTween24::tween(cocos2d::Node *target, float duration, CocosEa
     return tween;
 }
 
-Wait24 *CocosTween24::wait(float waitTime)
+Wait24Ptr CocosTween24::wait(float waitTime)
 {
-    return new Wait24(waitTime);
+    return std::make_shared<Wait24>(waitTime);
 }
 
 #pragma mark----- public -----
@@ -55,243 +55,243 @@ void CocosTween24::stop()
 
 #pragma mark position
 
-CocosTween24 *CocosTween24::x(float x)
+Tween24Ptr CocosTween24::x(float x)
 {
     auto pos = _target->getPosition();
     auto action = MoveTo::create(_duration, Point(x, pos.y));
     addAction(action);
 
-    return this;
+    return shared_from_this();
 }
 
-CocosTween24 *CocosTween24::$x(float $x)
+Tween24Ptr CocosTween24::$x(float $x)
 {
     auto action = MoveBy::create(_duration, Point($x, 0));
     addAction(action);
 
-    return this;
+    return shared_from_this();
 }
 
-CocosTween24 *CocosTween24::y(float y)
+Tween24Ptr CocosTween24::y(float y)
 {
     auto pos = _target->getPosition();
     auto action = MoveTo::create(_duration, Point(pos.x, y));
     addAction(action);
 
-    return this;
+    return shared_from_this();
 }
 
-CocosTween24 *CocosTween24::$y(float $y)
+Tween24Ptr CocosTween24::$y(float $y)
 {
     auto action = MoveBy::create(_duration, Point(0, $y));
     addAction(action);
 
-    return this;
+    return shared_from_this();
 }
 
-CocosTween24 *CocosTween24::xy(float x, float y)
+Tween24Ptr CocosTween24::xy(float x, float y)
 {
     auto action = MoveTo::create(_duration, Point(x, y));
     addAction(action);
 
-    return this;
+    return shared_from_this();
 }
 
-CocosTween24 *CocosTween24::$xy(float $x, float $y)
+Tween24Ptr CocosTween24::$xy(float $x, float $y)
 {
     auto action = MoveBy::create(_duration, Point($x, $y));
     addAction(action);
 
-    return this;
+    return shared_from_this();
 }
 
 #pragma mark scale
 
-CocosTween24 *CocosTween24::scaleX(float sx)
+Tween24Ptr CocosTween24::scaleX(float sx)
 {
     auto action = ScaleTo::create(_duration, sx, _target->getScaleY());
     addAction(action);
 
-    return this;
+    return shared_from_this();
 }
 
-CocosTween24 *CocosTween24::$scaleX(float $sx)
+Tween24Ptr CocosTween24::$scaleX(float $sx)
 {
     auto action = ScaleBy::create(_duration, $sx, 0);
     addAction(action);
 
-    return this;
+    return shared_from_this();
 }
 
-CocosTween24 *CocosTween24::scaleY(float sy)
+Tween24Ptr CocosTween24::scaleY(float sy)
 {
     auto action = ScaleTo::create(_duration, _target->getScaleX(), sy);
     addAction(action);
 
-    return this;
+    return shared_from_this();
 }
 
-CocosTween24 *CocosTween24::$scaleY(float $sy)
+Tween24Ptr CocosTween24::$scaleY(float $sy)
 {
     auto action = ScaleBy::create(_duration, 0, $sy);
     addAction(action);
 
-    return this;
+    return shared_from_this();
 }
 
-CocosTween24 *CocosTween24::scaleZ(float sz)
+Tween24Ptr CocosTween24::scaleZ(float sz)
 {
     auto action = ScaleTo::create(_duration, _target->getScaleX(), _target->getScaleY(), sz);
     addAction(action);
 
-    return this;
+    return shared_from_this();
 }
 
-CocosTween24 *CocosTween24::$scaleZ(float $sz)
+Tween24Ptr CocosTween24::$scaleZ(float $sz)
 {
     auto action = ScaleBy::create(_duration, 0, 0, $sz);
     addAction(action);
 
-    return this;
+    return shared_from_this();
 }
 
-CocosTween24 *CocosTween24::scale(float s)
+Tween24Ptr CocosTween24::scale(float s)
 {
     auto action = ScaleTo::create(_duration, s);
     addAction(action);
 
-    return this;
+    return shared_from_this();
 }
 
-CocosTween24 *CocosTween24::$scale(float $s)
+Tween24Ptr CocosTween24::$scale(float $s)
 {
     auto action = ScaleBy::create(_duration, $s);
     addAction(action);
 
-    return this;
+    return shared_from_this();
 }
 
-CocosTween24 *CocosTween24::scale(float sx, float sy)
+Tween24Ptr CocosTween24::scale(float sx, float sy)
 {
     auto action = ScaleTo::create(_duration, sx, sy);
     addAction(action);
 
-    return this;
+    return shared_from_this();
 }
 
-CocosTween24 *CocosTween24::$scale(float $sx, float $sy)
+Tween24Ptr CocosTween24::$scale(float $sx, float $sy)
 {
     auto action = ScaleBy::create(_duration, $sx, $sy);
     addAction(action);
 
-    return this;
+    return shared_from_this();
 }
 
-CocosTween24 *CocosTween24::scale(float sx, float sy, float sz)
+Tween24Ptr CocosTween24::scale(float sx, float sy, float sz)
 {
     auto action = ScaleTo::create(_duration, sx, sy, sz);
     addAction(action);
 
-    return this;
+    return shared_from_this();
 }
 
-CocosTween24 *CocosTween24::$scale(float $sx, float $sy, float $sz)
+Tween24Ptr CocosTween24::$scale(float $sx, float $sy, float $sz)
 {
     auto action = ScaleBy::create(_duration, $sx, $sy, $sz);
     addAction(action);
 
-    return this;
+    return shared_from_this();
 }
 
 #pragma mark rotate
 
-CocosTween24 *CocosTween24::rotateX(float angleX)
+Tween24Ptr CocosTween24::rotateX(float angleX)
 {
     auto action = RotateTo::create(_duration, angleX, _target->getRotationSkewY());
     addAction(action);
 
-    return this;
+    return shared_from_this();
 }
 
-CocosTween24 *CocosTween24::$rotateX(float $angleX)
+Tween24Ptr CocosTween24::$rotateX(float $angleX)
 {
     auto action = RotateBy::create(_duration, $angleX, 0);
     addAction(action);
 
-    return this;
+    return shared_from_this();
 }
 
-CocosTween24 *CocosTween24::rotateY(float angleY)
+Tween24Ptr CocosTween24::rotateY(float angleY)
 {
     auto action = RotateTo::create(_duration, _target->getRotationSkewX(), angleY);
     addAction(action);
 
-    return this;
+    return shared_from_this();
 }
 
-CocosTween24 *CocosTween24::$rotateY(float $angleY)
+Tween24Ptr CocosTween24::$rotateY(float $angleY)
 {
     auto action = RotateBy::create(_duration, 0, $angleY);
     addAction(action);
 
-    return this;
+    return shared_from_this();
 }
 
-CocosTween24 *CocosTween24::rotate(float angle)
+Tween24Ptr CocosTween24::rotate(float angle)
 {
     auto action = RotateTo::create(_duration, angle);
     addAction(action);
 
-    return this;
+    return shared_from_this();
 }
 
-CocosTween24 *CocosTween24::$rotate(float $angle)
+Tween24Ptr CocosTween24::$rotate(float $angle)
 {
     auto action = RotateBy::create(_duration, $angle);
     addAction(action);
 
-    return this;
+    return shared_from_this();
 }
 
-CocosTween24 *CocosTween24::rotate(float angleX, float angleY)
+Tween24Ptr CocosTween24::rotate(float angleX, float angleY)
 {
     auto action = RotateTo::create(_duration, angleX, angleY);
     addAction(action);
 
-    return this;
+    return shared_from_this();
 }
 
-CocosTween24 *CocosTween24::$rotate(float $angleX, float $angleY)
+Tween24Ptr CocosTween24::$rotate(float $angleX, float $angleY)
 {
     auto action = RotateBy::create(_duration, $angleX, $angleY);
     addAction(action);
 
-    return this;
+    return shared_from_this();
 }
 
-CocosTween24 *CocosTween24::rotate(const Vec3 &angle3D)
+Tween24Ptr CocosTween24::rotate(const Vec3 &angle3D)
 {
     auto action = RotateTo::create(_duration, angle3D);
     addAction(action);
 
-    return this;
+    return shared_from_this();
 }
 
-CocosTween24 *CocosTween24::$rotate(const Vec3 &$angle3D)
+Tween24Ptr CocosTween24::$rotate(const Vec3 &$angle3D)
 {
     auto action = RotateBy::create(_duration, $angle3D);
     addAction(action);
 
-    return this;
+    return shared_from_this();
 }
 
 #pragma mark delay
 
-CocosTween24 *CocosTween24::delay(float delayTime)
+Tween24Ptr CocosTween24::delay(float delayTime)
 {
     _delayTime = delayTime;
 
-    return this;
+    return shared_from_this();
 }
 
 #pragma mark----- private -----

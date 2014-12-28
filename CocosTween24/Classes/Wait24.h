@@ -6,6 +6,9 @@
 
 namespace cocosTween24
 {
+class Wait24;
+typedef std::shared_ptr<Wait24> Wait24Ptr;
+
 class Wait24 : public ITween24
 {
 public:

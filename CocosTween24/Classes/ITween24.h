@@ -5,6 +5,9 @@
 
 namespace cocosTween24
 {
+class ITween24;
+typedef std::shared_ptr<ITween24> ITween24Ptr;
+
 class ITween24
 {
 public:

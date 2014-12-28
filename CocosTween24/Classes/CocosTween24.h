@@ -8,11 +8,14 @@
 
 namespace cocosTween24
 {
-class CocosTween24 : public ITween24
+class CocosTween24;
+typedef std::shared_ptr<CocosTween24> Tween24Ptr;
+
+class CocosTween24 : public ITween24, public std::enable_shared_from_this<CocosTween24>
 {
 public:
-    static CocosTween24 *tween(cocos2d::Node *target, float duration, CocosEase24::EASE easing = CocosEase24::Linear);
-    static Wait24 *wait(float waitTime);
+    static Tween24Ptr tween(cocos2d::Node *target, float duration, CocosEase24::EASE easing = CocosEase24::Linear);
+    static Wait24Ptr wait(float waitTime);
 
     CocosTween24();
     virtual ~CocosTween24();
@@ -23,41 +26,41 @@ public:
     void stop();
 
 #pragma mark position
-    CocosTween24 *x(float x);
-    CocosTween24 *$x(float $x);
-    CocosTween24 *y(float y);
-    CocosTween24 *$y(float $y);
-    CocosTween24 *xy(float x, float y);
-    CocosTween24 *$xy(float $x, float $y);
+    Tween24Ptr x(float x);
+    Tween24Ptr $x(float $x);
+    Tween24Ptr y(float y);
+    Tween24Ptr $y(float $y);
+    Tween24Ptr xy(float x, float y);
+    Tween24Ptr $xy(float $x, float $y);
 
 #pragma mark scale
-    CocosTween24 *scaleX(float sx);
-    CocosTween24 *$scaleX(float $sx);
-    CocosTween24 *scaleY(float sy);
-    CocosTween24 *$scaleY(float $sy);
-    CocosTween24 *scaleZ(float sz);
-    CocosTween24 *$scaleZ(float $sz);
-    CocosTween24 *scale(float s);
-    CocosTween24 *$scale(float $s);
-    CocosTween24 *scale(float sx, float sy);
-    CocosTween24 *$scale(float $sx, float $sy);
-    CocosTween24 *scale(float sx, float sy, float sz);
-    CocosTween24 *$scale(float $sx, float $sy, float $sz);
+    Tween24Ptr scaleX(float sx);
+    Tween24Ptr $scaleX(float $sx);
+    Tween24Ptr scaleY(float sy);
+    Tween24Ptr $scaleY(float $sy);
+    Tween24Ptr scaleZ(float sz);
+    Tween24Ptr $scaleZ(float $sz);
+    Tween24Ptr scale(float s);
+    Tween24Ptr $scale(float $s);
+    Tween24Ptr scale(float sx, float sy);
+    Tween24Ptr $scale(float $sx, float $sy);
+    Tween24Ptr scale(float sx, float sy, float sz);
+    Tween24Ptr $scale(float $sx, float $sy, float $sz);
 
 #pragma mark rorate
-    CocosTween24 *rotateX(float angleX);
-    CocosTween24 *$rotateX(float $angleX);
-    CocosTween24 *rotateY(float angleY);
-    CocosTween24 *$rotateY(float $angleX);
-    CocosTween24 *rotate(float angle);
-    CocosTween24 *$rotate(float angle);
-    CocosTween24 *rotate(float angleX, float angleY);
-    CocosTween24 *$rotate(float $angleX, float $angleY);
-    CocosTween24 *rotate(const cocos2d::Vec3 &angle3D);
-    CocosTween24 *$rotate(const cocos2d::Vec3 &$angle3D);
+    Tween24Ptr rotateX(float angleX);
+    Tween24Ptr $rotateX(float $angleX);
+    Tween24Ptr rotateY(float angleY);
+    Tween24Ptr $rotateY(float $angleX);
+    Tween24Ptr rotate(float angle);
+    Tween24Ptr $rotate(float angle);
+    Tween24Ptr rotate(float angleX, float angleY);
+    Tween24Ptr $rotate(float $angleX, float $angleY);
+    Tween24Ptr rotate(const cocos2d::Vec3 &angle3D);
+    Tween24Ptr $rotate(const cocos2d::Vec3 &$angle3D);
 
 #pragma mark delay
-    CocosTween24 *delay(float delayTime);
+    Tween24Ptr delay(float delayTime);
 
 #pragma mark property
     CC_SYNTHESIZE_READONLY(cocos2d::Node *, _target, Target);

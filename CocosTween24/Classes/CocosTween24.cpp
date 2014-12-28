@@ -3,9 +3,9 @@
 using namespace cocosTween24;
 USING_NS_CC;
 
-#pragma mark ----- static -----
+#pragma mark----- static -----
 
-CocosTween24 * CocosTween24::tween(cocos2d::Node * target, float duration, CocosEase24::EASE easing)
+CocosTween24 *CocosTween24::tween(cocos2d::Node *target, float duration, CocosEase24::EASE easing)
 {
     auto tween = new CocosTween24();
     tween->_target = target;
@@ -15,11 +15,13 @@ CocosTween24 * CocosTween24::tween(cocos2d::Node * target, float duration, Cocos
     return tween;
 }
 
-#pragma mark ----- public -----
+#pragma mark----- public -----
 
-CocosTween24::CocosTween24() {}
+CocosTween24::CocosTween24()
+{
+}
 
-FiniteTimeAction * CocosTween24::getAction()
+FiniteTimeAction *CocosTween24::getAction()
 {
     auto spawn = Spawn::create(_actions);
     auto action = this->addEasing(spawn);
@@ -43,7 +45,7 @@ void CocosTween24::stop()
 
 #pragma mark position
 
-CocosTween24 * CocosTween24::x(float x)
+CocosTween24 *CocosTween24::x(float x)
 {
     auto pos = _target->getPosition();
     auto action = MoveTo::create(_duration, Point(x, pos.y));
@@ -52,7 +54,7 @@ CocosTween24 * CocosTween24::x(float x)
     return this;
 }
 
-CocosTween24 * CocosTween24::$x(float $x)
+CocosTween24 *CocosTween24::$x(float $x)
 {
     auto action = MoveBy::create(_duration, Point($x, 0));
     addAction(action);
@@ -60,7 +62,7 @@ CocosTween24 * CocosTween24::$x(float $x)
     return this;
 }
 
-CocosTween24 * CocosTween24::y(float y)
+CocosTween24 *CocosTween24::y(float y)
 {
     auto pos = _target->getPosition();
     auto action = MoveTo::create(_duration, Point(pos.x, y));
@@ -69,7 +71,7 @@ CocosTween24 * CocosTween24::y(float y)
     return this;
 }
 
-CocosTween24 * CocosTween24::$y(float $y)
+CocosTween24 *CocosTween24::$y(float $y)
 {
     auto action = MoveBy::create(_duration, Point(0, $y));
     addAction(action);
@@ -77,7 +79,7 @@ CocosTween24 * CocosTween24::$y(float $y)
     return this;
 }
 
-CocosTween24 * CocosTween24::xy(float x, float y)
+CocosTween24 *CocosTween24::xy(float x, float y)
 {
     auto action = MoveTo::create(_duration, Point(x, y));
     addAction(action);
@@ -85,7 +87,7 @@ CocosTween24 * CocosTween24::xy(float x, float y)
     return this;
 }
 
-CocosTween24 * CocosTween24::$xy(float $x, float $y)
+CocosTween24 *CocosTween24::$xy(float $x, float $y)
 {
     auto action = MoveBy::create(_duration, Point($x, $y));
     addAction(action);
@@ -95,105 +97,105 @@ CocosTween24 * CocosTween24::$xy(float $x, float $y)
 
 #pragma mark scale
 
-CocosTween24 * CocosTween24::scaleX(float sx)
+CocosTween24 *CocosTween24::scaleX(float sx)
 {
     auto action = ScaleTo::create(_duration, sx, _target->getScaleY());
     addAction(action);
-    
+
     return this;
 }
 
-CocosTween24 * CocosTween24::$scaleX(float $sx)
+CocosTween24 *CocosTween24::$scaleX(float $sx)
 {
     auto action = ScaleBy::create(_duration, $sx, 0);
     addAction(action);
-    
+
     return this;
 }
 
-CocosTween24 * CocosTween24::scaleY(float sy)
+CocosTween24 *CocosTween24::scaleY(float sy)
 {
     auto action = ScaleTo::create(_duration, _target->getScaleX(), sy);
     addAction(action);
-    
+
     return this;
 }
 
-CocosTween24 * CocosTween24::$scaleY(float $sy)
+CocosTween24 *CocosTween24::$scaleY(float $sy)
 {
     auto action = ScaleBy::create(_duration, 0, $sy);
     addAction(action);
-    
+
     return this;
 }
 
-CocosTween24 * CocosTween24::scaleZ(float sz)
+CocosTween24 *CocosTween24::scaleZ(float sz)
 {
     auto action = ScaleTo::create(_duration, _target->getScaleX(), _target->getScaleY(), sz);
     addAction(action);
-    
+
     return this;
 }
 
-CocosTween24 * CocosTween24::$scaleZ(float $sz)
+CocosTween24 *CocosTween24::$scaleZ(float $sz)
 {
     auto action = ScaleBy::create(_duration, 0, 0, $sz);
     addAction(action);
-    
+
     return this;
 }
 
-CocosTween24 * CocosTween24::scale(float s)
+CocosTween24 *CocosTween24::scale(float s)
 {
     auto action = ScaleTo::create(_duration, s);
     addAction(action);
-    
+
     return this;
 }
 
-CocosTween24 * CocosTween24::$scale(float $s)
+CocosTween24 *CocosTween24::$scale(float $s)
 {
     auto action = ScaleBy::create(_duration, $s);
     addAction(action);
-    
+
     return this;
 }
 
-CocosTween24 * CocosTween24::scale(float sx, float sy)
+CocosTween24 *CocosTween24::scale(float sx, float sy)
 {
     auto action = ScaleTo::create(_duration, sx, sy);
     addAction(action);
-    
+
     return this;
 }
 
-CocosTween24 * CocosTween24::$scale(float $sx, float $sy)
+CocosTween24 *CocosTween24::$scale(float $sx, float $sy)
 {
     auto action = ScaleBy::create(_duration, $sx, $sy);
     addAction(action);
-    
+
     return this;
 }
 
-CocosTween24 * CocosTween24::scale(float sx, float sy, float sz)
+CocosTween24 *CocosTween24::scale(float sx, float sy, float sz)
 {
     auto action = ScaleTo::create(_duration, sx, sy, sz);
     addAction(action);
-    
+
     return this;
 }
 
-CocosTween24 * CocosTween24::$scale(float $sx, float $sy, float $sz)
+CocosTween24 *CocosTween24::$scale(float $sx, float $sy, float $sz)
 {
     auto action = ScaleBy::create(_duration, $sx, $sy, $sz);
     addAction(action);
-    
+
     return this;
 }
 
 #pragma mark rotate
 
-CocosTween24 * CocosTween24::rotateX(float angleX)
+CocosTween24 *CocosTween24::rotateX(float angleX)
 {
     auto action = RotateTo::create(_duration, angleX, _target->getRotationSkewY());
     addAction(action);
@@ -201,7 +203,7 @@ CocosTween24 * CocosTween24::rotateX(float angleX)
     return this;
 }
 
-CocosTween24 * CocosTween24::$rotateX(float $angleX)
+CocosTween24 *CocosTween24::$rotateX(float $angleX)
 {
     auto action = RotateBy::create(_duration, $angleX, 0);
     addAction(action);
@@ -209,7 +211,7 @@ CocosTween24 * CocosTween24::$rotateX(float $angleX)
     return this;
 }
 
-CocosTween24 * CocosTween24::rotateY(float angleY)
+CocosTween24 *CocosTween24::rotateY(float angleY)
 {
     auto action = RotateTo::create(_duration, _target->getRotationSkewX(), angleY);
     addAction(action);
@@ -217,7 +219,7 @@ CocosTween24 * CocosTween24::rotateY(float angleY)
     return this;
 }
 
-CocosTween24 * CocosTween24::$rotateY(float $angleY)
+CocosTween24 *CocosTween24::$rotateY(float $angleY)
 {
     auto action = RotateBy::create(_duration, 0, $angleY);
     addAction(action);
@@ -225,7 +227,7 @@ CocosTween24 * CocosTween24::$rotateY(float $angleY)
     return this;
 }
 
-CocosTween24 * CocosTween24::rotate(float angle)
+CocosTween24 *CocosTween24::rotate(float angle)
 {
     auto action = RotateTo::create(_duration, angle);
     addAction(action);
@@ -233,7 +235,7 @@ CocosTween24 * CocosTween24::rotate(float angle)
     return this;
 }
 
-CocosTween24 * CocosTween24::$rotate(float $angle)
+CocosTween24 *CocosTween24::$rotate(float $angle)
 {
     auto action = RotateBy::create(_duration, $angle);
     addAction(action);
@@ -241,7 +243,7 @@ CocosTween24 * CocosTween24::$rotate(float $angle)
     return this;
 }
 
-CocosTween24 * CocosTween24::rotate(float angleX, float angleY)
+CocosTween24 *CocosTween24::rotate(float angleX, float angleY)
 {
     auto action = RotateTo::create(_duration, angleX, angleY);
     addAction(action);
@@ -249,7 +251,7 @@ CocosTween24 * CocosTween24::rotate(float angleX, float angleY)
     return this;
 }
 
-CocosTween24 * CocosTween24::$rotate(float $angleX, float $angleY)
+CocosTween24 *CocosTween24::$rotate(float $angleX, float $angleY)
 {
     auto action = RotateBy::create(_duration, $angleX, $angleY);
     addAction(action);
@@ -257,7 +259,7 @@ CocosTween24 * CocosTween24::$rotate(float $angleX, float $angleY)
     return this;
 }
 
-CocosTween24 * CocosTween24::rotate(const Vec3 & angle3D)
+CocosTween24 *CocosTween24::rotate(const Vec3 &angle3D)
 {
     auto action = RotateTo::create(_duration, angle3D);
     addAction(action);
@@ -265,7 +267,7 @@ CocosTween24 * CocosTween24::rotate(const Vec3 & angle3D)
     return this;
 }
 
-CocosTween24 * CocosTween24::$rotate(const Vec3 & $angle3D)
+CocosTween24 *CocosTween24::$rotate(const Vec3 &$angle3D)
 {
     auto action = RotateBy::create(_duration, $angle3D);
     addAction(action);
@@ -273,16 +275,16 @@ CocosTween24 * CocosTween24::$rotate(const Vec3 & $angle3D)
     return this;
 }
 
-#pragma mark ----- protected -----
+#pragma mark----- protected -----
 
-void CocosTween24::addAction(FiniteTimeAction * action)
+void CocosTween24::addAction(FiniteTimeAction *action)
 {
     _actions.pushBack(action);
 }
 
 #pragma mark easing
 
-ActionInterval * CocosTween24::addEasing(cocos2d::ActionInterval * action)
+ActionInterval *CocosTween24::addEasing(cocos2d::ActionInterval *action)
 {
     switch (_easing) {
         case CocosEase24::Linear:

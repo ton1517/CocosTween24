@@ -55,18 +55,24 @@ public:
     CocosTween24 *rotate(const cocos2d::Vec3 &angle3D);
     CocosTween24 *$rotate(const cocos2d::Vec3 &$angle3D);
 
+#pragma mark delay
+    CocosTween24 *delay(float delayTime);
+
 #pragma mark property
     CC_SYNTHESIZE_READONLY(cocos2d::Node *, _target, Target);
     CC_SYNTHESIZE_READONLY(float, _duration, Duration);
     CC_SYNTHESIZE_READONLY(CocosEase24::EASE, _easing, Easing);
 
-protected:
+private:
     cocos2d::FiniteTimeAction *_playingAction;
 
     cocos2d::Vector<cocos2d::FiniteTimeAction *> _actions;
     void addAction(cocos2d::FiniteTimeAction *action);
 
     cocos2d::ActionInterval *addEasing(cocos2d::ActionInterval *action);
+
+    float _delayTime{0};
+    cocos2d::ActionInterval *addDelay(cocos2d::ActionInterval *action);
 };
 }
 

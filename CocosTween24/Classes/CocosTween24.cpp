@@ -28,8 +28,9 @@ CocosTween24::CocosTween24()
 
 FiniteTimeAction *CocosTween24::getAction()
 {
-    auto spawn = Spawn::create(_actions);
-    auto action = this->addEasing(spawn);
+    ActionInterval *action = Spawn::create(_actions);
+    action = this->addDelay(action);
+    action = this->addEasing(action);
     auto targetedAction = TargetedAction::create(_target, action);
 
     return targetedAction;
@@ -280,14 +281,21 @@ CocosTween24 *CocosTween24::$rotate(const Vec3 &$angle3D)
     return this;
 }
 
-#pragma mark----- protected -----
+#pragma mark delay
+
+CocosTween24 *CocosTween24::delay(float delayTime)
+{
+    _delayTime = delayTime;
+
+    return this;
+}
+
+#pragma mark----- private -----
 
 void CocosTween24::addAction(FiniteTimeAction *action)
 {
     _actions.pushBack(action);
 }
-
-#pragma mark easing
 
 ActionInterval *CocosTween24::addEasing(cocos2d::ActionInterval *action)
 {
@@ -355,4 +363,13 @@ ActionInterval *CocosTween24::addEasing(cocos2d::ActionInterval *action)
         case CocosEase24::BounceInOut:
             return EaseBounceInOut::create(action);
     }
+}
+
+ActionInterval *CocosTween24::addDelay(ActionInterval *action)
+{
+    if (_delayTime == 0) {
+        return action;
+    }
+
+    return Sequence::create(DelayTime::create(_delayTime), action, nullptr);
 }

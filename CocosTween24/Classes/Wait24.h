@@ -10,6 +10,7 @@ class Wait24 : public ITween24
 {
 public:
     Wait24(float waitTime);
+    virtual ~Wait24();
 
     cocos2d::FiniteTimeAction *getAction() override;
 

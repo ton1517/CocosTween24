@@ -26,6 +26,10 @@ CocosTween24::CocosTween24()
 {
 }
 
+CocosTween24::~CocosTween24()
+{
+}
+
 FiniteTimeAction *CocosTween24::getAction()
 {
     ActionInterval *action = Spawn::create(_actions);

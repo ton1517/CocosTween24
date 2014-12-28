@@ -15,6 +15,7 @@ public:
     static Wait24 *wait(float waitTime);
 
     CocosTween24();
+    virtual ~CocosTween24();
 
     cocos2d::FiniteTimeAction *getAction() override;
 

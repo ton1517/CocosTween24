@@ -7,6 +7,10 @@ Wait24::Wait24(float waitTime) : _waitTime(waitTime)
 {
 }
 
+Wait24::~Wait24()
+{
+}
+
 FiniteTimeAction *Wait24::getAction()
 {
     return DelayTime::create(_waitTime);

@@ -14,7 +14,7 @@ typedef std::shared_ptr<CocosTween24> Tween24Ptr;
 class CocosTween24 : public ITween24, public std::enable_shared_from_this<CocosTween24>
 {
 public:
-    static Tween24Ptr tween(cocos2d::Node *target, float duration, CocosEase24::EASE easing = CocosEase24::Linear);
+    static Tween24Ptr tween(cocos2d::Node *target, float duration, CocosEase24 easing = CocosEase24::Linear);
     static Wait24Ptr wait(float waitTime);
 
     CocosTween24();
@@ -65,7 +65,7 @@ public:
 #pragma mark property
     CC_SYNTHESIZE_READONLY(cocos2d::Node *, _target, Target);
     CC_SYNTHESIZE_READONLY(float, _duration, Duration);
-    CC_SYNTHESIZE_READONLY(CocosEase24::EASE, _easing, Easing);
+    CC_SYNTHESIZE_READONLY(CocosEase24, _easing, Easing);
 
 private:
     cocos2d::FiniteTimeAction *_playingAction;

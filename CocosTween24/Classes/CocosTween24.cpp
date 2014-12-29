@@ -5,7 +5,7 @@ USING_NS_CC;
 
 #pragma mark----- static -----
 
-Tween24Ptr CocosTween24::tween(cocos2d::Node *target, float duration, CocosEase24::EASE easing)
+Tween24Ptr CocosTween24::tween(cocos2d::Node *target, float duration, CocosEase24 easing)
 {
     auto tween = std::make_shared<CocosTween24>();
     tween->_target = target;

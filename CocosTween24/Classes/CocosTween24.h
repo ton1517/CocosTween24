@@ -14,12 +14,15 @@ typedef std::shared_ptr<CocosTween24> Tween24Ptr;
 class CocosTween24 : public ITween24, public std::enable_shared_from_this<CocosTween24>
 {
 public:
+#pragma mark factory
     static Tween24Ptr tween(cocos2d::Node *target, float duration, CocosEase24 easing = CocosEase24::Linear);
     static Wait24Ptr wait(float waitTime);
 
+#pragma mark constructor & destructor
     CocosTween24();
     virtual ~CocosTween24();
 
+#pragma mark ITween24 interface
     cocos2d::FiniteTimeAction *getAction() override;
 
     void play() override;

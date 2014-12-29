@@ -22,8 +22,8 @@ public:
 
     cocos2d::FiniteTimeAction *getAction() override;
 
-    void play();
-    void stop();
+    void play() override;
+    void stop() override;
 
 #pragma mark position
     Tween24Ptr x(float x);

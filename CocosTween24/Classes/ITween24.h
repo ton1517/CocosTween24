@@ -13,6 +13,8 @@ class ITween24
 public:
     virtual ~ITween24(){};
     virtual cocos2d::FiniteTimeAction *getAction() = 0;
+    virtual void play() = 0;
+    virtual void stop() = 0;
 };
 }
 

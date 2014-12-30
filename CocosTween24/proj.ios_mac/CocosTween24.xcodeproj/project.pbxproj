@@ -68,6 +68,7 @@
 		D44C6210132DFF4E0009C878 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620F132DFF4E0009C878 /* AudioToolbox.framework */; };
 		D6B0611B1803AB670077942B /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B0611A1803AB670077942B /* CoreMotion.framework */; };
 		E64213D31A507266000DC542 /* Wait24.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E64213D11A507266000DC542 /* Wait24.cpp */; };
+		E6D1F2D91A5171360009200B /* Sequence24.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E6D1F2D71A5171360009200B /* Sequence24.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -164,6 +165,8 @@
 		E64213CF1A5070EA000DC542 /* ITween24.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITween24.h; sourceTree = "<group>"; };
 		E64213D11A507266000DC542 /* Wait24.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Wait24.cpp; sourceTree = "<group>"; };
 		E64213D21A507266000DC542 /* Wait24.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Wait24.h; sourceTree = "<group>"; };
+		E6D1F2D71A5171360009200B /* Sequence24.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sequence24.cpp; sourceTree = "<group>"; };
+		E6D1F2D81A5171360009200B /* Sequence24.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sequence24.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -310,6 +313,8 @@
 				E64213CF1A5070EA000DC542 /* ITween24.h */,
 				E64213D11A507266000DC542 /* Wait24.cpp */,
 				E64213D21A507266000DC542 /* Wait24.h */,
+				E6D1F2D71A5171360009200B /* Sequence24.cpp */,
+				E6D1F2D81A5171360009200B /* Sequence24.h */,
 			);
 			name = CocosTween24;
 			sourceTree = "<group>";
@@ -513,6 +518,7 @@
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				E64213D31A507266000DC542 /* Wait24.cpp in Sources */,
+				E6D1F2D91A5171360009200B /* Sequence24.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

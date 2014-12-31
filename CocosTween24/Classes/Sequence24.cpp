@@ -2,7 +2,14 @@
 
 using namespace cocosTween24;
 USING_NS_CC;
-using namespace std;
+
+Sequence24Ptr Sequence24::create(Node *target)
+{
+    auto s24 = new Sequence24(target);
+    auto sp = std::shared_ptr<Sequence24>(s24);
+    
+    return std::move(sp);
+}
 
 Sequence24::Sequence24(Node *target) : _target(target)
 {
@@ -50,3 +57,4 @@ Sequence24Ptr Sequence24::addTweens(const std::vector<ITween24Ptr> &tweens)
 
     return shared_from_this();
 }
+

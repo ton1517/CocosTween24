@@ -12,6 +12,8 @@ typedef std::shared_ptr<Wait24> Wait24Ptr;
 class Wait24 : public ITween24
 {
 public:
+    static Wait24Ptr create(float waitTime);
+
     Wait24(float waitTime);
     virtual ~Wait24();
 

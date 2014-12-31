@@ -11,12 +11,6 @@ typedef std::shared_ptr<Sequence24> Sequence24Ptr;
 
 class Sequence24 : public ITween24, public std::enable_shared_from_this<Sequence24>
 {
-private:
-    // dummy
-    void addTweens()
-    {
-    }
-
 public:
     static Sequence24Ptr create(cocos2d::Node *target);
 
@@ -33,7 +27,7 @@ public:
     template <class Tween, class... Args>
     Sequence24Ptr addTweens(Tween tween, Args... args)
     {
-        addTween(tween);
+        addTweens(tween);
         addTweens(args...);
 
         return shared_from_this();
@@ -42,8 +36,13 @@ public:
     CC_SYNTHESIZE_READONLY(cocos2d::Node *, _target, Target);
 private:
     cocos2d::FiniteTimeAction *_playingAction;
+    std::vector<ITween24Ptr>   _tweens;
 
-    std::vector<ITween24Ptr> _tweens;
+    template <class Tween>
+    void addTweens(Tween tween)
+    {
+        addTween(tween);
+    }
 };
 }
 

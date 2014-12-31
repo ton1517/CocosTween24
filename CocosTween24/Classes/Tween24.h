@@ -1,5 +1,5 @@
-#ifndef __CocosTween24__CocosTween24__
-#define __CocosTween24__CocosTween24__
+#ifndef __CocosTween24__Tween24__
+#define __CocosTween24__Tween24__
 
 #include "cocos2d.h"
 #include "ITween24.h"
@@ -9,10 +9,10 @@
 
 namespace cocosTween24
 {
-class CocosTween24;
-typedef std::shared_ptr<CocosTween24> Tween24Ptr;
+class Tween24;
+typedef std::shared_ptr<Tween24> Tween24Ptr;
 
-class CocosTween24 : public ITween24, public std::enable_shared_from_this<CocosTween24>
+class Tween24 : public ITween24, public std::enable_shared_from_this<Tween24>
 {
 public:
 #pragma mark factory
@@ -31,8 +31,8 @@ public:
     static Wait24Ptr wait(float waitTime);
 
 #pragma mark constructor & destructor
-    CocosTween24();
-    virtual ~CocosTween24();
+    Tween24();
+    virtual ~Tween24();
 
 #pragma mark ITween24 interface
     cocos2d::FiniteTimeAction *getAction() override;
@@ -95,4 +95,4 @@ private:
 };
 }
 
-#endif /* defined(__CocosTween24__CocosTween24__) */
+#endif /* defined(__CocosTween24__Tween24__) */

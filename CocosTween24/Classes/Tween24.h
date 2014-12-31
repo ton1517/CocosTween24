@@ -30,8 +30,10 @@ public:
 
     static Wait24Ptr wait(float waitTime);
 
+    static Tween24Ptr create(cocos2d::Node *target, float duration, CocosEase24 easing);
+    
 #pragma mark constructor & destructor
-    Tween24();
+    Tween24(cocos2d::Node *target, float duration, CocosEase24 easing);
     virtual ~Tween24();
 
 #pragma mark ITween24 interface

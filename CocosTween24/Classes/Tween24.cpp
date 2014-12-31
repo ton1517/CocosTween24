@@ -7,12 +7,9 @@ USING_NS_CC;
 
 Tween24Ptr Tween24::tween(cocos2d::Node *target, float duration, CocosEase24 easing)
 {
-    auto tween = std::make_shared<Tween24>();
-    tween->_target   = target;
-    tween->_duration = duration;
-    tween->_easing   = easing;
+    auto t24 = Tween24::create(target, duration, easing);
 
-    return tween;
+    return std::move(t24);
 }
 
 Sequence24Ptr Tween24::sequence(cocos2d::Node *target, const std::vector<ITween24Ptr> &tweens)
@@ -28,9 +25,16 @@ Wait24Ptr Tween24::wait(float waitTime)
     return std::make_shared<Wait24>(waitTime);
 }
 
+Tween24Ptr Tween24::create(cocos2d::Node *target, float duration, CocosEase24 easing)
+{
+    auto t24 = std::make_shared<Tween24>(target, duration, easing);
+
+    return std::move(t24);
+}
+
 #pragma mark----- public -----
 
-Tween24::Tween24()
+Tween24::Tween24(cocos2d::Node *target, float duration, CocosEase24 easing) : _target(target), _duration(duration), _easing(easing)
 {
 }
 
@@ -385,3 +389,4 @@ ActionInterval *Tween24::addDelay(ActionInterval *action)
 
     return Sequence::create(DelayTime::create(_delayTime), action, nullptr);
 }
+

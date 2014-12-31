@@ -294,46 +294,67 @@ ActionInterval *Tween24::addEasing(cocos2d::ActionInterval *action)
         case Ease24::Linear:
             return action;
         case Ease24::SineIn:
+        case Ease24::_1_SineIn:
             return EaseSineIn::create(action);
         case Ease24::SineOut:
+        case Ease24::_1_SineOut:
             return EaseSineOut::create(action);
         case Ease24::SineInOut:
+        case Ease24::_1_SineInOut:
             return EaseSineInOut::create(action);
         case Ease24::QuadIn:
+        case Ease24::_2_QuadIn:
             return EaseQuadraticActionIn::create(action);
         case Ease24::QuadOut:
+        case Ease24::_2_QuadOut:
             return EaseQuadraticActionOut::create(action);
         case Ease24::QuadInOut:
+        case Ease24::_2_QuadInOut:
             return EaseQuadraticActionInOut::create(action);
         case Ease24::CubicIn:
+        case Ease24::_3_CubicIn:
             return EaseCubicActionIn::create(action);
         case Ease24::CubicOut:
+        case Ease24::_3_CubicOut:
             return EaseCubicActionOut::create(action);
         case Ease24::CubicInOut:
+        case Ease24::_3_CubicInOut:
             return EaseCubicActionInOut::create(action);
         case Ease24::QuartIn:
+        case Ease24::_4_QuartIn:
             return EaseQuarticActionIn::create(action);
         case Ease24::QuartOut:
+        case Ease24::_4_QuartOut:
             return EaseQuarticActionOut::create(action);
         case Ease24::QuartInOut:
+        case Ease24::_4_QuartInOut:
             return EaseQuarticActionInOut::create(action);
         case Ease24::QuintIn:
+        case Ease24::_5_QuintIn:
             return EaseQuinticActionIn::create(action);
         case Ease24::QuintOut:
+        case Ease24::_5_QuintOut:
             return EaseQuinticActionOut::create(action);
         case Ease24::QuintInOut:
+        case Ease24::_5_QuintInOut:
             return EaseQuinticActionInOut::create(action);
         case Ease24::ExpoIn:
+        case Ease24::_6_ExpoIn:
             return EaseExponentialIn::create(action);
         case Ease24::ExpoOut:
+        case Ease24::_6_ExpoOut:
             return EaseExponentialOut::create(action);
         case Ease24::ExpoInOut:
+        case Ease24::_6_ExpoInOut:
             return EaseExponentialInOut::create(action);
         case Ease24::CircIn:
+        case Ease24::_7_CircIn:
             return EaseCircleActionIn::create(action);
         case Ease24::CircOut:
+        case Ease24::_7_CircOut:
             return EaseCircleActionOut::create(action);
         case Ease24::CircInOut:
+        case Ease24::_7_CircInOut:
             return EaseCircleActionInOut::create(action);
         case Ease24::ElasticIn:
             return EaseElasticIn::create(action);

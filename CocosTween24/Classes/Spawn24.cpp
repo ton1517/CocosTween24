@@ -13,7 +13,7 @@ Spawn24Ptr Spawn24::create(Node *target)
 Spawn24::Spawn24(Node *target) : _target(target) {}
 Spawn24::~Spawn24() {}
 
-FiniteTimeAction *Spawn24::getAction()
+ActionInterval *Spawn24::getAction()
 {
     Vector<FiniteTimeAction *> actions(_tweens.size());
     for (auto tween : _tweens) {

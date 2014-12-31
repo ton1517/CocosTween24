@@ -17,7 +17,7 @@ public:
     Sequence24(cocos2d::Node *target);
     virtual ~Sequence24();
 
-    cocos2d::FiniteTimeAction *getAction() override;
+    cocos2d::ActionInterval *getAction() override;
     void play() override;
     void stop() override;
 

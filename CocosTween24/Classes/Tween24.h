@@ -22,7 +22,7 @@ public:
     virtual ~Tween24();
 
     #pragma mark ITween24 interface
-    cocos2d::FiniteTimeAction *getAction() override;
+    cocos2d::ActionInterval *getAction() override;
 
     void play() override;
     void stop() override;

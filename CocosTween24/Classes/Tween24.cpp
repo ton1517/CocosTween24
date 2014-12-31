@@ -17,7 +17,7 @@ Tween24Ptr Tween24::create(cocos2d::Node *target, float duration, Ease24 easing)
 Tween24::Tween24(cocos2d::Node *target, float duration, Ease24 easing) : _target(target), _duration(duration), _easing(easing) {}
 Tween24::~Tween24() {}
 
-FiniteTimeAction *Tween24::getAction()
+ActionInterval *Tween24::getAction()
 {
     ActionInterval *action = Spawn::create(_actions);
     action = this->addDelay(action);

@@ -10,13 +10,8 @@ Sequence24Ptr Sequence24::create(Node *target)
     return std::move(s24);
 }
 
-Sequence24::Sequence24(Node *target) : _target(target)
-{
-}
-
-Sequence24::~Sequence24()
-{
-}
+Sequence24::Sequence24(Node *target) : _target(target) {}
+Sequence24::~Sequence24() {}
 
 FiniteTimeAction *Sequence24::getAction()
 {

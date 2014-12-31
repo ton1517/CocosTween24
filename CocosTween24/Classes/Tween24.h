@@ -15,21 +15,19 @@ typedef std::shared_ptr<Tween24> Tween24Ptr;
 class Tween24 : public ITween24, public std::enable_shared_from_this<Tween24>
 {
 public:
-
-
     static Tween24Ptr create(cocos2d::Node *target, float duration, CocosEase24 easing);
-    
-#pragma mark constructor & destructor
+
+    #pragma mark constructor & destructor
     Tween24(cocos2d::Node *target, float duration, CocosEase24 easing);
     virtual ~Tween24();
 
-#pragma mark ITween24 interface
+    #pragma mark ITween24 interface
     cocos2d::FiniteTimeAction *getAction() override;
 
     void play() override;
     void stop() override;
 
-#pragma mark position
+    #pragma mark position
     Tween24Ptr x(float x);
     Tween24Ptr $x(float $x);
     Tween24Ptr y(float y);
@@ -37,7 +35,7 @@ public:
     Tween24Ptr xy(float x, float y);
     Tween24Ptr $xy(float $x, float $y);
 
-#pragma mark scale
+    #pragma mark scale
     Tween24Ptr scaleX(float sx);
     Tween24Ptr $scaleX(float $sx);
     Tween24Ptr scaleY(float sy);
@@ -51,7 +49,7 @@ public:
     Tween24Ptr scale(float sx, float sy, float sz);
     Tween24Ptr $scale(float $sx, float $sy, float $sz);
 
-#pragma mark rorate
+    #pragma mark rorate
     Tween24Ptr rotateX(float angleX);
     Tween24Ptr $rotateX(float $angleX);
     Tween24Ptr rotateY(float angleY);
@@ -63,10 +61,10 @@ public:
     Tween24Ptr rotate(const cocos2d::Vec3 &angle3D);
     Tween24Ptr $rotate(const cocos2d::Vec3 &$angle3D);
 
-#pragma mark delay
+    #pragma mark delay
     Tween24Ptr delay(float delayTime);
 
-#pragma mark property
+    #pragma mark property
     CC_SYNTHESIZE_READONLY(cocos2d::Node *, _target, Target);
     CC_SYNTHESIZE_READONLY(float, _duration, Duration);
     CC_SYNTHESIZE_READONLY(CocosEase24, _easing, Easing);
@@ -79,7 +77,7 @@ private:
 
     cocos2d::ActionInterval *addEasing(cocos2d::ActionInterval *action);
 
-    float _delayTime{0};
+    float _delayTime {0};
     cocos2d::ActionInterval *addDelay(cocos2d::ActionInterval *action);
 };
 }

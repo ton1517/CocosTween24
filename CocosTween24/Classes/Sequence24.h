@@ -34,6 +34,7 @@ public:
     }
 
     CC_SYNTHESIZE_READONLY(cocos2d::Node *, _target, Target);
+
 private:
     cocos2d::FiniteTimeAction *_playingAction;
     std::vector<ITween24Ptr>   _tweens;

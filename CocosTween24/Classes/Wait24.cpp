@@ -10,24 +10,14 @@ Wait24Ptr Wait24::create(float waitTime)
     return std::move(w24);
 }
 
-Wait24::Wait24(float waitTime) : _waitTime(waitTime)
-{
-}
-
-Wait24::~Wait24()
-{
-}
+Wait24::Wait24(float waitTime) : _waitTime(waitTime) {}
+Wait24::~Wait24() {}
 
 FiniteTimeAction *Wait24::getAction()
 {
     return DelayTime::create(_waitTime);
 }
 
-void Wait24::play()
-{
-}
-
-void Wait24::stop()
-{
-}
+void Wait24::play() {}
+void Wait24::stop() {}
 

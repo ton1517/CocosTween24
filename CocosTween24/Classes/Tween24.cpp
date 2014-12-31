@@ -14,13 +14,8 @@ Tween24Ptr Tween24::create(cocos2d::Node *target, float duration, CocosEase24 ea
 
 #pragma mark----- public -----
 
-Tween24::Tween24(cocos2d::Node *target, float duration, CocosEase24 easing) : _target(target), _duration(duration), _easing(easing)
-{
-}
-
-Tween24::~Tween24()
-{
-}
+Tween24::Tween24(cocos2d::Node *target, float duration, CocosEase24 easing) : _target(target), _duration(duration), _easing(easing) {}
+Tween24::~Tween24() {}
 
 FiniteTimeAction *Tween24::getAction()
 {

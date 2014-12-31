@@ -121,7 +121,7 @@
 		46880B8719C43A87006E1F66 /* HelloWorldScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelloWorldScene.h; sourceTree = "<group>"; };
 		4D81EED51A4ACF3A00735E59 /* Tween24.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Tween24.cpp; sourceTree = "<group>"; };
 		4D81EED61A4ACF3A00735E59 /* Tween24.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tween24.h; sourceTree = "<group>"; };
-		4D81EEDA1A4ADD0800735E59 /* CocosEase24.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosEase24.h; sourceTree = "<group>"; };
+		4D81EEDA1A4ADD0800735E59 /* Ease24.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ease24.h; sourceTree = "<group>"; };
 		503AE0F617EB97AB00D1A890 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
 		503AE0F717EB97AB00D1A890 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		503AE0FA17EB989F00D1A890 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppController.h; path = ios/AppController.h; sourceTree = SOURCE_ROOT; };
@@ -315,7 +315,7 @@
 			children = (
 				4D81EED51A4ACF3A00735E59 /* Tween24.cpp */,
 				4D81EED61A4ACF3A00735E59 /* Tween24.h */,
-				4D81EEDA1A4ADD0800735E59 /* CocosEase24.h */,
+				4D81EEDA1A4ADD0800735E59 /* Ease24.h */,
 				E64213CF1A5070EA000DC542 /* ITween24.h */,
 				E64213D11A507266000DC542 /* Wait24.cpp */,
 				E64213D21A507266000DC542 /* Wait24.h */,

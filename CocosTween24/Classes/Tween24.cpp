@@ -5,7 +5,7 @@ USING_NS_CC;
 
 #pragma mark----- static -----
 
-Tween24Ptr Tween24::create(cocos2d::Node *target, float duration, CocosEase24 easing)
+Tween24Ptr Tween24::create(cocos2d::Node *target, float duration, Ease24 easing)
 {
     auto t24 = std::make_shared<Tween24>(target, duration, easing);
 
@@ -14,7 +14,7 @@ Tween24Ptr Tween24::create(cocos2d::Node *target, float duration, CocosEase24 ea
 
 #pragma mark----- public -----
 
-Tween24::Tween24(cocos2d::Node *target, float duration, CocosEase24 easing) : _target(target), _duration(duration), _easing(easing) {}
+Tween24::Tween24(cocos2d::Node *target, float duration, Ease24 easing) : _target(target), _duration(duration), _easing(easing) {}
 Tween24::~Tween24() {}
 
 FiniteTimeAction *Tween24::getAction()
@@ -291,67 +291,67 @@ void Tween24::addAction(FiniteTimeAction *action)
 ActionInterval *Tween24::addEasing(cocos2d::ActionInterval *action)
 {
     switch (_easing) {
-        case CocosEase24::Linear:
+        case Ease24::Linear:
             return action;
-        case CocosEase24::SineIn:
+        case Ease24::SineIn:
             return EaseSineIn::create(action);
-        case CocosEase24::SineOut:
+        case Ease24::SineOut:
             return EaseSineOut::create(action);
-        case CocosEase24::SineInOut:
+        case Ease24::SineInOut:
             return EaseSineInOut::create(action);
-        case CocosEase24::QuadIn:
+        case Ease24::QuadIn:
             return EaseQuadraticActionIn::create(action);
-        case CocosEase24::QuadOut:
+        case Ease24::QuadOut:
             return EaseQuadraticActionOut::create(action);
-        case CocosEase24::QuadInOut:
+        case Ease24::QuadInOut:
             return EaseQuadraticActionInOut::create(action);
-        case CocosEase24::CubicIn:
+        case Ease24::CubicIn:
             return EaseCubicActionIn::create(action);
-        case CocosEase24::CubicOut:
+        case Ease24::CubicOut:
             return EaseCubicActionOut::create(action);
-        case CocosEase24::CubicInOut:
+        case Ease24::CubicInOut:
             return EaseCubicActionInOut::create(action);
-        case CocosEase24::QuartIn:
+        case Ease24::QuartIn:
             return EaseQuarticActionIn::create(action);
-        case CocosEase24::QuartOut:
+        case Ease24::QuartOut:
             return EaseQuarticActionOut::create(action);
-        case CocosEase24::QuartInOut:
+        case Ease24::QuartInOut:
             return EaseQuarticActionInOut::create(action);
-        case CocosEase24::QuintIn:
+        case Ease24::QuintIn:
             return EaseQuinticActionIn::create(action);
-        case CocosEase24::QuintOut:
+        case Ease24::QuintOut:
             return EaseQuinticActionOut::create(action);
-        case CocosEase24::QuintInOut:
+        case Ease24::QuintInOut:
             return EaseQuinticActionInOut::create(action);
-        case CocosEase24::ExpoIn:
+        case Ease24::ExpoIn:
             return EaseExponentialIn::create(action);
-        case CocosEase24::ExpoOut:
+        case Ease24::ExpoOut:
             return EaseExponentialOut::create(action);
-        case CocosEase24::ExpoInOut:
+        case Ease24::ExpoInOut:
             return EaseExponentialInOut::create(action);
-        case CocosEase24::CircIn:
+        case Ease24::CircIn:
             return EaseCircleActionIn::create(action);
-        case CocosEase24::CircOut:
+        case Ease24::CircOut:
             return EaseCircleActionOut::create(action);
-        case CocosEase24::CircInOut:
+        case Ease24::CircInOut:
             return EaseCircleActionInOut::create(action);
-        case CocosEase24::ElasticIn:
+        case Ease24::ElasticIn:
             return EaseElasticIn::create(action);
-        case CocosEase24::ElasticOut:
+        case Ease24::ElasticOut:
             return EaseElasticOut::create(action);
-        case CocosEase24::ElasticInOut:
+        case Ease24::ElasticInOut:
             return EaseElasticInOut::create(action);
-        case CocosEase24::BackIn:
+        case Ease24::BackIn:
             return EaseBackIn::create(action);
-        case CocosEase24::BackOut:
+        case Ease24::BackOut:
             return EaseBackOut::create(action);
-        case CocosEase24::BackInOut:
+        case Ease24::BackInOut:
             return EaseBackInOut::create(action);
-        case CocosEase24::BounceIn:
+        case Ease24::BounceIn:
             return EaseBounceIn::create(action);
-        case CocosEase24::BounceOut:
+        case Ease24::BounceOut:
             return EaseBounceOut::create(action);
-        case CocosEase24::BounceInOut:
+        case Ease24::BounceInOut:
             return EaseBounceInOut::create(action);
     }
 }

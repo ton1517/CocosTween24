@@ -2,7 +2,7 @@
 
 namespace cocosTween24
 {
-Tween24Ptr tween(cocos2d::Node *target, float duration, CocosEase24 easing)
+Tween24Ptr tween(cocos2d::Node *target, float duration, Ease24 easing)
 {
     auto t24 = Tween24::create(target, duration, easing);
 

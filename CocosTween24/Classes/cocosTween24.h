@@ -2,14 +2,14 @@
 #define __CocosTween24__cocosTween24__
 
 #include "Tween24.h"
-#include "CocosEase24.h"
+#include "Ease24.h"
 #include "Sequence24.h"
 #include "Spawn24.h"
 #include "Wait24.h"
 
 namespace cocosTween24
 {
-Tween24Ptr tween(cocos2d::Node *target, float duration, CocosEase24 easing=CocosEase24::Linear);
+Tween24Ptr tween(cocos2d::Node *target, float duration, Ease24 easing=Ease24::Linear);
 
 Sequence24Ptr sequence(cocos2d::Node *target, const std::vector<ITween24Ptr> &tweens);
 

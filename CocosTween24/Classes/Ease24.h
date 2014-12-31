@@ -1,9 +1,9 @@
-#ifndef __CocosTween24__CocosEase24__
-#define __CocosTween24__CocosEase24__
+#ifndef __CocosTween24__Ease24__
+#define __CocosTween24__Ease24__
 
 namespace cocosTween24
 {
-enum class CocosEase24
+enum class Ease24
 {
     Linear,
     SineIn,
@@ -39,4 +39,4 @@ enum class CocosEase24
 };
 }
 
-#endif /* defined(__CocosTween24__CocosEase24__) */
+#endif /* defined(__CocosTween24__Ease24__) */

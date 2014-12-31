@@ -5,10 +5,9 @@ USING_NS_CC;
 
 Sequence24Ptr Sequence24::create(Node *target)
 {
-    auto s24 = new Sequence24(target);
-    auto sp  = std::shared_ptr<Sequence24>(s24);
+    auto s24 = std::make_shared<Sequence24>(target);
 
-    return std::move(sp);
+    return std::move(s24);
 }
 
 Sequence24::Sequence24(Node *target) : _target(target)

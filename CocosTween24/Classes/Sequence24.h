@@ -20,6 +20,7 @@ private:
 public:
     static Sequence24Ptr create(cocos2d::Node *target);
 
+    Sequence24(cocos2d::Node *target);
     virtual ~Sequence24();
 
     cocos2d::FiniteTimeAction *getAction() override;
@@ -40,8 +41,6 @@ public:
 
     CC_SYNTHESIZE_READONLY(cocos2d::Node *, _target, Target);
 private:
-    Sequence24(cocos2d::Node *target);
-
     cocos2d::FiniteTimeAction *_playingAction;
 
     std::vector<ITween24Ptr> _tweens;

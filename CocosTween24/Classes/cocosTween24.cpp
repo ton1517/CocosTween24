@@ -17,6 +17,14 @@ Sequence24Ptr sequence(cocos2d::Node *target, const std::vector<ITween24Ptr> &tw
     return std::move(s24);
 }
 
+Spawn24Ptr spawn(cocos2d::Node *target, const std::vector<ITween24Ptr> &tweens)
+{
+    auto s24 = Spawn24::create(target);
+    s24->addTweens(tweens);
+
+    return std::move(s24);
+}
+
 Wait24Ptr wait(float waitTime)
 {
     return std::move(std::make_shared<Wait24>(waitTime));

@@ -3,7 +3,8 @@
 
 namespace cocosTween24
 {
-enum class CocosEase24 {
+enum class CocosEase24
+{
     Linear,
     SineIn,
     SineOut,

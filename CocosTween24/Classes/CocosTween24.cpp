@@ -8,9 +8,9 @@ USING_NS_CC;
 Tween24Ptr CocosTween24::tween(cocos2d::Node *target, float duration, CocosEase24 easing)
 {
     auto tween = std::make_shared<CocosTween24>();
-    tween->_target = target;
+    tween->_target   = target;
     tween->_duration = duration;
-    tween->_easing = easing;
+    tween->_easing   = easing;
 
     return tween;
 }
@@ -65,7 +65,7 @@ void CocosTween24::stop()
 
 Tween24Ptr CocosTween24::x(float x)
 {
-    auto pos = _target->getPosition();
+    auto pos    = _target->getPosition();
     auto action = MoveTo::create(_duration, Point(x, pos.y));
     addAction(action);
 
@@ -82,7 +82,7 @@ Tween24Ptr CocosTween24::$x(float $x)
 
 Tween24Ptr CocosTween24::y(float y)
 {
-    auto pos = _target->getPosition();
+    auto pos    = _target->getPosition();
     auto action = MoveTo::create(_duration, Point(pos.x, y));
     addAction(action);
 

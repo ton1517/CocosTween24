@@ -15,6 +15,14 @@ Tween24Ptr CocosTween24::tween(cocos2d::Node *target, float duration, CocosEase2
     return tween;
 }
 
+Sequence24Ptr CocosTween24::sequence(cocos2d::Node *target, const std::vector<ITween24Ptr> &tweens)
+{
+    auto s24 = Sequence24::create(target);
+    s24->addTweens(tweens);
+
+    return std::move(s24);
+}
+
 Wait24Ptr CocosTween24::wait(float waitTime)
 {
     return std::make_shared<Wait24>(waitTime);

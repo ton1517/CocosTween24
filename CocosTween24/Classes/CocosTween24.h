@@ -4,6 +4,7 @@
 #include "cocos2d.h"
 #include "ITween24.h"
 #include "CocosEase24.h"
+#include "Sequence24.h"
 #include "Wait24.h"
 
 namespace cocosTween24
@@ -16,6 +17,17 @@ class CocosTween24 : public ITween24, public std::enable_shared_from_this<CocosT
 public:
 #pragma mark factory
     static Tween24Ptr tween(cocos2d::Node *target, float duration, CocosEase24 easing = CocosEase24::Linear);
+
+    static Sequence24Ptr sequence(cocos2d::Node *target, const std::vector<ITween24Ptr> &tweens);
+    template <class Tween, class... Args>
+    static Sequence24Ptr sequence(cocos2d::Node *target, Tween tween, Args... args)
+    {
+        auto s24 = Sequence24::create(target);
+        s24->addTweens(tween, args...);
+
+        return std::move(s24);
+    }
+
     static Wait24Ptr wait(float waitTime);
 
 #pragma mark constructor & destructor

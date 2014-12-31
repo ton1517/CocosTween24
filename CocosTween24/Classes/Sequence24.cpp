@@ -6,8 +6,8 @@ USING_NS_CC;
 Sequence24Ptr Sequence24::create(Node *target)
 {
     auto s24 = new Sequence24(target);
-    auto sp = std::shared_ptr<Sequence24>(s24);
-    
+    auto sp  = std::shared_ptr<Sequence24>(s24);
+
     return std::move(sp);
 }
 
@@ -26,7 +26,7 @@ FiniteTimeAction *Sequence24::getAction()
         actions.pushBack(tween->getAction());
     }
 
-    return Sequence::create(actions);
+    return TargetedAction::create(_target, Sequence::create(actions));
 }
 
 void Sequence24::play()

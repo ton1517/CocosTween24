@@ -69,6 +69,7 @@
 		D6B0611B1803AB670077942B /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B0611A1803AB670077942B /* CoreMotion.framework */; };
 		E64213D31A507266000DC542 /* Wait24.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E64213D11A507266000DC542 /* Wait24.cpp */; };
 		E669A79E1A54681D000AC2A5 /* cocosTween24.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E669A79C1A54681D000AC2A5 /* cocosTween24.cpp */; };
+		E669A7A11A549F1D000AC2A5 /* Spawn24.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E669A79F1A549F1D000AC2A5 /* Spawn24.cpp */; };
 		E6D1F2D91A5171360009200B /* Sequence24.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E6D1F2D71A5171360009200B /* Sequence24.cpp */; };
 /* End PBXBuildFile section */
 
@@ -168,6 +169,8 @@
 		E64213D21A507266000DC542 /* Wait24.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Wait24.h; sourceTree = "<group>"; };
 		E669A79C1A54681D000AC2A5 /* cocosTween24.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cocosTween24.cpp; sourceTree = "<group>"; };
 		E669A79D1A54681D000AC2A5 /* cocosTween24.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cocosTween24.h; sourceTree = "<group>"; };
+		E669A79F1A549F1D000AC2A5 /* Spawn24.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Spawn24.cpp; sourceTree = "<group>"; };
+		E669A7A01A549F1D000AC2A5 /* Spawn24.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Spawn24.h; sourceTree = "<group>"; };
 		E6D1F2D71A5171360009200B /* Sequence24.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sequence24.cpp; sourceTree = "<group>"; };
 		E6D1F2D81A5171360009200B /* Sequence24.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sequence24.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -318,6 +321,8 @@
 				E64213D21A507266000DC542 /* Wait24.h */,
 				E6D1F2D71A5171360009200B /* Sequence24.cpp */,
 				E6D1F2D81A5171360009200B /* Sequence24.h */,
+				E669A79F1A549F1D000AC2A5 /* Spawn24.cpp */,
+				E669A7A01A549F1D000AC2A5 /* Spawn24.h */,
 				E669A79C1A54681D000AC2A5 /* cocosTween24.cpp */,
 				E669A79D1A54681D000AC2A5 /* cocosTween24.h */,
 			);
@@ -526,6 +531,7 @@
 				E64213D31A507266000DC542 /* Wait24.cpp in Sources */,
 				E6D1F2D91A5171360009200B /* Sequence24.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
+				E669A7A11A549F1D000AC2A5 /* Spawn24.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

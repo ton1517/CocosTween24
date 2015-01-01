@@ -2,12 +2,16 @@
 
 namespace cocosTween24
 {
+#pragma mark tween
+
 Tween24Ptr tween(cocos2d::Node *target, float duration, Ease24 easing)
 {
     auto t24 = Tween24::create(target, duration, easing);
 
     return std::move(t24);
 }
+
+#pragma mark sequence
 
 Sequence24Ptr sequence(cocos2d::Node *target, const std::vector<ITween24Ptr> &tweens)
 {
@@ -17,6 +21,8 @@ Sequence24Ptr sequence(cocos2d::Node *target, const std::vector<ITween24Ptr> &tw
     return std::move(s24);
 }
 
+#pragma mark spawn
+
 Spawn24Ptr spawn(cocos2d::Node *target, const std::vector<ITween24Ptr> &tweens)
 {
     auto s24 = Spawn24::create(target);
@@ -24,6 +30,8 @@ Spawn24Ptr spawn(cocos2d::Node *target, const std::vector<ITween24Ptr> &tweens)
 
     return std::move(s24);
 }
+
+#pragma mark repeat
 
 Repeat24Ptr repeat(cocos2d::Node *target, unsigned int times, ITween24Ptr tween)
 {
@@ -39,6 +47,8 @@ Repeat24Ptr repeat(cocos2d::Node *target, unsigned int times, const std::vector<
 
     return std::move(r24);
 }
+
+#pragma mark wait
 
 Wait24Ptr wait(float waitTime)
 {

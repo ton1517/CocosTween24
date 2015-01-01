@@ -54,6 +54,20 @@ Repeat24Ptr repeat(cocos2d::Node *target, unsigned int times, Tween1 tween1, Twe
     return std::move(r24);
 }
 
+#pragma mark repeat forever
+
+Repeat24Ptr repeatForever(cocos2d::Node *target, ITween24Ptr tween);
+Repeat24Ptr repeatForever(cocos2d::Node *target, const std::vector<ITween24Ptr> &tweens);
+
+template <class Tween1, class Tween2, class... Args>
+Repeat24Ptr repeatForever(cocos2d::Node *target, Tween1 tween1, Tween2 tween2, Args... args)
+{
+    auto s24 = sequence(target, tween1, tween2, args...);
+    auto r24 = Repeat24::create(target, 0, std::move(s24));
+
+    return std::move(r24);
+}
+
 #pragma mark wait
 
 Wait24Ptr wait(float waitTime);

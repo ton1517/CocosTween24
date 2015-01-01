@@ -1,4 +1,4 @@
-#include "Repeat24.h"
+#include "Repeat24.hpp"
 
 using namespace cocosTween24;
 USING_NS_CC;

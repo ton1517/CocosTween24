@@ -1,12 +1,12 @@
 #ifndef __CocosTween24__cocosTween24__
 #define __CocosTween24__cocosTween24__
 
-#include "Tween24.h"
-#include "Ease24.h"
-#include "Sequence24.h"
-#include "Spawn24.h"
-#include "Repeat24.h"
-#include "Wait24.h"
+#include "Tween24.hpp"
+#include "Ease24.hpp"
+#include "Sequence24.hpp"
+#include "Spawn24.hpp"
+#include "Repeat24.hpp"
+#include "Wait24.hpp"
 
 namespace cocosTween24
 {

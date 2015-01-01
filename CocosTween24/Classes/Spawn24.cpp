@@ -1,4 +1,4 @@
-#include "Spawn24.h"
+#include "Spawn24.hpp"
 
 using namespace cocosTween24;
 USING_NS_CC;

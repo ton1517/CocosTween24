@@ -2,7 +2,7 @@
 #define __CocosTween24__Wait24__
 
 #include <cocos2d.h>
-#include "ITween24.h"
+#include "ITween24.hpp"
 
 namespace cocosTween24
 {

@@ -121,8 +121,8 @@
 		46880B8619C43A87006E1F66 /* HelloWorldScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HelloWorldScene.cpp; sourceTree = "<group>"; };
 		46880B8719C43A87006E1F66 /* HelloWorldScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelloWorldScene.h; sourceTree = "<group>"; };
 		4D81EED51A4ACF3A00735E59 /* Tween24.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Tween24.cpp; sourceTree = "<group>"; };
-		4D81EED61A4ACF3A00735E59 /* Tween24.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tween24.h; sourceTree = "<group>"; };
-		4D81EEDA1A4ADD0800735E59 /* Ease24.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ease24.h; sourceTree = "<group>"; };
+		4D81EED61A4ACF3A00735E59 /* Tween24.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Tween24.hpp; sourceTree = "<group>"; };
+		4D81EEDA1A4ADD0800735E59 /* Ease24.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Ease24.hpp; sourceTree = "<group>"; };
 		503AE0F617EB97AB00D1A890 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
 		503AE0F717EB97AB00D1A890 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		503AE0FA17EB989F00D1A890 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppController.h; path = ios/AppController.h; sourceTree = SOURCE_ROOT; };
@@ -165,17 +165,17 @@
 		D44C620D132DFF430009C878 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D44C620F132DFF4E0009C878 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		D6B0611A1803AB670077942B /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
-		E64213CF1A5070EA000DC542 /* ITween24.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITween24.h; sourceTree = "<group>"; };
+		E64213CF1A5070EA000DC542 /* ITween24.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ITween24.hpp; sourceTree = "<group>"; };
 		E64213D11A507266000DC542 /* Wait24.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Wait24.cpp; sourceTree = "<group>"; };
-		E64213D21A507266000DC542 /* Wait24.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Wait24.h; sourceTree = "<group>"; };
+		E64213D21A507266000DC542 /* Wait24.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Wait24.hpp; sourceTree = "<group>"; };
 		E669A79C1A54681D000AC2A5 /* cocosTween24.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cocosTween24.cpp; sourceTree = "<group>"; };
-		E669A79D1A54681D000AC2A5 /* cocosTween24.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cocosTween24.h; sourceTree = "<group>"; };
+		E669A79D1A54681D000AC2A5 /* cocosTween24.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = cocosTween24.hpp; sourceTree = "<group>"; };
 		E669A79F1A549F1D000AC2A5 /* Spawn24.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Spawn24.cpp; sourceTree = "<group>"; };
-		E669A7A01A549F1D000AC2A5 /* Spawn24.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Spawn24.h; sourceTree = "<group>"; };
+		E669A7A01A549F1D000AC2A5 /* Spawn24.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Spawn24.hpp; sourceTree = "<group>"; };
 		E669A7A21A54AFD6000AC2A5 /* Repeat24.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Repeat24.cpp; sourceTree = "<group>"; };
-		E669A7A31A54AFD6000AC2A5 /* Repeat24.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Repeat24.h; sourceTree = "<group>"; };
+		E669A7A31A54AFD6000AC2A5 /* Repeat24.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Repeat24.hpp; sourceTree = "<group>"; };
 		E6D1F2D71A5171360009200B /* Sequence24.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sequence24.cpp; sourceTree = "<group>"; };
-		E6D1F2D81A5171360009200B /* Sequence24.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sequence24.h; sourceTree = "<group>"; };
+		E6D1F2D81A5171360009200B /* Sequence24.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Sequence24.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -317,19 +317,19 @@
 			isa = PBXGroup;
 			children = (
 				E669A79C1A54681D000AC2A5 /* cocosTween24.cpp */,
-				E669A79D1A54681D000AC2A5 /* cocosTween24.h */,
+				E669A79D1A54681D000AC2A5 /* cocosTween24.hpp */,
 				4D81EED51A4ACF3A00735E59 /* Tween24.cpp */,
-				4D81EED61A4ACF3A00735E59 /* Tween24.h */,
-				4D81EEDA1A4ADD0800735E59 /* Ease24.h */,
-				E64213CF1A5070EA000DC542 /* ITween24.h */,
+				4D81EED61A4ACF3A00735E59 /* Tween24.hpp */,
+				4D81EEDA1A4ADD0800735E59 /* Ease24.hpp */,
+				E64213CF1A5070EA000DC542 /* ITween24.hpp */,
 				E64213D11A507266000DC542 /* Wait24.cpp */,
-				E64213D21A507266000DC542 /* Wait24.h */,
+				E64213D21A507266000DC542 /* Wait24.hpp */,
 				E6D1F2D71A5171360009200B /* Sequence24.cpp */,
-				E6D1F2D81A5171360009200B /* Sequence24.h */,
+				E6D1F2D81A5171360009200B /* Sequence24.hpp */,
 				E669A79F1A549F1D000AC2A5 /* Spawn24.cpp */,
-				E669A7A01A549F1D000AC2A5 /* Spawn24.h */,
+				E669A7A01A549F1D000AC2A5 /* Spawn24.hpp */,
 				E669A7A21A54AFD6000AC2A5 /* Repeat24.cpp */,
-				E669A7A31A54AFD6000AC2A5 /* Repeat24.h */,
+				E669A7A31A54AFD6000AC2A5 /* Repeat24.hpp */,
 			);
 			name = CocosTween24;
 			sourceTree = "<group>";

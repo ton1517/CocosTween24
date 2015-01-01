@@ -1,4 +1,4 @@
-#include "Wait24.h"
+#include "Wait24.hpp"
 
 using namespace cocosTween24;
 USING_NS_CC;

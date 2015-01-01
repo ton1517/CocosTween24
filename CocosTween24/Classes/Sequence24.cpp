@@ -1,4 +1,4 @@
-#include "Sequence24.h"
+#include "Sequence24.hpp"
 
 using namespace cocosTween24;
 USING_NS_CC;

@@ -2,10 +2,10 @@
 #define __CocosTween24__Tween24__
 
 #include "cocos2d.h"
-#include "ITween24.h"
-#include "Ease24.h"
-#include "Sequence24.h"
-#include "Wait24.h"
+#include "ITween24.hpp"
+#include "Ease24.hpp"
+#include "Sequence24.hpp"
+#include "Wait24.hpp"
 
 namespace cocosTween24
 {

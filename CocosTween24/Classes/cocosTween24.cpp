@@ -1,4 +1,4 @@
-#include "cocosTween24.h"
+#include "cocosTween24.hpp"
 
 namespace cocosTween24
 {

@@ -5,6 +5,7 @@
 #include "Ease24.h"
 #include "Sequence24.h"
 #include "Spawn24.h"
+#include "Repeat24.h"
 #include "Wait24.h"
 
 namespace cocosTween24
@@ -33,6 +34,18 @@ Spawn24Ptr spawn(cocos2d::Node *target, Tween tween, Args... args)
     return std::move(s24);
 }
 
+Repeat24Ptr repeat(cocos2d::Node *target, unsigned int times, ITween24Ptr tween);
+Repeat24Ptr repeat(cocos2d::Node *target, unsigned int times, const std::vector<ITween24Ptr> &tweens);
+
+template <class Tween1, class Tween2, class... Args>
+Repeat24Ptr repeat(cocos2d::Node *target, unsigned int times, Tween1 tween1, Tween2 tween2, Args... args)
+{
+    auto s24 = sequence(target, tween1, tween2, args...);
+    auto r24 = Repeat24::create(target, times, std::move(s24));
+
+    return std::move(r24);
+}
+    
 Wait24Ptr wait(float waitTime);
 }
 

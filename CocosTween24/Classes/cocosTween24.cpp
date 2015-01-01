@@ -25,6 +25,21 @@ Spawn24Ptr spawn(cocos2d::Node *target, const std::vector<ITween24Ptr> &tweens)
     return std::move(s24);
 }
 
+Repeat24Ptr repeat(cocos2d::Node *target, unsigned int times, ITween24Ptr tween)
+{
+    auto r24 = Repeat24::create(target, times, tween);
+
+    return std::move(r24);
+}
+
+Repeat24Ptr repeat(cocos2d::Node *target, unsigned int times, const std::vector<ITween24Ptr> &tweens)
+{
+    auto s24 = sequence(target, tweens);
+    auto r24 = Repeat24::create(target, times, std::move(s24));
+
+    return std::move(r24);
+}
+
 Wait24Ptr wait(float waitTime)
 {
     return std::move(std::make_shared<Wait24>(waitTime));

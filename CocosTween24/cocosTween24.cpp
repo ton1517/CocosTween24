@@ -71,4 +71,4 @@ Wait24Ptr wait(float waitTime)
 {
     return std::move(std::make_shared<Wait24>(waitTime));
 }
-}
+} // namespace

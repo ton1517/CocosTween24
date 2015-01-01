@@ -1,7 +1,8 @@
 #ifndef __CocosTween24__Tween24__
 #define __CocosTween24__Tween24__
 
-#include "cocos2d.h"
+#include <cocos2d.h>
+
 #include "ITween24.hpp"
 #include "Ease24.hpp"
 #include "Sequence24.hpp"
@@ -80,6 +81,6 @@ private:
     float _delayTime {0};
     cocos2d::ActionInterval *addDelay(cocos2d::ActionInterval *action);
 };
-}
+} // namespace
 
 #endif /* defined(__CocosTween24__Tween24__) */

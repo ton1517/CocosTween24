@@ -2,6 +2,7 @@
 #define __CocosTween24__Wait24__
 
 #include <cocos2d.h>
+
 #include "ITween24.hpp"
 
 namespace cocosTween24
@@ -23,6 +24,6 @@ public:
 
     CC_SYNTHESIZE_READONLY(float, _waitTime, WaitTime);
 };
-}
+} // namespace
 
 #endif /* defined(__CocosTween24__Wait24__) */

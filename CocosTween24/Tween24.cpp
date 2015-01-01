@@ -1,8 +1,7 @@
 #include "Tween24.hpp"
 
-using namespace cocosTween24;
-USING_NS_CC;
-
+namespace cocosTween24
+{
 #pragma mark----- static -----
 
 Tween24Ptr Tween24::create(cocos2d::Node *target, float duration, Ease24 easing)
@@ -17,12 +16,12 @@ Tween24Ptr Tween24::create(cocos2d::Node *target, float duration, Ease24 easing)
 Tween24::Tween24(cocos2d::Node *target, float duration, Ease24 easing) : _target(target), _duration(duration), _easing(easing) {}
 Tween24::~Tween24() {}
 
-ActionInterval *Tween24::getAction()
+cocos2d::ActionInterval *Tween24::getAction()
 {
-    ActionInterval *action = Spawn::create(_actions);
+    cocos2d::ActionInterval *action = cocos2d::Spawn::create(_actions);
     action = this->addDelay(action);
     action = this->addEasing(action);
-    auto targetedAction = TargetedAction::create(_target, action);
+    auto targetedAction = cocos2d::TargetedAction::create(_target, action);
 
     return targetedAction;
 }
@@ -45,7 +44,7 @@ void Tween24::stop()
 Tween24Ptr Tween24::x(float x)
 {
     auto pos    = _target->getPosition();
-    auto action = MoveTo::create(_duration, Point(x, pos.y));
+    auto action = cocos2d::MoveTo::create(_duration, cocos2d::Point(x, pos.y));
     addAction(action);
 
     return shared_from_this();
@@ -53,7 +52,7 @@ Tween24Ptr Tween24::x(float x)
 
 Tween24Ptr Tween24::$x(float $x)
 {
-    auto action = MoveBy::create(_duration, Point($x, 0));
+    auto action = cocos2d::MoveBy::create(_duration, cocos2d::Point($x, 0));
     addAction(action);
 
     return shared_from_this();
@@ -62,7 +61,7 @@ Tween24Ptr Tween24::$x(float $x)
 Tween24Ptr Tween24::y(float y)
 {
     auto pos    = _target->getPosition();
-    auto action = MoveTo::create(_duration, Point(pos.x, y));
+    auto action = cocos2d::MoveTo::create(_duration, cocos2d::Point(pos.x, y));
     addAction(action);
 
     return shared_from_this();
@@ -70,7 +69,7 @@ Tween24Ptr Tween24::y(float y)
 
 Tween24Ptr Tween24::$y(float $y)
 {
-    auto action = MoveBy::create(_duration, Point(0, $y));
+    auto action = cocos2d::MoveBy::create(_duration, cocos2d::Point(0, $y));
     addAction(action);
 
     return shared_from_this();
@@ -78,7 +77,7 @@ Tween24Ptr Tween24::$y(float $y)
 
 Tween24Ptr Tween24::xy(float x, float y)
 {
-    auto action = MoveTo::create(_duration, Point(x, y));
+    auto action = cocos2d::MoveTo::create(_duration, cocos2d::Point(x, y));
     addAction(action);
 
     return shared_from_this();
@@ -86,7 +85,7 @@ Tween24Ptr Tween24::xy(float x, float y)
 
 Tween24Ptr Tween24::$xy(float $x, float $y)
 {
-    auto action = MoveBy::create(_duration, Point($x, $y));
+    auto action = cocos2d::MoveBy::create(_duration, cocos2d::Point($x, $y));
     addAction(action);
 
     return shared_from_this();
@@ -96,7 +95,7 @@ Tween24Ptr Tween24::$xy(float $x, float $y)
 
 Tween24Ptr Tween24::scaleX(float sx)
 {
-    auto action = ScaleTo::create(_duration, sx, _target->getScaleY());
+    auto action = cocos2d::ScaleTo::create(_duration, sx, _target->getScaleY());
     addAction(action);
 
     return shared_from_this();
@@ -104,7 +103,7 @@ Tween24Ptr Tween24::scaleX(float sx)
 
 Tween24Ptr Tween24::$scaleX(float $sx)
 {
-    auto action = ScaleBy::create(_duration, $sx, 0);
+    auto action = cocos2d::ScaleBy::create(_duration, $sx, 0);
     addAction(action);
 
     return shared_from_this();
@@ -112,7 +111,7 @@ Tween24Ptr Tween24::$scaleX(float $sx)
 
 Tween24Ptr Tween24::scaleY(float sy)
 {
-    auto action = ScaleTo::create(_duration, _target->getScaleX(), sy);
+    auto action = cocos2d::ScaleTo::create(_duration, _target->getScaleX(), sy);
     addAction(action);
 
     return shared_from_this();
@@ -120,7 +119,7 @@ Tween24Ptr Tween24::scaleY(float sy)
 
 Tween24Ptr Tween24::$scaleY(float $sy)
 {
-    auto action = ScaleBy::create(_duration, 0, $sy);
+    auto action = cocos2d::ScaleBy::create(_duration, 0, $sy);
     addAction(action);
 
     return shared_from_this();
@@ -128,7 +127,7 @@ Tween24Ptr Tween24::$scaleY(float $sy)
 
 Tween24Ptr Tween24::scaleZ(float sz)
 {
-    auto action = ScaleTo::create(_duration, _target->getScaleX(), _target->getScaleY(), sz);
+    auto action = cocos2d::ScaleTo::create(_duration, _target->getScaleX(), _target->getScaleY(), sz);
     addAction(action);
 
     return shared_from_this();
@@ -136,7 +135,7 @@ Tween24Ptr Tween24::scaleZ(float sz)
 
 Tween24Ptr Tween24::$scaleZ(float $sz)
 {
-    auto action = ScaleBy::create(_duration, 0, 0, $sz);
+    auto action = cocos2d::ScaleBy::create(_duration, 0, 0, $sz);
     addAction(action);
 
     return shared_from_this();
@@ -144,7 +143,7 @@ Tween24Ptr Tween24::$scaleZ(float $sz)
 
 Tween24Ptr Tween24::scale(float s)
 {
-    auto action = ScaleTo::create(_duration, s);
+    auto action = cocos2d::ScaleTo::create(_duration, s);
     addAction(action);
 
     return shared_from_this();
@@ -152,7 +151,7 @@ Tween24Ptr Tween24::scale(float s)
 
 Tween24Ptr Tween24::$scale(float $s)
 {
-    auto action = ScaleBy::create(_duration, $s);
+    auto action = cocos2d::ScaleBy::create(_duration, $s);
     addAction(action);
 
     return shared_from_this();
@@ -160,7 +159,7 @@ Tween24Ptr Tween24::$scale(float $s)
 
 Tween24Ptr Tween24::scale(float sx, float sy)
 {
-    auto action = ScaleTo::create(_duration, sx, sy);
+    auto action = cocos2d::ScaleTo::create(_duration, sx, sy);
     addAction(action);
 
     return shared_from_this();
@@ -168,7 +167,7 @@ Tween24Ptr Tween24::scale(float sx, float sy)
 
 Tween24Ptr Tween24::$scale(float $sx, float $sy)
 {
-    auto action = ScaleBy::create(_duration, $sx, $sy);
+    auto action = cocos2d::ScaleBy::create(_duration, $sx, $sy);
     addAction(action);
 
     return shared_from_this();
@@ -176,7 +175,7 @@ Tween24Ptr Tween24::$scale(float $sx, float $sy)
 
 Tween24Ptr Tween24::scale(float sx, float sy, float sz)
 {
-    auto action = ScaleTo::create(_duration, sx, sy, sz);
+    auto action = cocos2d::ScaleTo::create(_duration, sx, sy, sz);
     addAction(action);
 
     return shared_from_this();
@@ -184,7 +183,7 @@ Tween24Ptr Tween24::scale(float sx, float sy, float sz)
 
 Tween24Ptr Tween24::$scale(float $sx, float $sy, float $sz)
 {
-    auto action = ScaleBy::create(_duration, $sx, $sy, $sz);
+    auto action = cocos2d::ScaleBy::create(_duration, $sx, $sy, $sz);
     addAction(action);
 
     return shared_from_this();
@@ -194,7 +193,7 @@ Tween24Ptr Tween24::$scale(float $sx, float $sy, float $sz)
 
 Tween24Ptr Tween24::rotateX(float angleX)
 {
-    auto action = RotateTo::create(_duration, angleX, _target->getRotationSkewY());
+    auto action = cocos2d::RotateTo::create(_duration, angleX, _target->getRotationSkewY());
     addAction(action);
 
     return shared_from_this();
@@ -202,7 +201,7 @@ Tween24Ptr Tween24::rotateX(float angleX)
 
 Tween24Ptr Tween24::$rotateX(float $angleX)
 {
-    auto action = RotateBy::create(_duration, $angleX, 0);
+    auto action = cocos2d::RotateBy::create(_duration, $angleX, 0);
     addAction(action);
 
     return shared_from_this();
@@ -210,7 +209,7 @@ Tween24Ptr Tween24::$rotateX(float $angleX)
 
 Tween24Ptr Tween24::rotateY(float angleY)
 {
-    auto action = RotateTo::create(_duration, _target->getRotationSkewX(), angleY);
+    auto action = cocos2d::RotateTo::create(_duration, _target->getRotationSkewX(), angleY);
     addAction(action);
 
     return shared_from_this();
@@ -218,7 +217,7 @@ Tween24Ptr Tween24::rotateY(float angleY)
 
 Tween24Ptr Tween24::$rotateY(float $angleY)
 {
-    auto action = RotateBy::create(_duration, 0, $angleY);
+    auto action = cocos2d::RotateBy::create(_duration, 0, $angleY);
     addAction(action);
 
     return shared_from_this();
@@ -226,7 +225,7 @@ Tween24Ptr Tween24::$rotateY(float $angleY)
 
 Tween24Ptr Tween24::rotate(float angle)
 {
-    auto action = RotateTo::create(_duration, angle);
+    auto action = cocos2d::RotateTo::create(_duration, angle);
     addAction(action);
 
     return shared_from_this();
@@ -234,7 +233,7 @@ Tween24Ptr Tween24::rotate(float angle)
 
 Tween24Ptr Tween24::$rotate(float $angle)
 {
-    auto action = RotateBy::create(_duration, $angle);
+    auto action = cocos2d::RotateBy::create(_duration, $angle);
     addAction(action);
 
     return shared_from_this();
@@ -242,7 +241,7 @@ Tween24Ptr Tween24::$rotate(float $angle)
 
 Tween24Ptr Tween24::rotate(float angleX, float angleY)
 {
-    auto action = RotateTo::create(_duration, angleX, angleY);
+    auto action = cocos2d::RotateTo::create(_duration, angleX, angleY);
     addAction(action);
 
     return shared_from_this();
@@ -250,23 +249,23 @@ Tween24Ptr Tween24::rotate(float angleX, float angleY)
 
 Tween24Ptr Tween24::$rotate(float $angleX, float $angleY)
 {
-    auto action = RotateBy::create(_duration, $angleX, $angleY);
+    auto action = cocos2d::RotateBy::create(_duration, $angleX, $angleY);
     addAction(action);
 
     return shared_from_this();
 }
 
-Tween24Ptr Tween24::rotate(const Vec3 &angle3D)
+Tween24Ptr Tween24::rotate(const cocos2d::Vec3 &angle3D)
 {
-    auto action = RotateTo::create(_duration, angle3D);
+    auto action = cocos2d::RotateTo::create(_duration, angle3D);
     addAction(action);
 
     return shared_from_this();
 }
 
-Tween24Ptr Tween24::$rotate(const Vec3 &$angle3D)
+Tween24Ptr Tween24::$rotate(const cocos2d::Vec3 &$angle3D)
 {
-    auto action = RotateBy::create(_duration, $angle3D);
+    auto action = cocos2d::RotateBy::create(_duration, $angle3D);
     addAction(action);
 
     return shared_from_this();
@@ -283,106 +282,106 @@ Tween24Ptr Tween24::delay(float delayTime)
 
 #pragma mark----- private -----
 
-void Tween24::addAction(FiniteTimeAction *action)
+void Tween24::addAction(cocos2d::FiniteTimeAction *action)
 {
     _actions.pushBack(action);
 }
 
-ActionInterval *Tween24::addEasing(cocos2d::ActionInterval *action)
+cocos2d::ActionInterval *Tween24::addEasing(cocos2d::ActionInterval *action)
 {
     switch (_easing) {
         case Ease24::Linear:
             return action;
         case Ease24::SineIn:
         case Ease24::_1_SineIn:
-            return EaseSineIn::create(action);
+            return cocos2d::EaseSineIn::create(action);
         case Ease24::SineOut:
         case Ease24::_1_SineOut:
-            return EaseSineOut::create(action);
+            return cocos2d::EaseSineOut::create(action);
         case Ease24::SineInOut:
         case Ease24::_1_SineInOut:
-            return EaseSineInOut::create(action);
+            return cocos2d::EaseSineInOut::create(action);
         case Ease24::QuadIn:
         case Ease24::_2_QuadIn:
-            return EaseQuadraticActionIn::create(action);
+            return cocos2d::EaseQuadraticActionIn::create(action);
         case Ease24::QuadOut:
         case Ease24::_2_QuadOut:
-            return EaseQuadraticActionOut::create(action);
+            return cocos2d::EaseQuadraticActionOut::create(action);
         case Ease24::QuadInOut:
         case Ease24::_2_QuadInOut:
-            return EaseQuadraticActionInOut::create(action);
+            return cocos2d::EaseQuadraticActionInOut::create(action);
         case Ease24::CubicIn:
         case Ease24::_3_CubicIn:
-            return EaseCubicActionIn::create(action);
+            return cocos2d::EaseCubicActionIn::create(action);
         case Ease24::CubicOut:
         case Ease24::_3_CubicOut:
-            return EaseCubicActionOut::create(action);
+            return cocos2d::EaseCubicActionOut::create(action);
         case Ease24::CubicInOut:
         case Ease24::_3_CubicInOut:
-            return EaseCubicActionInOut::create(action);
+            return cocos2d::EaseCubicActionInOut::create(action);
         case Ease24::QuartIn:
         case Ease24::_4_QuartIn:
-            return EaseQuarticActionIn::create(action);
+            return cocos2d::EaseQuarticActionIn::create(action);
         case Ease24::QuartOut:
         case Ease24::_4_QuartOut:
-            return EaseQuarticActionOut::create(action);
+            return cocos2d::EaseQuarticActionOut::create(action);
         case Ease24::QuartInOut:
         case Ease24::_4_QuartInOut:
-            return EaseQuarticActionInOut::create(action);
+            return cocos2d::EaseQuarticActionInOut::create(action);
         case Ease24::QuintIn:
         case Ease24::_5_QuintIn:
-            return EaseQuinticActionIn::create(action);
+            return cocos2d::EaseQuinticActionIn::create(action);
         case Ease24::QuintOut:
         case Ease24::_5_QuintOut:
-            return EaseQuinticActionOut::create(action);
+            return cocos2d::EaseQuinticActionOut::create(action);
         case Ease24::QuintInOut:
         case Ease24::_5_QuintInOut:
-            return EaseQuinticActionInOut::create(action);
+            return cocos2d::EaseQuinticActionInOut::create(action);
         case Ease24::ExpoIn:
         case Ease24::_6_ExpoIn:
-            return EaseExponentialIn::create(action);
+            return cocos2d::EaseExponentialIn::create(action);
         case Ease24::ExpoOut:
         case Ease24::_6_ExpoOut:
-            return EaseExponentialOut::create(action);
+            return cocos2d::EaseExponentialOut::create(action);
         case Ease24::ExpoInOut:
         case Ease24::_6_ExpoInOut:
-            return EaseExponentialInOut::create(action);
+            return cocos2d::EaseExponentialInOut::create(action);
         case Ease24::CircIn:
         case Ease24::_7_CircIn:
-            return EaseCircleActionIn::create(action);
+            return cocos2d::EaseCircleActionIn::create(action);
         case Ease24::CircOut:
         case Ease24::_7_CircOut:
-            return EaseCircleActionOut::create(action);
+            return cocos2d::EaseCircleActionOut::create(action);
         case Ease24::CircInOut:
         case Ease24::_7_CircInOut:
-            return EaseCircleActionInOut::create(action);
+            return cocos2d::EaseCircleActionInOut::create(action);
         case Ease24::ElasticIn:
-            return EaseElasticIn::create(action);
+            return cocos2d::EaseElasticIn::create(action);
         case Ease24::ElasticOut:
-            return EaseElasticOut::create(action);
+            return cocos2d::EaseElasticOut::create(action);
         case Ease24::ElasticInOut:
-            return EaseElasticInOut::create(action);
+            return cocos2d::EaseElasticInOut::create(action);
         case Ease24::BackIn:
-            return EaseBackIn::create(action);
+            return cocos2d::EaseBackIn::create(action);
         case Ease24::BackOut:
-            return EaseBackOut::create(action);
+            return cocos2d::EaseBackOut::create(action);
         case Ease24::BackInOut:
-            return EaseBackInOut::create(action);
+            return cocos2d::EaseBackInOut::create(action);
         case Ease24::BounceIn:
-            return EaseBounceIn::create(action);
+            return cocos2d::EaseBounceIn::create(action);
         case Ease24::BounceOut:
-            return EaseBounceOut::create(action);
+            return cocos2d::EaseBounceOut::create(action);
         case Ease24::BounceInOut:
-            return EaseBounceInOut::create(action);
+            return cocos2d::EaseBounceInOut::create(action);
     }
 }
 
-ActionInterval *Tween24::addDelay(ActionInterval *action)
+cocos2d::ActionInterval *Tween24::addDelay(cocos2d::ActionInterval *action)
 {
     if (_delayTime == 0) {
         return action;
     }
 
-    return Sequence::create(DelayTime::create(_delayTime), action, nullptr);
+    return cocos2d::Sequence::create(cocos2d::DelayTime::create(_delayTime), action, nullptr);
 }
-
+} // namespace

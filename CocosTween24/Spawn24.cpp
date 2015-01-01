@@ -1,26 +1,25 @@
 #include "Spawn24.hpp"
 
-using namespace cocosTween24;
-USING_NS_CC;
-
-Spawn24Ptr Spawn24::create(Node *target)
+namespace cocosTween24
+{
+Spawn24Ptr Spawn24::create(cocos2d::Node *target)
 {
     auto s24 = std::make_shared<Spawn24>(target);
 
     return std::move(s24);
 }
 
-Spawn24::Spawn24(Node *target) : _target(target) {}
+Spawn24::Spawn24(cocos2d::Node *target) : _target(target) {}
 Spawn24::~Spawn24() {}
 
-ActionInterval *Spawn24::getAction()
+cocos2d::ActionInterval *Spawn24::getAction()
 {
-    Vector<FiniteTimeAction *> actions(_tweens.size());
+    cocos2d::Vector<cocos2d::FiniteTimeAction *> actions(_tweens.size());
     for (auto tween : _tweens) {
         actions.pushBack(tween->getAction());
     }
 
-    return TargetedAction::create(_target, Spawn::create(actions));
+    return cocos2d::TargetedAction::create(_target, cocos2d::Spawn::create(actions));
 }
 
 void Spawn24::play()
@@ -51,4 +50,4 @@ Spawn24Ptr Spawn24::addTweens(const std::vector<ITween24Ptr> &tweens)
 
     return shared_from_this();
 }
-
+} // namespace

@@ -16,6 +16,6 @@ public:
     virtual void play()                          = 0;
     virtual void stop()                          = 0;
 };
-}
+} // namespace
 
 #endif /* defined(__CocosTween24__ITween24__) */

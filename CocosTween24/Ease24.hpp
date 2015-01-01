@@ -58,6 +58,6 @@ enum class Ease24
     BounceOut,
     BounceInOut,
 };
-}
+} // namespace
 
 #endif /* defined(__CocosTween24__Ease24__) */

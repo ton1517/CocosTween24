@@ -2,6 +2,7 @@
 #define __CocosTween24__Sequence24__
 
 #include <cocos2d.h>
+
 #include "ITween24.hpp"
 
 namespace cocosTween24
@@ -45,6 +46,6 @@ private:
     cocos2d::FiniteTimeAction *_playingAction;
     std::vector<ITween24Ptr>   _tweens;
 };
-}
+} // namespace
 
 #endif /* defined(__CocosTween24__Sequence24__) */

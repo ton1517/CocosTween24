@@ -2,6 +2,7 @@
 #define __CocosTween24__Repeat24__
 
 #include <cocos2d.h>
+
 #include "ITween24.hpp"
 
 namespace cocosTween24
@@ -28,6 +29,6 @@ private:
     cocos2d::FiniteTimeAction *_playingAction;
     ITween24Ptr                _tween;
 };
-}
+} // namespace
 
 #endif /* defined(__CocosTween24__Repeat24__) */

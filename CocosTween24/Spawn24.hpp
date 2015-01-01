@@ -2,6 +2,7 @@
 #define __CocosTween24__Spawn24__
 
 #include <cocos2d.h>
+
 #include "ITween24.hpp"
 
 namespace cocosTween24
@@ -45,6 +46,6 @@ private:
         addTween(tween);
     }
 };
-}
+} // namespace
 
 #endif /* defined(__CocosTween24__Spawn24__) */

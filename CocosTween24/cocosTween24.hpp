@@ -1,6 +1,8 @@
 #ifndef __CocosTween24__cocosTween24__
 #define __CocosTween24__cocosTween24__
 
+#include <cocos2d.h>
+
 #include "Tween24.hpp"
 #include "Ease24.hpp"
 #include "Sequence24.hpp"
@@ -71,6 +73,6 @@ Repeat24Ptr repeatForever(cocos2d::Node *target, Tween1 tween1, Tween2 tween2, A
 #pragma mark wait
 
 Wait24Ptr wait(float waitTime);
-}
+} // namespace
 
 #endif /* defined(__CocosTween24__cocosTween24__) */

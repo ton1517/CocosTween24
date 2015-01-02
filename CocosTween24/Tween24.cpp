@@ -364,6 +364,39 @@ Tween24Ptr Tween24::blink(int times)
     return shared_from_this();
 }
 
+#pragma mark tint
+Tween24Ptr Tween24::tint(GLubyte red, GLubyte green, GLubyte blue)
+{
+    auto action = cocos2d::TintTo::create(_duration, red, green, blue);
+    addAction(action);
+
+    return shared_from_this();
+}
+
+Tween24Ptr Tween24::$tint(GLubyte red, GLubyte green, GLubyte blue)
+{
+    auto action = cocos2d::TintBy::create(_duration, red, green, blue);
+    addAction(action);
+
+    return shared_from_this();
+}
+
+Tween24Ptr Tween24::tint(const cocos2d::Color3B &color)
+{
+    auto action = cocos2d::TintTo::create(_duration, color.r, color.g, color.b);
+    addAction(action);
+
+    return shared_from_this();
+}
+
+Tween24Ptr Tween24::$tint(const cocos2d::Color3B &color)
+{
+    auto action = cocos2d::TintBy::create(_duration, color.r, color.g, color.b);
+    addAction(action);
+
+    return shared_from_this();
+}
+
 #pragma mark delay
 
 Tween24Ptr Tween24::delay(float delayTime)

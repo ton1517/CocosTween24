@@ -78,6 +78,12 @@ public:
     #pragma mark blink
     Tween24Ptr blink(int times);
 
+    #pragma mark tint
+    Tween24Ptr tint(GLubyte red, GLubyte green, GLubyte blue);
+    Tween24Ptr $tint(GLubyte red, GLubyte green, GLubyte blue);
+    Tween24Ptr tint(const cocos2d::Color3B &color);
+    Tween24Ptr $tint(const cocos2d::Color3B &color);
+
     #pragma mark delay
     Tween24Ptr delay(float delayTime);
 

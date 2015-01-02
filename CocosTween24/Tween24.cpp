@@ -257,6 +257,31 @@ Tween24Ptr Tween24::$rotate(const cocos2d::Vec3 &$angle3D)
     return shared_from_this();
 }
 
+#pragma mark fade
+Tween24Ptr Tween24::fadeIn()
+{
+    auto action = cocos2d::FadeIn::create(_duration);
+    addAction(action);
+
+    return shared_from_this();
+}
+
+Tween24Ptr Tween24::fadeOut()
+{
+    auto action = cocos2d::FadeOut::create(_duration);
+    addAction(action);
+
+    return shared_from_this();
+}
+
+Tween24Ptr Tween24::fadeTo(GLubyte opacity)
+{
+    auto action = cocos2d::FadeTo::create(_duration, opacity);
+    addAction(action);
+
+    return shared_from_this();
+}
+
 #pragma mark delay
 
 Tween24Ptr Tween24::delay(float delayTime)

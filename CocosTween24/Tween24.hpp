@@ -57,6 +57,11 @@ public:
     Tween24Ptr rotate(const cocos2d::Vec3 &angle3D);
     Tween24Ptr $rotate(const cocos2d::Vec3 &$angle3D);
 
+    #pragma mark fade
+    Tween24Ptr fadeIn();
+    Tween24Ptr fadeOut();
+    Tween24Ptr fadeTo(GLubyte opacity);
+
     #pragma mark delay
     Tween24Ptr delay(float delayTime);
 

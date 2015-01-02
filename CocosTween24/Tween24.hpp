@@ -20,7 +20,7 @@ public:
     Tween24(cocos2d::Node *target, float duration, Ease24 easing);
     virtual ~Tween24() = default;
 
-    #pragma mark ITween24 interface
+    #pragma mark IInterval24 interface
     cocos2d::ActionInterval *getAction() override;
 
     #pragma mark position

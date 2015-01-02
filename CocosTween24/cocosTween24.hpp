@@ -19,11 +19,11 @@ Tween24Ptr tween(cocos2d::Node *target, float duration, Ease24 easing=Ease24::Li
 
 #pragma mark sequence
 
-Sequence24Ptr sequence(cocos2d::Node *target, const std::vector<ITween24Ptr> &tweens);
-ITween24Ptr sequence(const std::vector<ITween24Ptr> &tweens);
+Sequence24Ptr sequence(cocos2d::Node *target, const std::vector<IInterval24Ptr> &tweens);
+IInterval24Ptr sequence(const std::vector<IInterval24Ptr> &tweens);
 
 template <class... Args>
-Sequence24Ptr sequence(cocos2d::Node *target, ITween24Ptr tween, Args... args)
+Sequence24Ptr sequence(cocos2d::Node *target, IInterval24Ptr tween, Args... args)
 {
     auto s24 = Sequence24::create(target);
     s24->addTweens(tween, args...);
@@ -32,7 +32,7 @@ Sequence24Ptr sequence(cocos2d::Node *target, ITween24Ptr tween, Args... args)
 }
 
 template <class... Args>
-ITween24Ptr sequence(ITween24Ptr tween, Args... args)
+IInterval24Ptr sequence(IInterval24Ptr tween, Args... args)
 {
     auto s24 = Sequence24::create(nullptr);
     s24->addTweens(tween, args...);
@@ -42,11 +42,11 @@ ITween24Ptr sequence(ITween24Ptr tween, Args... args)
 
 #pragma mark spawn
 
-Spawn24Ptr spawn(cocos2d::Node *target, const std::vector<ITween24Ptr> &tweens);
-ITween24Ptr spawn(const std::vector<ITween24Ptr> &tweens);
+Spawn24Ptr spawn(cocos2d::Node *target, const std::vector<IInterval24Ptr> &tweens);
+IInterval24Ptr spawn(const std::vector<IInterval24Ptr> &tweens);
 
 template <class... Args>
-Spawn24Ptr spawn(cocos2d::Node *target, ITween24Ptr tween, Args... args)
+Spawn24Ptr spawn(cocos2d::Node *target, IInterval24Ptr tween, Args... args)
 {
     auto s24 = Spawn24::create(target);
     s24->addTweens(tween, args...);
@@ -55,7 +55,7 @@ Spawn24Ptr spawn(cocos2d::Node *target, ITween24Ptr tween, Args... args)
 }
 
 template <class... Args>
-ITween24Ptr spawn(ITween24Ptr tween, Args... args)
+IInterval24Ptr spawn(IInterval24Ptr tween, Args... args)
 {
     auto s24 = Spawn24::create(nullptr);
     s24->addTweens(tween, args...);
@@ -65,14 +65,14 @@ ITween24Ptr spawn(ITween24Ptr tween, Args... args)
 
 #pragma mark repeat
 
-Repeat24Ptr repeat(cocos2d::Node *target, unsigned int times, ITween24Ptr tween);
-ITween24Ptr repeat(unsigned int times, ITween24Ptr tween);
+Repeat24Ptr repeat(cocos2d::Node *target, unsigned int times, IInterval24Ptr tween);
+IInterval24Ptr repeat(unsigned int times, IInterval24Ptr tween);
 
-Repeat24Ptr repeat(cocos2d::Node *target, unsigned int times, const std::vector<ITween24Ptr> &tweens);
-ITween24Ptr repeat(unsigned int times, const std::vector<ITween24Ptr> &tweens);
+Repeat24Ptr repeat(cocos2d::Node *target, unsigned int times, const std::vector<IInterval24Ptr> &tweens);
+IInterval24Ptr repeat(unsigned int times, const std::vector<IInterval24Ptr> &tweens);
 
 template <class... Args>
-Repeat24Ptr repeat(cocos2d::Node *target, unsigned int times, ITween24Ptr tween1, ITween24Ptr tween2, Args... args)
+Repeat24Ptr repeat(cocos2d::Node *target, unsigned int times, IInterval24Ptr tween1, IInterval24Ptr tween2, Args... args)
 {
     auto s24 = sequence(target, tween1, tween2, args...);
     auto r24 = Repeat24::create(target, times, std::move(s24));
@@ -81,7 +81,7 @@ Repeat24Ptr repeat(cocos2d::Node *target, unsigned int times, ITween24Ptr tween1
 }
 
 template <class... Args>
-ITween24Ptr repeat(unsigned int times, ITween24Ptr tween1, ITween24Ptr tween2, Args... args)
+IInterval24Ptr repeat(unsigned int times, IInterval24Ptr tween1, IInterval24Ptr tween2, Args... args)
 {
     auto s24 = sequence(tween1, tween2, args...);
     auto r24 = Repeat24::create(nullptr, times, std::move(s24));
@@ -91,11 +91,11 @@ ITween24Ptr repeat(unsigned int times, ITween24Ptr tween1, ITween24Ptr tween2, A
 
 #pragma mark repeat forever
 
-Repeat24Ptr repeatForever(cocos2d::Node *target, ITween24Ptr tween);
-Repeat24Ptr repeatForever(cocos2d::Node *target, const std::vector<ITween24Ptr> &tweens);
+Repeat24Ptr repeatForever(cocos2d::Node *target, IInterval24Ptr tween);
+Repeat24Ptr repeatForever(cocos2d::Node *target, const std::vector<IInterval24Ptr> &tweens);
 
 template <class... Args>
-Repeat24Ptr repeatForever(cocos2d::Node *target, ITween24Ptr tween1, ITween24Ptr tween2, Args... args)
+Repeat24Ptr repeatForever(cocos2d::Node *target, IInterval24Ptr tween1, IInterval24Ptr tween2, Args... args)
 {
     auto s24 = sequence(target, tween1, tween2, args...);
     auto r24 = Repeat24::create(target, 0, std::move(s24));
@@ -105,11 +105,11 @@ Repeat24Ptr repeatForever(cocos2d::Node *target, ITween24Ptr tween1, ITween24Ptr
 
 #pragma mark lag
 
-Lag24Ptr lag(cocos2d::Node *target, float waitTime, const std::vector<ITween24Ptr> &tweens);
-ITween24Ptr lag(float waitTime, const std::vector<ITween24Ptr> &tweens);
+Lag24Ptr lag(cocos2d::Node *target, float waitTime, const std::vector<IInterval24Ptr> &tweens);
+IInterval24Ptr lag(float waitTime, const std::vector<IInterval24Ptr> &tweens);
 
 template <class... Args>
-Lag24Ptr lag(cocos2d::Node *target, float waitTime, ITween24Ptr tween, Args... args)
+Lag24Ptr lag(cocos2d::Node *target, float waitTime, IInterval24Ptr tween, Args... args)
 {
     auto l24 = Lag24::create(target, waitTime);
     l24->addTweens(tween, args...);
@@ -118,7 +118,7 @@ Lag24Ptr lag(cocos2d::Node *target, float waitTime, ITween24Ptr tween, Args... a
 }
 
 template <class... Args>
-ITween24Ptr lag(float waitTime, ITween24Ptr tween, Args... args)
+IInterval24Ptr lag(float waitTime, IInterval24Ptr tween, Args... args)
 {
     auto l24 = Lag24::create(nullptr, waitTime);
     l24->addTweens(tween, args...);

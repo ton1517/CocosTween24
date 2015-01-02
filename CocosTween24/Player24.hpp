@@ -1,11 +1,11 @@
 #ifndef __CocosTween24__Player24__
 #define __CocosTween24__Player24__
 
-#include "ITween24.hpp"
+#include "IInterval24.hpp"
 
 namespace cocosTween24
 {
-class Player24 : public ITween24
+class Player24 : public IInterval24
 {
 public:
     explicit Player24(cocos2d::Node *target);

@@ -20,11 +20,11 @@ public:
 
     cocos2d::ActionInterval *getAction() override;
 
-    Lag24Ptr addTweens(ITween24Ptr tween);
-    Lag24Ptr addTweens(const std::vector<ITween24Ptr> &tweens);
+    Lag24Ptr addTweens(IInterval24Ptr tween);
+    Lag24Ptr addTweens(const std::vector<IInterval24Ptr> &tweens);
 
     template <class... Args>
-    Lag24Ptr addTweens(ITween24Ptr tween, Args... args)
+    Lag24Ptr addTweens(IInterval24Ptr tween, Args... args)
     {
         addTweens(tween);
         addTweens(args...);
@@ -35,7 +35,7 @@ public:
     CC_SYNTHESIZE_READONLY(float, _waitTime, WaitTime);
 
 private:
-    std::vector<ITween24Ptr> _tweens;
+    std::vector<IInterval24Ptr> _tweens;
 
     Lag24(const Lag24&)           = delete;
     Lag24(Lag24&&)                = delete;

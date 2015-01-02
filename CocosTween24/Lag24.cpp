@@ -22,7 +22,7 @@ cocos2d::ActionInterval *Lag24::getAction()
     return cocos2d::Sequence::create(actions);
 }
 
-Lag24Ptr Lag24::addTweens(ITween24Ptr tween)
+Lag24Ptr Lag24::addTweens(IInterval24Ptr tween)
 {
     if (_tweens.size() > 0) {
         _tweens.push_back(Wait24::create(_waitTime));
@@ -32,7 +32,7 @@ Lag24Ptr Lag24::addTweens(ITween24Ptr tween)
     return shared_from_this();
 }
 
-Lag24Ptr Lag24::addTweens(const std::vector<ITween24Ptr> &tweens)
+Lag24Ptr Lag24::addTweens(const std::vector<IInterval24Ptr> &tweens)
 {
     for (auto &tween : tweens) {
         addTweens(tween);

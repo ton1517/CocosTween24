@@ -3,14 +3,14 @@
 
 #include <cocos2d.h>
 
-#include "ITween24.hpp"
+#include "IInterval24.hpp"
 
 namespace cocosTween24
 {
 class Wait24;
 typedef std::shared_ptr<Wait24> Wait24Ptr;
 
-class Wait24 : public ITween24
+class Wait24 : public IInterval24
 {
 public:
     static Wait24Ptr create(float waitTime);

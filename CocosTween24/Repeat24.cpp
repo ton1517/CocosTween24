@@ -2,14 +2,14 @@
 
 namespace cocosTween24
 {
-Repeat24Ptr Repeat24::create(cocos2d::Node *target, unsigned int times, ITween24Ptr tween)
+Repeat24Ptr Repeat24::create(cocos2d::Node *target, unsigned int times, IInterval24Ptr tween)
 {
     auto r24 = std::make_shared<Repeat24>(target, times, tween);
 
     return std::move(r24);
 }
 
-Repeat24::Repeat24(cocos2d::Node *target, unsigned int times, ITween24Ptr tween) : Player24(target), _times(times), _tween(tween)
+Repeat24::Repeat24(cocos2d::Node *target, unsigned int times, IInterval24Ptr tween) : Player24(target), _times(times), _tween(tween)
 {
 }
 

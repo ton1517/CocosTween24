@@ -20,11 +20,11 @@ public:
 
     cocos2d::ActionInterval *getAction() override;
 
-    Sequence24Ptr addTweens(ITween24Ptr tween);
-    Sequence24Ptr addTweens(const std::vector<ITween24Ptr> &tweens);
+    Sequence24Ptr addTweens(IInterval24Ptr tween);
+    Sequence24Ptr addTweens(const std::vector<IInterval24Ptr> &tweens);
 
     template <class... Args>
-    Sequence24Ptr addTweens(ITween24Ptr tween, Args... args)
+    Sequence24Ptr addTweens(IInterval24Ptr tween, Args... args)
     {
         addTweens(tween);
         addTweens(args...);
@@ -33,7 +33,7 @@ public:
     }
 
 private:
-    std::vector<ITween24Ptr> _tweens;
+    std::vector<IInterval24Ptr> _tweens;
 
     Sequence24(const Sequence24&)           = delete;
     Sequence24(Sequence24&&)                = delete;

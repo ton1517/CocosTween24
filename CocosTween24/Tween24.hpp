@@ -5,8 +5,6 @@
 
 #include "Player24.hpp"
 #include "Ease24.hpp"
-#include "Sequence24.hpp"
-#include "Wait24.hpp"
 
 namespace cocosTween24
 {

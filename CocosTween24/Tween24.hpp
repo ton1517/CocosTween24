@@ -62,6 +62,11 @@ public:
     Tween24Ptr fadeOut();
     Tween24Ptr fadeTo(GLubyte opacity);
 
+    #pragma mark jump
+    Tween24Ptr jump(const cocos2d::Vec2 &position, float height, int jumps);
+    Tween24Ptr $jump(const cocos2d::Vec2 &position, float height, int jumps);
+    Tween24Ptr jumpUp(float height, int jumps);
+
     #pragma mark delay
     Tween24Ptr delay(float delayTime);
 

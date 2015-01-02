@@ -282,6 +282,30 @@ Tween24Ptr Tween24::fadeTo(GLubyte opacity)
     return shared_from_this();
 }
 
+#pragma mark jump
+Tween24Ptr Tween24::jump(const cocos2d::Vec2 &position, float height, int jumps)
+{
+    auto action = cocos2d::JumpTo::create(_duration, position, height, jumps);
+    addAction(action);
+
+    return shared_from_this();
+}
+
+Tween24Ptr Tween24::$jump(const cocos2d::Vec2 &position, float height, int jumps)
+{
+    auto action = cocos2d::JumpBy::create(_duration, position, height, jumps);
+    addAction(action);
+
+    return shared_from_this();
+}
+
+Tween24Ptr Tween24::jumpUp(float height, int jumps)
+{
+    $jump(cocos2d::Vec2(0, 0), height, jumps);
+
+    return shared_from_this();
+}
+
 #pragma mark delay
 
 Tween24Ptr Tween24::delay(float delayTime)

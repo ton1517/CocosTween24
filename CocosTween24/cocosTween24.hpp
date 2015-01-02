@@ -20,8 +20,8 @@ Tween24Ptr tween(cocos2d::Node *target, float duration, Ease24 easing=Ease24::Li
 
 Sequence24Ptr sequence(cocos2d::Node *target, const std::vector<ITween24Ptr> &tweens);
 
-template <class Tween, class... Args>
-Sequence24Ptr sequence(cocos2d::Node *target, Tween tween, Args... args)
+template <class... Args>
+Sequence24Ptr sequence(cocos2d::Node *target, ITween24Ptr tween, Args... args)
 {
     auto s24 = Sequence24::create(target);
     s24->addTweens(tween, args...);
@@ -33,8 +33,8 @@ Sequence24Ptr sequence(cocos2d::Node *target, Tween tween, Args... args)
 
 Spawn24Ptr spawn(cocos2d::Node *target, const std::vector<ITween24Ptr> &tweens);
 
-template <class Tween, class... Args>
-Spawn24Ptr spawn(cocos2d::Node *target, Tween tween, Args... args)
+template <class... Args>
+Spawn24Ptr spawn(cocos2d::Node *target, ITween24Ptr tween, Args... args)
 {
     auto s24 = Spawn24::create(target);
     s24->addTweens(tween, args...);

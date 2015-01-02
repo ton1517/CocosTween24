@@ -67,6 +67,14 @@ public:
     Tween24Ptr $jump(const cocos2d::Vec2 &position, float height, int jumps);
     Tween24Ptr jumpUp(float height, int jumps);
 
+    #pragma mark bezier
+    Tween24Ptr bezier(const cocos2d::Vec2 &endPosition, const cocos2d::Vec2 &controlPoint);
+    Tween24Ptr $bezier(const cocos2d::Vec2 &endPosition, const cocos2d::Vec2 &controlPoint);
+    Tween24Ptr bezier(const cocos2d::Vec2 &endPosition, const cocos2d::Vec2 &controlPoint1, const cocos2d::Vec2 &controlPoint2);
+    Tween24Ptr $bezier(const cocos2d::Vec2 &endPosition, const cocos2d::Vec2 &controlPoint1, const cocos2d::Vec2 &controlPoint2);
+    Tween24Ptr bezier(const cocos2d::ccBezierConfig &bezierConfig);
+    Tween24Ptr $bezier(const cocos2d::ccBezierConfig &bezierConfig);
+
     #pragma mark delay
     Tween24Ptr delay(float delayTime);
 

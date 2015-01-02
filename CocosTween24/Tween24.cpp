@@ -306,6 +306,55 @@ Tween24Ptr Tween24::jumpUp(float height, int jumps)
     return shared_from_this();
 }
 
+#pragma mark bezier
+Tween24Ptr Tween24::bezier(const cocos2d::Vec2 &endPosition, const cocos2d::Vec2 &controlPoint)
+{
+    auto action = cocos2d::BezierTo::create(_duration, {endPosition, controlPoint, controlPoint});
+    addAction(action);
+
+    return shared_from_this();
+}
+
+Tween24Ptr Tween24::$bezier(const cocos2d::Vec2 &endPosition, const cocos2d::Vec2 &controlPoint)
+{
+    auto action = cocos2d::BezierBy::create(_duration, {endPosition, controlPoint, controlPoint});
+    addAction(action);
+
+    return shared_from_this();
+}
+
+Tween24Ptr Tween24::bezier(const cocos2d::Vec2 &endPosition, const cocos2d::Vec2 &controlPoint1, const cocos2d::Vec2 &controlPoint2)
+{
+    auto action = cocos2d::BezierTo::create(_duration, {endPosition, controlPoint1, controlPoint2});
+    addAction(action);
+
+    return shared_from_this();
+}
+
+Tween24Ptr Tween24::$bezier(const cocos2d::Vec2 &endPosition, const cocos2d::Vec2 &controlPoint1, const cocos2d::Vec2 &controlPoint2)
+{
+    auto action = cocos2d::BezierBy::create(_duration, {endPosition, controlPoint1, controlPoint2});
+    addAction(action);
+
+    return shared_from_this();
+}
+
+Tween24Ptr Tween24::bezier(const cocos2d::ccBezierConfig &bezierConfig)
+{
+    auto action = cocos2d::BezierTo::create(_duration, bezierConfig);
+    addAction(action);
+
+    return shared_from_this();
+}
+
+Tween24Ptr Tween24::$bezier(const cocos2d::ccBezierConfig &bezierConfig)
+{
+    auto action = cocos2d::BezierBy::create(_duration, bezierConfig);
+    addAction(action);
+
+    return shared_from_this();
+}
+
 #pragma mark delay
 
 Tween24Ptr Tween24::delay(float delayTime)

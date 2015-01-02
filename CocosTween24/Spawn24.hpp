@@ -16,7 +16,7 @@ public:
     static Spawn24Ptr create(cocos2d::Node *target);
 
     explicit Spawn24(cocos2d::Node *target);
-    virtual ~Spawn24();
+    virtual ~Spawn24() = default;
 
     cocos2d::ActionInterval *getAction() override;
 
@@ -34,6 +34,11 @@ public:
 
 private:
     std::vector<ITween24Ptr> _tweens;
+
+    Spawn24(const Spawn24&)           = delete;
+    Spawn24(Spawn24&&)                = delete;
+    Spawn24&operator=(const Spawn24&) = delete;
+    Spawn24&operator=(Spawn24&&)      = delete;
 };
 } // namespace
 

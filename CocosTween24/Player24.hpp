@@ -9,7 +9,7 @@ class Player24 : public ITween24
 {
 public:
     explicit Player24(cocos2d::Node *target);
-    virtual ~Player24();
+    virtual ~Player24() = default;
 
     virtual void play();
     virtual void stop();
@@ -19,6 +19,11 @@ public:
 private:
     cocos2d::Node   *_target;
     cocos2d::Action *_playingAction;
+
+    Player24(const Player24&)           = delete;
+    Player24(Player24&&)                = delete;
+    Player24&operator=(const Player24&) = delete;
+    Player24&operator=(Player24&&)      = delete;
 };
 } // namespace
 

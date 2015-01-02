@@ -16,11 +16,17 @@ public:
     static Wait24Ptr create(float waitTime);
 
     explicit Wait24(float waitTime);
-    virtual ~Wait24();
+    virtual ~Wait24() = default;
 
     cocos2d::ActionInterval *getAction() override;
 
     CC_SYNTHESIZE_READONLY(float, _waitTime, WaitTime);
+
+private:
+    Wait24(const Wait24&)           = delete;
+    Wait24(Wait24&&)                = delete;
+    Wait24&operator=(const Wait24&) = delete;
+    Wait24&operator=(Wait24&&)      = delete;
 };
 } // namespace
 

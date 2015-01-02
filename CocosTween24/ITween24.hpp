@@ -11,8 +11,16 @@ typedef std::shared_ptr<ITween24> ITween24Ptr;
 class ITween24
 {
 public:
-    virtual ~ITween24() {}
+    ITween24()          = default;
+    virtual ~ITween24() = default;
+
     virtual cocos2d::ActionInterval *getAction() = 0;
+
+private:
+    ITween24(const ITween24&)           = delete;
+    ITween24(ITween24&&)                = delete;
+    ITween24&operator=(const ITween24&) = delete;
+    ITween24&operator=(ITween24&&)      = delete;
 };
 } // namespace
 

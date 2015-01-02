@@ -16,7 +16,7 @@ public:
     static Repeat24Ptr create(cocos2d::Node *target, unsigned int times, ITween24Ptr tween);
 
     Repeat24(cocos2d::Node *target, unsigned int times, ITween24Ptr tween);
-    virtual ~Repeat24();
+    virtual ~Repeat24() = default;
 
     cocos2d::ActionInterval *getAction() override;
 
@@ -24,6 +24,11 @@ public:
 
 private:
     ITween24Ptr _tween;
+
+    Repeat24(const Repeat24&)           = delete;
+    Repeat24(Repeat24&&)                = delete;
+    Repeat24&operator=(const Repeat24&) = delete;
+    Repeat24&operator=(Repeat24&&)      = delete;
 };
 } // namespace
 

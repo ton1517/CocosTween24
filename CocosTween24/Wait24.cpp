@@ -10,7 +10,6 @@ Wait24Ptr Wait24::create(float waitTime)
 }
 
 Wait24::Wait24(float waitTime) : _waitTime(waitTime) {}
-Wait24::~Wait24() {}
 
 cocos2d::ActionInterval *Wait24::getAction()
 {

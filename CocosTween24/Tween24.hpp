@@ -18,7 +18,7 @@ public:
 
     #pragma mark constructor & destructor
     Tween24(cocos2d::Node *target, float duration, Ease24 easing);
-    virtual ~Tween24();
+    virtual ~Tween24() = default;
 
     #pragma mark ITween24 interface
     cocos2d::ActionInterval *getAction() override;
@@ -72,6 +72,11 @@ private:
 
     float _delayTime {0};
     cocos2d::ActionInterval *addDelay(cocos2d::ActionInterval *action);
+
+    Tween24(const Tween24&)           = delete;
+    Tween24(Tween24&&)                = delete;
+    Tween24&operator=(const Tween24&) = delete;
+    Tween24&operator=(Tween24&&)      = delete;
 };
 } // namespace
 

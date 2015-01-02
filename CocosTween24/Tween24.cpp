@@ -14,7 +14,6 @@ Tween24Ptr Tween24::create(cocos2d::Node *target, float duration, Ease24 easing)
 #pragma mark----- public -----
 
 Tween24::Tween24(cocos2d::Node *target, float duration, Ease24 easing) : cocosTween24::Player24(target), _duration(duration), _easing(easing) {}
-Tween24::~Tween24() {}
 
 cocos2d::ActionInterval *Tween24::getAction()
 {

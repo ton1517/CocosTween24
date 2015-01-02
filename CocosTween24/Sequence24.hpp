@@ -16,7 +16,7 @@ public:
     static Sequence24Ptr create(cocos2d::Node *target);
 
     explicit Sequence24(cocos2d::Node *target);
-    virtual ~Sequence24();
+    virtual ~Sequence24() = default;
 
     cocos2d::ActionInterval *getAction() override;
 
@@ -34,6 +34,11 @@ public:
 
 private:
     std::vector<ITween24Ptr> _tweens;
+
+    Sequence24(const Sequence24&)           = delete;
+    Sequence24(Sequence24&&)                = delete;
+    Sequence24&operator=(const Sequence24&) = delete;
+    Sequence24&operator=(Sequence24&&)      = delete;
 };
 } // namespace
 

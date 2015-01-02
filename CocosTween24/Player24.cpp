@@ -3,7 +3,6 @@
 namespace cocosTween24
 {
 Player24::Player24(cocos2d::Node *target) : _target(target) {}
-Player24::~Player24() {}
 
 void Player24::play()
 {

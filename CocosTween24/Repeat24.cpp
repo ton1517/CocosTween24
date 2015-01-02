@@ -13,8 +13,6 @@ Repeat24::Repeat24(cocos2d::Node *target, unsigned int times, ITween24Ptr tween)
 {
 }
 
-Repeat24::~Repeat24() {}
-
 cocos2d::ActionInterval *Repeat24::getAction()
 {
     auto action = _tween->getAction();

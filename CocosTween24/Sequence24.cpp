@@ -22,7 +22,7 @@ cocos2d::ActionInterval *Sequence24::getAction()
     return cocos2d::Sequence::create(actions);
 }
 
-Sequence24Ptr Sequence24::addTween(ITween24Ptr tween)
+Sequence24Ptr Sequence24::addTweens(ITween24Ptr tween)
 {
     _tweens.push_back(tween);
 
@@ -32,7 +32,7 @@ Sequence24Ptr Sequence24::addTween(ITween24Ptr tween)
 Sequence24Ptr Sequence24::addTweens(const std::vector<ITween24Ptr> &tweens)
 {
     for (auto &tween : tweens) {
-        addTween(tween);
+        addTweens(tween);
     }
 
     return shared_from_this();

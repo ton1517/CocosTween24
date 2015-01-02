@@ -47,8 +47,8 @@ Spawn24Ptr spawn(cocos2d::Node *target, Tween tween, Args... args)
 Repeat24Ptr repeat(cocos2d::Node *target, unsigned int times, ITween24Ptr tween);
 Repeat24Ptr repeat(cocos2d::Node *target, unsigned int times, const std::vector<ITween24Ptr> &tweens);
 
-template <class Tween1, class Tween2, class... Args>
-Repeat24Ptr repeat(cocos2d::Node *target, unsigned int times, Tween1 tween1, Tween2 tween2, Args... args)
+template <class... Args>
+Repeat24Ptr repeat(cocos2d::Node *target, unsigned int times, ITween24Ptr tween1, ITween24Ptr tween2, Args... args)
 {
     auto s24 = sequence(target, tween1, tween2, args...);
     auto r24 = Repeat24::create(target, times, std::move(s24));
@@ -61,8 +61,8 @@ Repeat24Ptr repeat(cocos2d::Node *target, unsigned int times, Tween1 tween1, Twe
 Repeat24Ptr repeatForever(cocos2d::Node *target, ITween24Ptr tween);
 Repeat24Ptr repeatForever(cocos2d::Node *target, const std::vector<ITween24Ptr> &tweens);
 
-template <class Tween1, class Tween2, class... Args>
-Repeat24Ptr repeatForever(cocos2d::Node *target, Tween1 tween1, Tween2 tween2, Args... args)
+template <class... Args>
+Repeat24Ptr repeatForever(cocos2d::Node *target, ITween24Ptr tween1, ITween24Ptr tween2, Args... args)
 {
     auto s24 = sequence(target, tween1, tween2, args...);
     auto r24 = Repeat24::create(target, 0, std::move(s24));

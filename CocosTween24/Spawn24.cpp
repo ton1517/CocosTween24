@@ -22,7 +22,7 @@ cocos2d::ActionInterval *Spawn24::getAction()
     return cocos2d::Spawn::create(actions);
 }
 
-Spawn24Ptr Spawn24::addTween(ITween24Ptr tween)
+Spawn24Ptr Spawn24::addTweens(ITween24Ptr tween)
 {
     _tweens.push_back(tween);
 
@@ -32,7 +32,7 @@ Spawn24Ptr Spawn24::addTween(ITween24Ptr tween)
 Spawn24Ptr Spawn24::addTweens(const std::vector<ITween24Ptr> &tweens)
 {
     for (auto &tween : tweens) {
-        addTween(tween);
+        addTweens(tween);
     }
 
     return shared_from_this();

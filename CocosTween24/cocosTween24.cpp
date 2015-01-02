@@ -89,6 +89,6 @@ Repeat24Ptr repeatForever(cocos2d::Node *target, const std::vector<ITween24Ptr> 
 
 Wait24Ptr wait(float waitTime)
 {
-    return std::move(std::make_shared<Wait24>(waitTime));
+    return std::move(Wait24::create(waitTime));
 }
 } // namespace

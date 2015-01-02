@@ -19,7 +19,7 @@ cocos2d::ActionInterval *Spawn24::getAction()
         actions.pushBack(tween->getAction());
     }
 
-    return cocos2d::TargetedAction::create(getTarget(), cocos2d::Spawn::create(actions));
+    return cocos2d::Spawn::create(actions);
 }
 
 Spawn24Ptr Spawn24::addTween(ITween24Ptr tween)

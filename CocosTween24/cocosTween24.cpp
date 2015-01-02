@@ -85,6 +85,21 @@ Repeat24Ptr repeatForever(cocos2d::Node *target, const std::vector<ITween24Ptr> 
     return std::move(r24);
 }
 
+#pragma mark lag
+
+Lag24Ptr lag(cocos2d::Node *target, float waitTime, const std::vector<ITween24Ptr> &tweens)
+{
+    auto l24 = Lag24::create(target, waitTime);
+    l24->addTweens(tweens);
+
+    return std::move(l24);
+}
+
+ITween24Ptr lag(float waitTime, const std::vector<ITween24Ptr> &tweens)
+{
+    return std::move(lag(nullptr, waitTime, tweens));
+}
+
 #pragma mark wait
 
 Wait24Ptr wait(float waitTime)

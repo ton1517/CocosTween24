@@ -8,6 +8,7 @@
 #include "Sequence24.hpp"
 #include "Spawn24.hpp"
 #include "Repeat24.hpp"
+#include "Lag24.hpp"
 #include "Wait24.hpp"
 
 namespace cocosTween24
@@ -100,6 +101,29 @@ Repeat24Ptr repeatForever(cocos2d::Node *target, ITween24Ptr tween1, ITween24Ptr
     auto r24 = Repeat24::create(target, 0, std::move(s24));
 
     return std::move(r24);
+}
+
+#pragma mark lag
+
+Lag24Ptr lag(cocos2d::Node *target, float waitTime, const std::vector<ITween24Ptr> &tweens);
+ITween24Ptr lag(float waitTime, const std::vector<ITween24Ptr> &tweens);
+
+template <class... Args>
+Lag24Ptr lag(cocos2d::Node *target, float waitTime, ITween24Ptr tween, Args... args)
+{
+    auto l24 = Lag24::create(target, waitTime);
+    l24->addTweens(tween, args...);
+
+    return std::move(l24);
+}
+
+template <class... Args>
+ITween24Ptr lag(float waitTime, ITween24Ptr tween, Args... args)
+{
+    auto l24 = Lag24::create(nullptr, waitTime);
+    l24->addTweens(tween, args...);
+
+    return std::move(l24);
 }
 
 #pragma mark wait

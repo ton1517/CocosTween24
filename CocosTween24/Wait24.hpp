@@ -15,7 +15,7 @@ class Wait24 : public ITween24
 public:
     static Wait24Ptr create(float waitTime);
 
-    Wait24(float waitTime);
+    explicit Wait24(float waitTime);
     virtual ~Wait24();
 
     cocos2d::ActionInterval *getAction() override;

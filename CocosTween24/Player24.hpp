@@ -8,7 +8,7 @@ namespace cocosTween24
 class Player24 : public ITween24
 {
 public:
-    Player24(cocos2d::Node *target);
+    explicit Player24(cocos2d::Node *target);
     virtual ~Player24();
 
     virtual void play();

@@ -15,7 +15,7 @@ class Spawn24 : public Player24, public std::enable_shared_from_this<Spawn24>
 public:
     static Spawn24Ptr create(cocos2d::Node *target);
 
-    Spawn24(cocos2d::Node *target);
+    explicit Spawn24(cocos2d::Node *target);
     virtual ~Spawn24();
 
     cocos2d::ActionInterval *getAction() override;

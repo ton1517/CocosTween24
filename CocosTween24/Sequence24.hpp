@@ -15,7 +15,7 @@ class Sequence24 : public Player24, public std::enable_shared_from_this<Sequence
 public:
     static Sequence24Ptr create(cocos2d::Node *target);
 
-    Sequence24(cocos2d::Node *target);
+    explicit Sequence24(cocos2d::Node *target);
     virtual ~Sequence24();
 
     cocos2d::ActionInterval *getAction() override;

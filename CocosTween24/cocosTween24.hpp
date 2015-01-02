@@ -19,6 +19,7 @@ Tween24Ptr tween(cocos2d::Node *target, float duration, Ease24 easing=Ease24::Li
 #pragma mark sequence
 
 Sequence24Ptr sequence(cocos2d::Node *target, const std::vector<ITween24Ptr> &tweens);
+ITween24Ptr sequence(const std::vector<ITween24Ptr> &tweens);
 
 template <class... Args>
 Sequence24Ptr sequence(cocos2d::Node *target, ITween24Ptr tween, Args... args)
@@ -29,9 +30,19 @@ Sequence24Ptr sequence(cocos2d::Node *target, ITween24Ptr tween, Args... args)
     return std::move(s24);
 }
 
+template <class... Args>
+ITween24Ptr sequence(ITween24Ptr tween, Args... args)
+{
+    auto s24 = Sequence24::create(nullptr);
+    s24->addTweens(tween, args...);
+
+    return std::move(s24);
+}
+
 #pragma mark spawn
 
 Spawn24Ptr spawn(cocos2d::Node *target, const std::vector<ITween24Ptr> &tweens);
+ITween24Ptr spawn(const std::vector<ITween24Ptr> &tweens);
 
 template <class... Args>
 Spawn24Ptr spawn(cocos2d::Node *target, ITween24Ptr tween, Args... args)
@@ -42,16 +53,37 @@ Spawn24Ptr spawn(cocos2d::Node *target, ITween24Ptr tween, Args... args)
     return std::move(s24);
 }
 
+template <class... Args>
+ITween24Ptr spawn(ITween24Ptr tween, Args... args)
+{
+    auto s24 = Spawn24::create(nullptr);
+    s24->addTweens(tween, args...);
+
+    return std::move(s24);
+}
+
 #pragma mark repeat
 
 Repeat24Ptr repeat(cocos2d::Node *target, unsigned int times, ITween24Ptr tween);
+ITween24Ptr repeat(unsigned int times, ITween24Ptr tween);
+
 Repeat24Ptr repeat(cocos2d::Node *target, unsigned int times, const std::vector<ITween24Ptr> &tweens);
+ITween24Ptr repeat(unsigned int times, const std::vector<ITween24Ptr> &tweens);
 
 template <class... Args>
 Repeat24Ptr repeat(cocos2d::Node *target, unsigned int times, ITween24Ptr tween1, ITween24Ptr tween2, Args... args)
 {
     auto s24 = sequence(target, tween1, tween2, args...);
     auto r24 = Repeat24::create(target, times, std::move(s24));
+
+    return std::move(r24);
+}
+
+template <class... Args>
+ITween24Ptr repeat(unsigned int times, ITween24Ptr tween1, ITween24Ptr tween2, Args... args)
+{
+    auto s24 = sequence(tween1, tween2, args...);
+    auto r24 = Repeat24::create(nullptr, times, std::move(s24));
 
     return std::move(r24);
 }

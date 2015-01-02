@@ -21,6 +21,11 @@ Sequence24Ptr sequence(cocos2d::Node *target, const std::vector<ITween24Ptr> &tw
     return std::move(s24);
 }
 
+ITween24Ptr sequence(const std::vector<ITween24Ptr> &tweens)
+{
+    return std::move(sequence(nullptr, tweens));
+}
+
 #pragma mark spawn
 
 Spawn24Ptr spawn(cocos2d::Node *target, const std::vector<ITween24Ptr> &tweens)
@@ -29,6 +34,11 @@ Spawn24Ptr spawn(cocos2d::Node *target, const std::vector<ITween24Ptr> &tweens)
     s24->addTweens(tweens);
 
     return std::move(s24);
+}
+
+ITween24Ptr spawn(const std::vector<ITween24Ptr> &tweens)
+{
+    return std::move(spawn(nullptr, tweens));
 }
 
 #pragma mark repeat
@@ -40,12 +50,22 @@ Repeat24Ptr repeat(cocos2d::Node *target, unsigned int times, ITween24Ptr tween)
     return std::move(r24);
 }
 
+ITween24Ptr repeat(unsigned int times, ITween24Ptr tween)
+{
+    return std::move(repeat(nullptr, times, tween));
+}
+
 Repeat24Ptr repeat(cocos2d::Node *target, unsigned int times, const std::vector<ITween24Ptr> &tweens)
 {
     auto s24 = sequence(target, tweens);
     auto r24 = Repeat24::create(target, times, std::move(s24));
 
     return std::move(r24);
+}
+
+ITween24Ptr repeat(unsigned int times, const std::vector<ITween24Ptr> &tweens)
+{
+    return std::move(repeat(nullptr, times, tweens));
 }
 
 #pragma mark repeat forever

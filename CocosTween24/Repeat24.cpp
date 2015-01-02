@@ -9,7 +9,7 @@ Repeat24Ptr Repeat24::create(cocos2d::Node *target, unsigned int times, ITween24
     return std::move(r24);
 }
 
-Repeat24::Repeat24(cocos2d::Node *target, unsigned int times, ITween24Ptr tween) : _target(target), _times(times), _tween(tween)
+Repeat24::Repeat24(cocos2d::Node *target, unsigned int times, ITween24Ptr tween) : Player24(target), _times(times), _tween(tween)
 {
 }
 
@@ -23,18 +23,5 @@ cocos2d::ActionInterval *Repeat24::getAction()
     }
 
     return cocos2d::Repeat::create(action, _times);
-}
-
-void Repeat24::play()
-{
-    _playingAction = this->getAction();
-    _target->runAction(_playingAction);
-}
-
-void Repeat24::stop()
-{
-    if (_playingAction && !_playingAction->isDone()) {
-        _target->stopAction(_playingAction);
-    }
 }
 } // namespace

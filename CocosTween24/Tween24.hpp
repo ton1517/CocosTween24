@@ -3,7 +3,7 @@
 
 #include <cocos2d.h>
 
-#include "ITween24.hpp"
+#include "Player24.hpp"
 #include "Ease24.hpp"
 #include "Sequence24.hpp"
 #include "Wait24.hpp"
@@ -13,7 +13,7 @@ namespace cocosTween24
 class Tween24;
 typedef std::shared_ptr<Tween24> Tween24Ptr;
 
-class Tween24 : public ITween24, public std::enable_shared_from_this<Tween24>
+class Tween24 : public Player24, public std::enable_shared_from_this<Tween24>
 {
 public:
     static Tween24Ptr create(cocos2d::Node *target, float duration, Ease24 easing);
@@ -24,9 +24,6 @@ public:
 
     #pragma mark ITween24 interface
     cocos2d::ActionInterval *getAction() override;
-
-    void play() override;
-    void stop() override;
 
     #pragma mark position
     Tween24Ptr x(float x);
@@ -66,13 +63,10 @@ public:
     Tween24Ptr delay(float delayTime);
 
     #pragma mark property
-    CC_SYNTHESIZE_READONLY(cocos2d::Node *, _target, Target);
     CC_SYNTHESIZE_READONLY(float, _duration, Duration);
     CC_SYNTHESIZE_READONLY(Ease24, _easing, Easing);
 
 private:
-    cocos2d::FiniteTimeAction *_playingAction;
-
     cocos2d::Vector<cocos2d::FiniteTimeAction *> _actions;
     void addAction(cocos2d::FiniteTimeAction *action);
 

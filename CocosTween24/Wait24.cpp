@@ -16,7 +16,4 @@ cocos2d::ActionInterval *Wait24::getAction()
 {
     return cocos2d::DelayTime::create(_waitTime);
 }
-
-void Wait24::play() {}
-void Wait24::stop() {}
 } // namespace

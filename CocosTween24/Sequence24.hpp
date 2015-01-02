@@ -3,14 +3,14 @@
 
 #include <cocos2d.h>
 
-#include "ITween24.hpp"
+#include "Player24.hpp"
 
 namespace cocosTween24
 {
 class Sequence24;
 typedef std::shared_ptr<Sequence24> Sequence24Ptr;
 
-class Sequence24 : public ITween24, public std::enable_shared_from_this<Sequence24>
+class Sequence24 : public Player24, public std::enable_shared_from_this<Sequence24>
 {
 public:
     static Sequence24Ptr create(cocos2d::Node *target);
@@ -19,8 +19,6 @@ public:
     virtual ~Sequence24();
 
     cocos2d::ActionInterval *getAction() override;
-    void play() override;
-    void stop() override;
 
     Sequence24Ptr addTween(ITween24Ptr tween);
     Sequence24Ptr addTweens(const std::vector<ITween24Ptr> &tweens);
@@ -40,11 +38,8 @@ public:
         return shared_from_this();
     }
 
-    CC_SYNTHESIZE_READONLY(cocos2d::Node *, _target, Target);
-
 private:
-    cocos2d::FiniteTimeAction *_playingAction;
-    std::vector<ITween24Ptr>   _tweens;
+    std::vector<ITween24Ptr> _tweens;
 };
 } // namespace
 

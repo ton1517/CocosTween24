@@ -13,7 +13,7 @@ Tween24Ptr Tween24::create(cocos2d::Node *target, float duration, Ease24 easing)
 
 #pragma mark----- public -----
 
-Tween24::Tween24(cocos2d::Node *target, float duration, Ease24 easing) : _target(target), _duration(duration), _easing(easing) {}
+Tween24::Tween24(cocos2d::Node *target, float duration, Ease24 easing) : cocosTween24::Player24(target), _duration(duration), _easing(easing) {}
 Tween24::~Tween24() {}
 
 cocos2d::ActionInterval *Tween24::getAction()
@@ -21,29 +21,16 @@ cocos2d::ActionInterval *Tween24::getAction()
     cocos2d::ActionInterval *action = cocos2d::Spawn::create(_actions);
     action = this->addDelay(action);
     action = this->addEasing(action);
-    auto targetedAction = cocos2d::TargetedAction::create(_target, action);
+    auto targetedAction = cocos2d::TargetedAction::create(getTarget(), action);
 
     return targetedAction;
-}
-
-void Tween24::play()
-{
-    _playingAction = this->getAction();
-    _target->runAction(_playingAction);
-}
-
-void Tween24::stop()
-{
-    if (_playingAction && !_playingAction->isDone()) {
-        _target->stopAction(_playingAction);
-    }
 }
 
 #pragma mark position
 
 Tween24Ptr Tween24::x(float x)
 {
-    auto pos    = _target->getPosition();
+    auto pos    = getTarget()->getPosition();
     auto action = cocos2d::MoveTo::create(_duration, cocos2d::Point(x, pos.y));
     addAction(action);
 
@@ -60,7 +47,7 @@ Tween24Ptr Tween24::$x(float $x)
 
 Tween24Ptr Tween24::y(float y)
 {
-    auto pos    = _target->getPosition();
+    auto pos    = getTarget()->getPosition();
     auto action = cocos2d::MoveTo::create(_duration, cocos2d::Point(pos.x, y));
     addAction(action);
 
@@ -95,7 +82,7 @@ Tween24Ptr Tween24::$xy(float $x, float $y)
 
 Tween24Ptr Tween24::scaleX(float sx)
 {
-    auto action = cocos2d::ScaleTo::create(_duration, sx, _target->getScaleY());
+    auto action = cocos2d::ScaleTo::create(_duration, sx, getTarget()->getScaleY());
     addAction(action);
 
     return shared_from_this();
@@ -111,7 +98,7 @@ Tween24Ptr Tween24::$scaleX(float $sx)
 
 Tween24Ptr Tween24::scaleY(float sy)
 {
-    auto action = cocos2d::ScaleTo::create(_duration, _target->getScaleX(), sy);
+    auto action = cocos2d::ScaleTo::create(_duration, getTarget()->getScaleX(), sy);
     addAction(action);
 
     return shared_from_this();
@@ -127,7 +114,7 @@ Tween24Ptr Tween24::$scaleY(float $sy)
 
 Tween24Ptr Tween24::scaleZ(float sz)
 {
-    auto action = cocos2d::ScaleTo::create(_duration, _target->getScaleX(), _target->getScaleY(), sz);
+    auto action = cocos2d::ScaleTo::create(_duration, getTarget()->getScaleX(), getTarget()->getScaleY(), sz);
     addAction(action);
 
     return shared_from_this();
@@ -193,7 +180,7 @@ Tween24Ptr Tween24::$scale(float $sx, float $sy, float $sz)
 
 Tween24Ptr Tween24::rotateX(float angleX)
 {
-    auto action = cocos2d::RotateTo::create(_duration, angleX, _target->getRotationSkewY());
+    auto action = cocos2d::RotateTo::create(_duration, angleX, getTarget()->getRotationSkewY());
     addAction(action);
 
     return shared_from_this();
@@ -209,7 +196,7 @@ Tween24Ptr Tween24::$rotateX(float $angleX)
 
 Tween24Ptr Tween24::rotateY(float angleY)
 {
-    auto action = cocos2d::RotateTo::create(_duration, _target->getRotationSkewX(), angleY);
+    auto action = cocos2d::RotateTo::create(_duration, getTarget()->getRotationSkewX(), angleY);
     addAction(action);
 
     return shared_from_this();

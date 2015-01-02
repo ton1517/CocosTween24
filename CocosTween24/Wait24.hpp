@@ -19,8 +19,6 @@ public:
     virtual ~Wait24();
 
     cocos2d::ActionInterval *getAction() override;
-    void play() override;
-    void stop() override;
 
     CC_SYNTHESIZE_READONLY(float, _waitTime, WaitTime);
 };

@@ -9,7 +9,7 @@ Sequence24Ptr Sequence24::create(cocos2d::Node *target)
     return std::move(s24);
 }
 
-Sequence24::Sequence24(cocos2d::Node *target) : _target(target) {}
+Sequence24::Sequence24(cocos2d::Node *target) : Player24(target) {}
 Sequence24::~Sequence24() {}
 
 cocos2d::ActionInterval *Sequence24::getAction()
@@ -19,20 +19,7 @@ cocos2d::ActionInterval *Sequence24::getAction()
         actions.pushBack(tween->getAction());
     }
 
-    return cocos2d::TargetedAction::create(_target, cocos2d::Sequence::create(actions));
-}
-
-void Sequence24::play()
-{
-    _playingAction = this->getAction();
-    _target->runAction(_playingAction);
-}
-
-void Sequence24::stop()
-{
-    if (_playingAction && !_playingAction->isDone()) {
-        _target->stopAction(_playingAction);
-    }
+    return cocos2d::TargetedAction::create(getTarget(), cocos2d::Sequence::create(actions));
 }
 
 Sequence24Ptr Sequence24::addTween(ITween24Ptr tween)

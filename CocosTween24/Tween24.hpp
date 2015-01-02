@@ -75,6 +75,9 @@ public:
     Tween24Ptr bezier(const cocos2d::ccBezierConfig &bezierConfig);
     Tween24Ptr $bezier(const cocos2d::ccBezierConfig &bezierConfig);
 
+    #pragma mark blink
+    Tween24Ptr blink(int times);
+
     #pragma mark delay
     Tween24Ptr delay(float delayTime);
 

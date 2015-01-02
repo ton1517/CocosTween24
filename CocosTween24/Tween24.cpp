@@ -355,6 +355,15 @@ Tween24Ptr Tween24::$bezier(const cocos2d::ccBezierConfig &bezierConfig)
     return shared_from_this();
 }
 
+#pragma mark blink
+Tween24Ptr Tween24::blink(int times)
+{
+    auto action = cocos2d::Blink::create(_duration, times);
+    addAction(action);
+
+    return shared_from_this();
+}
+
 #pragma mark delay
 
 Tween24Ptr Tween24::delay(float delayTime)

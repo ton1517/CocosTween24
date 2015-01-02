@@ -9,7 +9,7 @@ Spawn24Ptr Spawn24::create(cocos2d::Node *target)
     return std::move(s24);
 }
 
-Spawn24::Spawn24(cocos2d::Node *target) : Player24(target) {}
+Spawn24::Spawn24(cocos2d::Node *target) : Player24(this, target) {}
 
 cocos2d::ActionInterval *Spawn24::getAction()
 {

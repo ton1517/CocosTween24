@@ -3,6 +3,7 @@
 
 #include <cocos2d.h>
 
+#include "IInterval24.hpp"
 #include "Player24.hpp"
 
 namespace cocosTween24
@@ -10,7 +11,7 @@ namespace cocosTween24
 class Repeat24;
 typedef std::shared_ptr<Repeat24> Repeat24Ptr;
 
-class Repeat24 : public Player24, public std::enable_shared_from_this<Repeat24>
+class Repeat24 : public IInterval24, public Player24, public std::enable_shared_from_this<Repeat24>
 {
 public:
     static Repeat24Ptr create(cocos2d::Node *target, unsigned int times, IInterval24Ptr tween);

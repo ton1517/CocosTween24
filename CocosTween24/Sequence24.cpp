@@ -9,7 +9,7 @@ Sequence24Ptr Sequence24::create(cocos2d::Node *target)
     return std::move(s24);
 }
 
-Sequence24::Sequence24(cocos2d::Node *target) : Player24(target) {}
+Sequence24::Sequence24(cocos2d::Node *target) : Player24(this, target) {}
 
 cocos2d::ActionInterval *Sequence24::getAction()
 {

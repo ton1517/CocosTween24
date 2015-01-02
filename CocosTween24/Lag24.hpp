@@ -3,6 +3,7 @@
 
 #include <cocos2d.h>
 
+#include "IInterval24.hpp"
 #include "Player24.hpp"
 
 namespace cocosTween24
@@ -10,7 +11,7 @@ namespace cocosTween24
 class Lag24;
 typedef std::shared_ptr<Lag24> Lag24Ptr;
 
-class Lag24 : public Player24, public std::enable_shared_from_this<Lag24>
+class Lag24 : public IInterval24, public Player24, public std::enable_shared_from_this<Lag24>
 {
 public:
     static Lag24Ptr create(cocos2d::Node *target, float waitTime);

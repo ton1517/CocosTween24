@@ -2,11 +2,11 @@
 
 namespace cocosTween24
 {
-Player24::Player24(cocos2d::Node *target) : _target(target) {}
+Player24::Player24(IAction24 *tweener, cocos2d::Node *target) : _tweener(tweener), _target(target) {}
 
 void Player24::play()
 {
-    _playingAction = this->getAction();
+    _playingAction = _tweener->getAction();
     _target->runAction(_playingAction);
 }
 

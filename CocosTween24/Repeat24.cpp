@@ -9,7 +9,7 @@ Repeat24Ptr Repeat24::create(cocos2d::Node *target, unsigned int times, IInterva
     return std::move(r24);
 }
 
-Repeat24::Repeat24(cocos2d::Node *target, unsigned int times, IInterval24Ptr tween) : Player24(target), _times(times), _tween(tween)
+Repeat24::Repeat24(cocos2d::Node *target, unsigned int times, IInterval24Ptr tween) : Player24(this, target), _times(times), _tween(tween)
 {
 }
 

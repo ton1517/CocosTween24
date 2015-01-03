@@ -14,9 +14,9 @@ typedef std::shared_ptr<Repeat24> Repeat24Ptr;
 class Repeat24 : public IInterval24, public Player24, public std::enable_shared_from_this<Repeat24>
 {
 public:
-    static Repeat24Ptr create(cocos2d::Node *target, unsigned int times, IInterval24Ptr tween);
+    static Repeat24Ptr create(cocos2d::Node *target, unsigned int times, IFiniteTime24Ptr tween);
 
-    Repeat24(cocos2d::Node *target, unsigned int times, IInterval24Ptr tween);
+    Repeat24(cocos2d::Node *target, unsigned int times, IFiniteTime24Ptr tween);
     virtual ~Repeat24() = default;
 
     cocos2d::ActionInterval *getAction() override;
@@ -24,7 +24,7 @@ public:
     CC_SYNTHESIZE(unsigned int, _times, Times);
 
 private:
-    IInterval24Ptr _tween;
+    IFiniteTime24Ptr _tween;
 
     Repeat24(const Repeat24&)           = delete;
     Repeat24(Repeat24&&)                = delete;

@@ -66,14 +66,14 @@ IInterval24Ptr spawn(IFiniteTime24Ptr tween, Args... args)
 
 #pragma mark repeat
 
-Repeat24Ptr repeat(cocos2d::Node *target, unsigned int times, IInterval24Ptr tween);
-IInterval24Ptr repeat(unsigned int times, IInterval24Ptr tween);
+Repeat24Ptr repeat(cocos2d::Node *target, unsigned int times, IFiniteTime24Ptr tween);
+IInterval24Ptr repeat(unsigned int times, IFiniteTime24Ptr tween);
 
-Repeat24Ptr repeat(cocos2d::Node *target, unsigned int times, const std::vector<IInterval24Ptr> &tweens);
-IInterval24Ptr repeat(unsigned int times, const std::vector<IInterval24Ptr> &tweens);
+Repeat24Ptr repeat(cocos2d::Node *target, unsigned int times, const std::vector<IFiniteTime24Ptr> &tweens);
+IInterval24Ptr repeat(unsigned int times, const std::vector<IFiniteTime24Ptr> &tweens);
 
 template <class... Args>
-Repeat24Ptr repeat(cocos2d::Node *target, unsigned int times, IInterval24Ptr tween1, IInterval24Ptr tween2, Args... args)
+Repeat24Ptr repeat(cocos2d::Node *target, unsigned int times, IFiniteTime24Ptr tween1, IFiniteTime24Ptr tween2, Args... args)
 {
     auto s24 = sequence(target, tween1, tween2, args...);
     auto r24 = Repeat24::create(target, times, std::move(s24));
@@ -82,7 +82,7 @@ Repeat24Ptr repeat(cocos2d::Node *target, unsigned int times, IInterval24Ptr twe
 }
 
 template <class... Args>
-IInterval24Ptr repeat(unsigned int times, IInterval24Ptr tween1, IInterval24Ptr tween2, Args... args)
+IInterval24Ptr repeat(unsigned int times, IFiniteTime24Ptr tween1, IFiniteTime24Ptr tween2, Args... args)
 {
     auto s24 = sequence(tween1, tween2, args...);
     auto r24 = Repeat24::create(nullptr, times, std::move(s24));

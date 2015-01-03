@@ -19,11 +19,11 @@ Tween24Ptr tween(cocos2d::Node *target, float duration, Ease24 easing=Ease24::Li
 
 #pragma mark sequence
 
-Sequence24Ptr sequence(cocos2d::Node *target, const std::vector<IInterval24Ptr> &tweens);
-IInterval24Ptr sequence(const std::vector<IInterval24Ptr> &tweens);
+Sequence24Ptr sequence(cocos2d::Node *target, const std::vector<IFiniteTime24Ptr> &tweens);
+IInterval24Ptr sequence(const std::vector<IFiniteTime24Ptr> &tweens);
 
 template <class... Args>
-Sequence24Ptr sequence(cocos2d::Node *target, IInterval24Ptr tween, Args... args)
+Sequence24Ptr sequence(cocos2d::Node *target, IFiniteTime24Ptr tween, Args... args)
 {
     auto s24 = Sequence24::create(target);
     s24->addTweens(tween, args...);
@@ -32,7 +32,7 @@ Sequence24Ptr sequence(cocos2d::Node *target, IInterval24Ptr tween, Args... args
 }
 
 template <class... Args>
-IInterval24Ptr sequence(IInterval24Ptr tween, Args... args)
+IInterval24Ptr sequence(IFiniteTime24Ptr tween, Args... args)
 {
     auto s24 = Sequence24::create(nullptr);
     s24->addTweens(tween, args...);

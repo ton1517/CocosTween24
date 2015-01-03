@@ -106,4 +106,11 @@ Wait24Ptr wait(float waitTime)
 {
     return std::move(Wait24::create(waitTime));
 }
+
+#pragma mark func
+
+Func24Ptr func(const std::function<void()> &func)
+{
+    return std::move(Func24::create(func));
+}
 } // namespace

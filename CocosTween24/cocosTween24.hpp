@@ -11,6 +11,7 @@
 #include "RepeatForever24.hpp"
 #include "Lag24.hpp"
 #include "Wait24.hpp"
+#include "Func24.hpp"
 
 namespace cocosTween24
 {
@@ -130,6 +131,10 @@ IInterval24Ptr lag(float waitTime, IFiniteTime24Ptr tween, Args... args)
 #pragma mark wait
 
 Wait24Ptr wait(float waitTime);
+
+#pragma mark func
+
+Func24Ptr func(const std::function<void()> &func);
 } // namespace
 
 #endif /* defined(__CocosTween24__cocosTween24__) */

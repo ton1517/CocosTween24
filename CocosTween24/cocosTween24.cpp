@@ -113,4 +113,11 @@ Func24Ptr func(const std::function<void()> &func)
 {
     return std::move(Func24::create(func));
 }
+
+#pragma mark action
+
+Action24Ptr action(cocos2d::Node *target, cocos2d::FiniteTimeAction *action)
+{
+    return std::move(Action24::create(target, action));
+}
 } // namespace

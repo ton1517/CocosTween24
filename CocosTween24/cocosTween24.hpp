@@ -12,6 +12,7 @@
 #include "Lag24.hpp"
 #include "Wait24.hpp"
 #include "Func24.hpp"
+#include "Action24.hpp"
 
 namespace cocosTween24
 {
@@ -135,6 +136,10 @@ Wait24Ptr wait(float waitTime);
 #pragma mark func
 
 Func24Ptr func(const std::function<void()> &func);
+
+#pragma mark action
+
+Action24Ptr action(cocos2d::Node *target, cocos2d::FiniteTimeAction *action);
 } // namespace
 
 #endif /* defined(__CocosTween24__cocosTween24__) */

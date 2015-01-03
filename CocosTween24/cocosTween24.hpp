@@ -42,11 +42,11 @@ IInterval24Ptr sequence(IInterval24Ptr tween, Args... args)
 
 #pragma mark spawn
 
-Spawn24Ptr spawn(cocos2d::Node *target, const std::vector<IInterval24Ptr> &tweens);
-IInterval24Ptr spawn(const std::vector<IInterval24Ptr> &tweens);
+Spawn24Ptr spawn(cocos2d::Node *target, const std::vector<IFiniteTime24Ptr> &tweens);
+IInterval24Ptr spawn(const std::vector<IFiniteTime24Ptr> &tweens);
 
 template <class... Args>
-Spawn24Ptr spawn(cocos2d::Node *target, IInterval24Ptr tween, Args... args)
+Spawn24Ptr spawn(cocos2d::Node *target, IFiniteTime24Ptr tween, Args... args)
 {
     auto s24 = Spawn24::create(target);
     s24->addTweens(tween, args...);
@@ -55,7 +55,7 @@ Spawn24Ptr spawn(cocos2d::Node *target, IInterval24Ptr tween, Args... args)
 }
 
 template <class... Args>
-IInterval24Ptr spawn(IInterval24Ptr tween, Args... args)
+IInterval24Ptr spawn(IFiniteTime24Ptr tween, Args... args)
 {
     auto s24 = Spawn24::create(nullptr);
     s24->addTweens(tween, args...);

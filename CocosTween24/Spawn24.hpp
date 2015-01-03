@@ -21,11 +21,11 @@ public:
 
     cocos2d::ActionInterval *getAction() override;
 
-    Spawn24Ptr addTweens(IInterval24Ptr tween);
-    Spawn24Ptr addTweens(const std::vector<IInterval24Ptr> &tweens);
+    Spawn24Ptr addTweens(IFiniteTime24Ptr tween);
+    Spawn24Ptr addTweens(const std::vector<IFiniteTime24Ptr> &tweens);
 
     template <class... Args>
-    Spawn24Ptr addTweens(IInterval24Ptr tween, Args... args)
+    Spawn24Ptr addTweens(IFiniteTime24Ptr tween, Args... args)
     {
         addTweens(tween);
         addTweens(args...);
@@ -34,7 +34,7 @@ public:
     }
 
 private:
-    std::vector<IInterval24Ptr> _tweens;
+    std::vector<IFiniteTime24Ptr> _tweens;
 
     Spawn24(const Spawn24&)           = delete;
     Spawn24(Spawn24&&)                = delete;

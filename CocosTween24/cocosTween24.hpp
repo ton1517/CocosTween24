@@ -8,6 +8,7 @@
 #include "Sequence24.hpp"
 #include "Spawn24.hpp"
 #include "Repeat24.hpp"
+#include "RepeatForever24.hpp"
 #include "Lag24.hpp"
 #include "Wait24.hpp"
 
@@ -91,14 +92,14 @@ IInterval24Ptr repeat(unsigned int times, IInterval24Ptr tween1, IInterval24Ptr 
 
 #pragma mark repeat forever
 
-Repeat24Ptr repeatForever(cocos2d::Node *target, IInterval24Ptr tween);
-Repeat24Ptr repeatForever(cocos2d::Node *target, const std::vector<IInterval24Ptr> &tweens);
+RepeatForever24Ptr repeatForever(cocos2d::Node *target, IInterval24Ptr tween);
+RepeatForever24Ptr repeatForever(cocos2d::Node *target, const std::vector<IFiniteTime24Ptr> &tweens);
 
 template <class... Args>
-Repeat24Ptr repeatForever(cocos2d::Node *target, IInterval24Ptr tween1, IInterval24Ptr tween2, Args... args)
+RepeatForever24Ptr repeatForever(cocos2d::Node *target, IFiniteTime24Ptr tween1, IFiniteTime24Ptr tween2, Args... args)
 {
     auto s24 = sequence(target, tween1, tween2, args...);
-    auto r24 = Repeat24::create(target, 0, std::move(s24));
+    auto r24 = RepeatForever24::create(target, std::move(s24));
 
     return std::move(r24);
 }

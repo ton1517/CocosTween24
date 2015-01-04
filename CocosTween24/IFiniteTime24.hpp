@@ -16,7 +16,7 @@ public:
     IFiniteTime24()          = default;
     virtual ~IFiniteTime24() = default;
 
-    virtual cocos2d::FiniteTimeAction *getAction() = 0;
+    virtual cocos2d::FiniteTimeAction *generateAction() = 0;
 
 private:
     IFiniteTime24(const IFiniteTime24&)           = delete;

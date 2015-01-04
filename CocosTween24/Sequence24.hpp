@@ -19,7 +19,7 @@ public:
     explicit Sequence24(cocos2d::Node *target);
     virtual ~Sequence24() = default;
 
-    cocos2d::ActionInterval *getAction() override;
+    cocos2d::ActionInterval *generateAction() override;
 
     Sequence24Ptr addTweens(IFiniteTime24Ptr tween);
     Sequence24Ptr addTweens(const std::vector<IFiniteTime24Ptr> &tweens);

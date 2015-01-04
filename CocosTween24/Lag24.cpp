@@ -12,11 +12,11 @@ Lag24Ptr Lag24::create(cocos2d::Node *target, float waitTime)
 
 Lag24::Lag24(cocos2d::Node *target, float waitTime) : Player24(this, target), _waitTime(waitTime) {}
 
-cocos2d::ActionInterval *Lag24::getAction()
+cocos2d::ActionInterval *Lag24::generateAction()
 {
     cocos2d::Vector<cocos2d::FiniteTimeAction *> actions(_tweens.size());
     for (auto tween : _tweens) {
-        actions.pushBack(tween->getAction());
+        actions.pushBack(tween->generateAction());
     }
 
     return cocos2d::Sequence::create(actions);

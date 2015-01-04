@@ -6,7 +6,7 @@ Player24::Player24(IAction24 *tweener, cocos2d::Node *target) : _tweener(tweener
 
 void Player24::play()
 {
-    _playingAction = _tweener->getAction();
+    _playingAction = _tweener->generateAction();
     _target->runAction(_playingAction);
 }
 

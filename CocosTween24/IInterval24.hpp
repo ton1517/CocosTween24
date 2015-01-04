@@ -16,7 +16,7 @@ public:
     IInterval24()          = default;
     virtual ~IInterval24() = default;
 
-    virtual cocos2d::ActionInterval *getAction() = 0;
+    virtual cocos2d::ActionInterval *generateAction() = 0;
 
 private:
     IInterval24(const IInterval24&)           = delete;

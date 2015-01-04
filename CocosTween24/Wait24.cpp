@@ -11,7 +11,7 @@ Wait24Ptr Wait24::create(float waitTime)
 
 Wait24::Wait24(float waitTime) : _waitTime(waitTime) {}
 
-cocos2d::ActionInterval *Wait24::getAction()
+cocos2d::ActionInterval *Wait24::generateAction()
 {
     return cocos2d::DelayTime::create(_waitTime);
 }

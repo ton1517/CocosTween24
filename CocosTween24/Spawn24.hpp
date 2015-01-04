@@ -19,7 +19,7 @@ public:
     explicit Spawn24(cocos2d::Node *target);
     virtual ~Spawn24() = default;
 
-    cocos2d::ActionInterval *getAction() override;
+    cocos2d::ActionInterval *generateAction() override;
 
     Spawn24Ptr addTweens(IFiniteTime24Ptr tween);
     Spawn24Ptr addTweens(const std::vector<IFiniteTime24Ptr> &tweens);

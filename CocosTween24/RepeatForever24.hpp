@@ -19,7 +19,7 @@ public:
     RepeatForever24(cocos2d::Node *target, IInterval24Ptr tween);
     virtual ~RepeatForever24() = default;
 
-    cocos2d::ActionInterval *getAction() override;
+    cocos2d::ActionInterval *generateAction() override;
 
 private:
     IInterval24Ptr _tween;

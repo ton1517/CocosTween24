@@ -14,7 +14,7 @@ public:
     IAction24()          = default;
     virtual ~IAction24() = default;
 
-    virtual cocos2d::Action *getAction() = 0;
+    virtual cocos2d::Action *generateAction() = 0;
 
 private:
     IAction24(const IAction24&)           = delete;

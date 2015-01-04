@@ -16,7 +16,7 @@ public:
     IInstant24()          = default;
     virtual ~IInstant24() = default;
 
-    virtual cocos2d::ActionInstant *getAction() = 0;
+    virtual cocos2d::ActionInstant *generateAction() = 0;
 
 private:
     IInstant24(const IInstant24&)           = delete;

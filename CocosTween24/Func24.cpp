@@ -11,7 +11,7 @@ Func24Ptr Func24::create(const std::function<void()> &func)
 
 Func24::Func24(const std::function<void()> &func) : _func(func) {}
 
-cocos2d::ActionInstant *Func24::getAction()
+cocos2d::ActionInstant *Func24::generateAction()
 {
     return cocos2d::CallFunc::create(_func);
 }

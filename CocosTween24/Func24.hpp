@@ -18,7 +18,7 @@ public:
     explicit Func24(const std::function<void()> &func);
     virtual ~Func24() = default;
 
-    cocos2d::ActionInstant *getAction() override;
+    cocos2d::ActionInstant *generateAction() override;
 
 private:
     Func24(const Func24&)           = delete;

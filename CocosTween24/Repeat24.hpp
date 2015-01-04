@@ -19,7 +19,7 @@ public:
     Repeat24(cocos2d::Node *target, unsigned int times, IFiniteTime24Ptr tween);
     virtual ~Repeat24() = default;
 
-    cocos2d::ActionInterval *getAction() override;
+    cocos2d::ActionInterval *generateAction() override;
 
     CC_SYNTHESIZE(unsigned int, _times, Times);
 

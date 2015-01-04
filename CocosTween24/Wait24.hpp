@@ -18,7 +18,7 @@ public:
     explicit Wait24(float waitTime);
     virtual ~Wait24() = default;
 
-    cocos2d::ActionInterval *getAction() override;
+    cocos2d::ActionInterval *generateAction() override;
 
     CC_SYNTHESIZE_READONLY(float, _waitTime, WaitTime);
 

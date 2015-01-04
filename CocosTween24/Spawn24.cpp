@@ -11,11 +11,11 @@ Spawn24Ptr Spawn24::create(cocos2d::Node *target)
 
 Spawn24::Spawn24(cocos2d::Node *target) : Player24(this, target) {}
 
-cocos2d::ActionInterval *Spawn24::getAction()
+cocos2d::ActionInterval *Spawn24::generateAction()
 {
     cocos2d::Vector<cocos2d::FiniteTimeAction *> actions(_tweens.size());
     for (auto tween : _tweens) {
-        actions.pushBack(tween->getAction());
+        actions.pushBack(tween->generateAction());
     }
 
     return cocos2d::Spawn::create(actions);

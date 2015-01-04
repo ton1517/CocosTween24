@@ -11,9 +11,9 @@ RepeatForever24Ptr RepeatForever24::create(cocos2d::Node *target, IInterval24Ptr
 
 RepeatForever24::RepeatForever24(cocos2d::Node *target, IInterval24Ptr tween) : Player24(this, target), _tween(tween) {}
 
-cocos2d::ActionInterval *RepeatForever24::getAction()
+cocos2d::ActionInterval *RepeatForever24::generateAction()
 {
-    auto action = _tween->getAction();
+    auto action = _tween->generateAction();
 
     return cocos2d::RepeatForever::create(action);
 }

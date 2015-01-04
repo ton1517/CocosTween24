@@ -22,7 +22,7 @@ public:
     virtual ~Tween24() = default;
 
     #pragma mark IInterval24 interface
-    cocos2d::ActionInterval *getAction() override;
+    cocos2d::ActionInterval *generateAction() override;
 
     #pragma mark position
     Tween24Ptr x(float x);

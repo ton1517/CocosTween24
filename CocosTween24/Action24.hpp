@@ -19,7 +19,7 @@ public:
     explicit Action24(cocos2d::Node *target, cocos2d::FiniteTimeAction *action);
     virtual ~Action24() = default;
 
-    cocos2d::ActionInterval *getAction() override;
+    cocos2d::ActionInterval *generateAction() override;
 
 private:
     Action24(const Action24&)           = delete;

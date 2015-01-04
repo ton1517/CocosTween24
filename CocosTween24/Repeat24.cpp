@@ -13,9 +13,9 @@ Repeat24::Repeat24(cocos2d::Node *target, unsigned int times, IFiniteTime24Ptr t
 {
 }
 
-cocos2d::ActionInterval *Repeat24::getAction()
+cocos2d::ActionInterval *Repeat24::generateAction()
 {
-    auto action = _tween->getAction();
+    auto action = _tween->generateAction();
 
     return cocos2d::Repeat::create(action, _times);
 }

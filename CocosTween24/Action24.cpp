@@ -11,7 +11,7 @@ Action24Ptr Action24::create(cocos2d::Node *target, cocos2d::FiniteTimeAction *a
 
 Action24::Action24(cocos2d::Node *target, cocos2d::FiniteTimeAction *action) : Player24(this, target), _action(action) {}
 
-cocos2d::ActionInterval *Action24::getAction()
+cocos2d::ActionInterval *Action24::generateAction()
 {
     return cocos2d::TargetedAction::create(getTarget(), _action->clone());
 }

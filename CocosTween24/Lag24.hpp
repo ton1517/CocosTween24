@@ -19,7 +19,7 @@ public:
     Lag24(cocos2d::Node *target, float waitTime);
     virtual ~Lag24() = default;
 
-    cocos2d::ActionInterval *getAction() override;
+    cocos2d::ActionInterval *generateAction() override;
 
     Lag24Ptr addTweens(IFiniteTime24Ptr tween);
     Lag24Ptr addTweens(const std::vector<IFiniteTime24Ptr> &tweens);

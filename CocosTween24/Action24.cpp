@@ -13,6 +13,6 @@ Action24::Action24(cocos2d::Node *target, cocos2d::FiniteTimeAction *action) : P
 
 cocos2d::ActionInterval *Action24::getAction()
 {
-    return cocos2d::TargetedAction::create(getTarget(), _action);
+    return cocos2d::TargetedAction::create(getTarget(), _action->clone());
 }
 } // namespace

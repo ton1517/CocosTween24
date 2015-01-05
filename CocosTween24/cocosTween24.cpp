@@ -127,4 +127,9 @@ Visible24Ptr visible(cocos2d::Node *target, bool visible)
 {
     return std::move(Visible24::create(target, visible));
 }
+
+ToggleVisibility24Ptr toggleVisibility(cocos2d::Node *target)
+{
+    return std::move(ToggleVisibility24::create(target));
+}
 } // namespace

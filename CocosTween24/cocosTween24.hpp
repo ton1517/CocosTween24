@@ -14,6 +14,7 @@
 #include "Func24.hpp"
 #include "Action24.hpp"
 #include "Visible24.hpp"
+#include "ToggleVisibility24.hpp"
 
 namespace cocosTween24
 {
@@ -145,6 +146,8 @@ Action24Ptr action(cocos2d::Node *target, cocos2d::FiniteTimeAction *action);
 #pragma mark visible
 
 Visible24Ptr visible(cocos2d::Node *target, bool visible);
+
+ToggleVisibility24Ptr toggleVisibility(cocos2d::Node *target);
 } // namespace
 
 #endif /* defined(__CocosTween24__cocosTween24__) */

@@ -132,4 +132,11 @@ ToggleVisibility24Ptr toggleVisibility(cocos2d::Node *target)
 {
     return std::move(ToggleVisibility24::create(target));
 }
+
+#pragma mark remove
+
+Remove24Ptr remove(cocos2d::Node *target)
+{
+    return std::move(Remove24::create(target));
+}
 } // namespace

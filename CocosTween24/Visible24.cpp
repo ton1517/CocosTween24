@@ -4,7 +4,7 @@ namespace cocosTween24
 {
 Visible24Ptr Visible24::create(cocos2d::Node *target, bool visible)
 {
-    auto v24 = std::make_shared<Visible24>(visible);
+    auto v24 = std::make_shared<Visible24>(target, visible);
 
     return std::move(v24);
 }

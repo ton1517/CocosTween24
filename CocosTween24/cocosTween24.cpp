@@ -120,4 +120,11 @@ Action24Ptr action(cocos2d::Node *target, cocos2d::FiniteTimeAction *action)
 {
     return std::move(Action24::create(target, action));
 }
+
+#pragma mark visible
+
+Visible24Ptr visible(cocos2d::Node *target, bool visible)
+{
+    return std::move(Visible24::create(target, visible));
+}
 } // namespace

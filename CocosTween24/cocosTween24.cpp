@@ -139,4 +139,11 @@ Remove24Ptr remove(cocos2d::Node *target)
 {
     return std::move(Remove24::create(target));
 }
+
+#pragma mark place
+
+Place24Ptr place(cocos2d::Node *target, const cocos2d::Vec2 &pos)
+{
+    return std::move(Place24::create(target, pos));
+}
 } // namespace

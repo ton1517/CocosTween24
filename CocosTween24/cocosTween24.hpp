@@ -16,6 +16,7 @@
 #include "Visible24.hpp"
 #include "ToggleVisibility24.hpp"
 #include "Remove24.hpp"
+#include "Place24.hpp"
 
 namespace cocosTween24
 {
@@ -153,6 +154,10 @@ ToggleVisibility24Ptr toggleVisibility(cocos2d::Node *target);
 #pragma mark remove
 
 Remove24Ptr remove(cocos2d::Node *target);
+
+#pragma mark place
+
+Place24Ptr place(cocos2d::Node *target, const cocos2d::Vec2 &pos);
 } // namespace
 
 #endif /* defined(__CocosTween24__cocosTween24__) */

@@ -146,4 +146,11 @@ Place24Ptr place(cocos2d::Node *target, const cocos2d::Vec2 &pos)
 {
     return std::move(Place24::create(target, pos));
 }
+
+#pragma mark flip
+
+FlipX24Ptr flipX(cocos2d::Node *target, bool x)
+{
+    return std::move(FlipX24::create(target, x));
+}
 } // namespace

@@ -22,10 +22,10 @@ public:
     cocos2d::ActionInterval *generateAction() override;
 
 private:
-    FlipX24(const FlipX24&)            = delete;
-    FlipX24(FlipX24&&)                 = delete;
-    FlipX24&operator =(const FlipX24&) = delete;
-    FlipX24&operator =(FlipX24&&)      = delete;
+    FlipX24(const FlipX24&)           = delete;
+    FlipX24(FlipX24&&)                = delete;
+    FlipX24&operator=(const FlipX24&) = delete;
+    FlipX24&operator=(FlipX24&&)      = delete;
 
     bool _flipX;
 };

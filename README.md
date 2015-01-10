@@ -2,4 +2,6 @@
 
 This library is inspired by [Tween24](https://github.com/a24/Tween24).
 
-This software is released under the MIT License, see LICENSE.
+## License
+
+This software is released under the MIT License, see [LICENSE](https://github.com/ton1517/CocosTween24/blob/master/LICENSE).

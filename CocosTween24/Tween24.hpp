@@ -31,6 +31,8 @@ public:
     Tween24Ptr $y(float $y);
     Tween24Ptr xy(float x, float y);
     Tween24Ptr $xy(float $x, float $y);
+    Tween24Ptr xy(const cocos2d::Vec2 &pos);
+    Tween24Ptr $xy(const cocos2d::Vec2 &pos);
 
     #pragma mark scale
     Tween24Ptr scaleX(float sx);

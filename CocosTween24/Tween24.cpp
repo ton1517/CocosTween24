@@ -77,6 +77,22 @@ Tween24Ptr Tween24::$xy(float $x, float $y)
     return shared_from_this();
 }
 
+Tween24Ptr Tween24::xy(const cocos2d::Vec2 &pos)
+{
+    auto action = cocos2d::MoveTo::create(_duration, pos);
+    addAction(action);
+
+    return shared_from_this();
+}
+
+Tween24Ptr Tween24::$xy(const cocos2d::Vec2 &pos)
+{
+    auto action = cocos2d::MoveBy::create(_duration, pos);
+    addAction(action);
+
+    return shared_from_this();
+}
+
 #pragma mark scale
 
 Tween24Ptr Tween24::scaleX(float sx)

@@ -1,6 +1,6 @@
 #include "Repeat23.hpp"
 
-namespace cocosTween23
+namespace tween23
 {
 Repeat23Ptr Repeat23::create(cocos2d::Node *target, unsigned int times, IFiniteTime23Ptr tween)
 {

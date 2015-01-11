@@ -6,7 +6,7 @@
 #include "IInterval23.hpp"
 #include "Player23.hpp"
 
-namespace cocosTween23
+namespace tween23
 {
 class Action23;
 typedef std::shared_ptr<Action23> Action23Ptr;

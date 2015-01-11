@@ -1,6 +1,6 @@
 #include "Func23.hpp"
 
-namespace cocosTween23
+namespace tween23
 {
 Func23Ptr Func23::create(const std::function<void()> &func)
 {

@@ -1,6 +1,6 @@
 #include "RepeatForever23.hpp"
 
-namespace cocosTween23
+namespace tween23
 {
 RepeatForever23Ptr RepeatForever23::create(cocos2d::Node *target, IInterval23Ptr tween)
 {

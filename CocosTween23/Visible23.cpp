@@ -1,6 +1,6 @@
 #include "Visible23.hpp"
 
-namespace cocosTween23
+namespace tween23
 {
 Visible23Ptr Visible23::create(cocos2d::Node *target, bool visible)
 {

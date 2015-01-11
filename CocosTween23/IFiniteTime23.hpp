@@ -5,7 +5,7 @@
 
 #include "IAction23.hpp"
 
-namespace cocosTween23
+namespace tween23
 {
 class IFiniteTime23;
 typedef std::shared_ptr<IFiniteTime23> IFiniteTime23Ptr;

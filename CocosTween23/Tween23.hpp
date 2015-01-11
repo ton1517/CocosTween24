@@ -7,7 +7,7 @@
 #include "Player23.hpp"
 #include "Ease23.hpp"
 
-namespace cocosTween23
+namespace tween23
 {
 class Tween23;
 typedef std::shared_ptr<Tween23> Tween23Ptr;

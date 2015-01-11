@@ -6,7 +6,7 @@
 #include "IInterval23.hpp"
 #include "Player23.hpp"
 
-namespace cocosTween23
+namespace tween23
 {
 class Visible23;
 typedef std::shared_ptr<Visible23> Visible23Ptr;

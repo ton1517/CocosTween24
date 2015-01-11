@@ -1,6 +1,6 @@
 #include "cocosTween23.hpp"
 
-namespace cocosTween23
+namespace tween23
 {
 #pragma mark tween
 

@@ -5,7 +5,7 @@
 
 #include "IInstant23.hpp"
 
-namespace cocosTween23
+namespace tween23
 {
 class Func23;
 typedef std::shared_ptr<Func23> Func23Ptr;

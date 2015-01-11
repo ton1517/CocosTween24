@@ -1,6 +1,6 @@
 #include "Player23.hpp"
 
-namespace cocosTween23
+namespace tween23
 {
 Player23::Player23(IAction23 *tweener, cocos2d::Node *target) : _tweener(tweener), _target(target) {}
 

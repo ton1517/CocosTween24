@@ -1,6 +1,6 @@
 #include "Place23.hpp"
 
-namespace cocosTween23
+namespace tween23
 {
 Place23Ptr Place23::create(cocos2d::Node *target, const cocos2d::Vec2 &pos)
 {

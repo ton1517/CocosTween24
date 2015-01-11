@@ -1,6 +1,6 @@
 #include "Remove23.hpp"
 
-namespace cocosTween23
+namespace tween23
 {
 Remove23Ptr Remove23::create(cocos2d::Node *target)
 {

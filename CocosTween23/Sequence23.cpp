@@ -1,6 +1,6 @@
 #include "Sequence23.hpp"
 
-namespace cocosTween23
+namespace tween23
 {
 Sequence23Ptr Sequence23::create(cocos2d::Node *target)
 {

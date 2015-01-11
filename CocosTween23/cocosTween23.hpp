@@ -19,7 +19,7 @@
 #include "Place23.hpp"
 #include "FlipX23.hpp"
 
-namespace cocosTween23
+namespace tween23
 {
 #pragma mark tween
 

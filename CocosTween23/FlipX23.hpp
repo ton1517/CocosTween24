@@ -6,7 +6,7 @@
 #include "IInterval23.hpp"
 #include "Player23.hpp"
 
-namespace cocosTween23
+namespace tween23
 {
 class FlipX23;
 typedef std::shared_ptr<FlipX23> FlipX23Ptr;

@@ -1,6 +1,6 @@
 #include "Spawn23.hpp"
 
-namespace cocosTween23
+namespace tween23
 {
 Spawn23Ptr Spawn23::create(cocos2d::Node *target)
 {

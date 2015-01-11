@@ -1,6 +1,6 @@
 #include "Tween23.hpp"
 
-namespace cocosTween23
+namespace tween23
 {
 #pragma mark----- static -----
 
@@ -13,7 +13,7 @@ Tween23Ptr Tween23::create(cocos2d::Node *target, float duration, Ease23 easing)
 
 #pragma mark----- public -----
 
-Tween23::Tween23(cocos2d::Node *target, float duration, Ease23 easing) : cocosTween23::Player23(this, target), _duration(duration), _easing(easing) {}
+Tween23::Tween23(cocos2d::Node *target, float duration, Ease23 easing) : Player23(this, target), _duration(duration), _easing(easing) {}
 
 cocos2d::ActionInterval *Tween23::generateAction()
 {

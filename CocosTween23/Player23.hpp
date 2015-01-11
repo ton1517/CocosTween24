@@ -3,7 +3,7 @@
 
 #include "IAction23.hpp"
 
-namespace cocosTween23
+namespace tween23
 {
 class Player23
 {

@@ -1,6 +1,6 @@
 #include "FlipX23.hpp"
 
-namespace cocosTween23
+namespace tween23
 {
 FlipX23Ptr FlipX23::create(cocos2d::Node *target, bool x)
 {

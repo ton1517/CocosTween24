@@ -3,7 +3,7 @@
 
 #include <cocos2d.h>
 
-namespace cocosTween23
+namespace tween23
 {
 class IAction23;
 typedef std::shared_ptr<IAction23> IAction23Ptr;

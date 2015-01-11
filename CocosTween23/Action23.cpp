@@ -1,6 +1,6 @@
 #include "Action23.hpp"
 
-namespace cocosTween23
+namespace tween23
 {
 Action23Ptr Action23::create(cocos2d::Node *target, cocos2d::FiniteTimeAction *action)
 {

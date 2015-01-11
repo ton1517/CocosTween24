@@ -1,6 +1,6 @@
 #include "ToggleVisibility23.hpp"
 
-namespace cocosTween23
+namespace tween23
 {
 ToggleVisibility23Ptr ToggleVisibility23::create(cocos2d::Node *target)
 {

@@ -6,7 +6,7 @@
 #include "IInterval23.hpp"
 #include "Player23.hpp"
 
-namespace cocosTween23
+namespace tween23
 {
 class Lag23;
 typedef std::shared_ptr<Lag23> Lag23Ptr;

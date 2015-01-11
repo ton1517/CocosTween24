@@ -1,7 +1,7 @@
 #ifndef __CocosTween23__Ease23__
 #define __CocosTween23__Ease23__
 
-namespace cocosTween23
+namespace tween23
 {
 enum class Ease23
 {

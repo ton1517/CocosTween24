@@ -6,7 +6,7 @@
 #include "IInterval23.hpp"
 #include "Player23.hpp"
 
-namespace cocosTween23
+namespace tween23
 {
 class Remove23;
 typedef std::shared_ptr<Remove23> Remove23Ptr;

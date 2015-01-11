@@ -5,7 +5,7 @@
 
 #include "IInterval23.hpp"
 
-namespace cocosTween23
+namespace tween23
 {
 class Wait23;
 typedef std::shared_ptr<Wait23> Wait23Ptr;

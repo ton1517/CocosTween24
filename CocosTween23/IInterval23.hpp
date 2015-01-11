@@ -5,7 +5,7 @@
 
 #include "IFiniteTime23.hpp"
 
-namespace cocosTween23
+namespace tween23
 {
 class IInterval23;
 typedef std::shared_ptr<IInterval23> IInterval23Ptr;

@@ -1,6 +1,6 @@
 #include "Wait23.hpp"
 
-namespace cocosTween23
+namespace tween23
 {
 Wait23Ptr Wait23::create(float waitTime)
 {

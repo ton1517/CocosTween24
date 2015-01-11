@@ -1,7 +1,7 @@
 #include "Lag23.hpp"
 #include "Wait23.hpp"
 
-namespace cocosTween23
+namespace tween23
 {
 Lag23Ptr Lag23::create(cocos2d::Node *target, float waitTime)
 {

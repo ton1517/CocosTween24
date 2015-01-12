@@ -1,17 +1,17 @@
-#include "Wait23.hpp"
+#include "Wait.hpp"
 
-namespace tween23
+namespace tweencc
 {
-Wait23Ptr Wait23::create(float waitTime)
+WaitPtr Wait::create(float waitTime)
 {
-    auto w23 = std::make_shared<Wait23>(waitTime);
+    auto w = std::make_shared<Wait>(waitTime);
 
-    return std::move(w23);
+    return std::move(w);
 }
 
-Wait23::Wait23(float waitTime) : _waitTime(waitTime) {}
+Wait::Wait(float waitTime) : _waitTime(waitTime) {}
 
-cocos2d::ActionInterval *Wait23::generateAction()
+cocos2d::ActionInterval *Wait::generateAction()
 {
     return cocos2d::DelayTime::create(_waitTime);
 }

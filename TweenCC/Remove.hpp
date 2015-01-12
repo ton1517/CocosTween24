@@ -1,32 +1,32 @@
-#ifndef __CocosTween23__Remove23__
-#define __CocosTween23__Remove23__
+#ifndef __TweenCC__Remove__
+#define __TweenCC__Remove__
 
 #include <cocos2d.h>
 
-#include "IInterval23.hpp"
-#include "Player23.hpp"
+#include "IInterval.hpp"
+#include "Player.hpp"
 
-namespace tween23
+namespace tweencc
 {
-class Remove23;
-typedef std::shared_ptr<Remove23> Remove23Ptr;
+class Remove;
+typedef std::shared_ptr<Remove> RemovePtr;
 
-class Remove23 : public IInterval23, public Player23
+class Remove : public IInterval, public Player
 {
 public:
-    static Remove23Ptr create(cocos2d::Node *target);
+    static RemovePtr create(cocos2d::Node *target);
 
-    Remove23(cocos2d::Node *target);
-    virtual ~Remove23() = default;
+    Remove(cocos2d::Node *target);
+    virtual ~Remove() = default;
 
     cocos2d::ActionInterval *generateAction() override;
 
 private:
-    Remove23(const Remove23&)           = delete;
-    Remove23(Remove23&&)                = delete;
-    Remove23&operator=(const Remove23&) = delete;
-    Remove23&operator=(Remove23&&)      = delete;
+    Remove(const Remove&)           = delete;
+    Remove(Remove&&)                = delete;
+    Remove&operator=(const Remove&) = delete;
+    Remove&operator=(Remove&&)      = delete;
 };
 } // namespace
 
-#endif /* defined(__CocosTween23__Remove23__) */
+#endif /* defined(__TweenCC__Remove__) */

@@ -1,15 +1,15 @@
-#include "FlipX23.hpp"
+#include "FlipX.hpp"
 
-namespace tween23
+namespace tweencc
 {
-FlipX23Ptr FlipX23::create(cocos2d::Node *target, bool x)
+FlipXPtr FlipX::create(cocos2d::Node *target, bool x)
 {
-    return std::move(std::make_shared<FlipX23>(target, x));
+    return std::move(std::make_shared<FlipX>(target, x));
 }
 
-FlipX23::FlipX23(cocos2d::Node *target, bool x) : Player23(this, target), _flipX(x) {}
+FlipX::FlipX(cocos2d::Node *target, bool x) : Player(this, target), _flipX(x) {}
 
-cocos2d::ActionInterval *FlipX23::generateAction()
+cocos2d::ActionInterval *FlipX::generateAction()
 {
     return cocos2d::TargetedAction::create(getTarget(), cocos2d::FlipX::create(_flipX));
 }

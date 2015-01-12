@@ -1,19 +1,19 @@
-#include "Repeat23.hpp"
+#include "Repeat.hpp"
 
-namespace tween23
+namespace tweencc
 {
-Repeat23Ptr Repeat23::create(cocos2d::Node *target, unsigned int times, IFiniteTime23Ptr tween)
+RepeatPtr Repeat::create(cocos2d::Node *target, unsigned int times, IFiniteTimePtr tween)
 {
-    auto r23 = std::make_shared<Repeat23>(target, times, tween);
+    auto r = std::make_shared<Repeat>(target, times, tween);
 
-    return std::move(r23);
+    return std::move(r);
 }
 
-Repeat23::Repeat23(cocos2d::Node *target, unsigned int times, IFiniteTime23Ptr tween) : Player23(this, target), _times(times), _tween(tween)
+Repeat::Repeat(cocos2d::Node *target, unsigned int times, IFiniteTimePtr tween) : Player(this, target), _times(times), _tween(tween)
 {
 }
 
-cocos2d::ActionInterval *Repeat23::generateAction()
+cocos2d::ActionInterval *Repeat::generateAction()
 {
     auto action = _tween->generateAction();
 

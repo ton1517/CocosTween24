@@ -1,17 +1,17 @@
-#include "Action23.hpp"
+#include "Action.hpp"
 
-namespace tween23
+namespace tweencc
 {
-Action23Ptr Action23::create(cocos2d::Node *target, cocos2d::FiniteTimeAction *action)
+ActionPtr Action::create(cocos2d::Node *target, cocos2d::FiniteTimeAction *action)
 {
-    auto a23 = std::make_shared<Action23>(target, action);
+    auto a = std::make_shared<Action>(target, action);
 
-    return std::move(a23);
+    return std::move(a);
 }
 
-Action23::Action23(cocos2d::Node *target, cocos2d::FiniteTimeAction *action) : Player23(this, target), _action(action) {}
+Action::Action(cocos2d::Node *target, cocos2d::FiniteTimeAction *action) : Player(this, target), _action(action) {}
 
-cocos2d::ActionInterval *Action23::generateAction()
+cocos2d::ActionInterval *Action::generateAction()
 {
     return cocos2d::TargetedAction::create(getTarget(), _action->clone());
 }

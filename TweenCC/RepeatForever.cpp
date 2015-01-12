@@ -1,17 +1,17 @@
-#include "RepeatForever23.hpp"
+#include "RepeatForever.hpp"
 
-namespace tween23
+namespace tweencc
 {
-RepeatForever23Ptr RepeatForever23::create(cocos2d::Node *target, IInterval23Ptr tween)
+RepeatForeverPtr RepeatForever::create(cocos2d::Node *target, IIntervalPtr tween)
 {
-    auto r23 = std::make_shared<RepeatForever23>(target, tween);
+    auto r = std::make_shared<RepeatForever>(target, tween);
 
-    return std::move(r23);
+    return std::move(r);
 }
 
-RepeatForever23::RepeatForever23(cocos2d::Node *target, IInterval23Ptr tween) : Player23(this, target), _tween(tween) {}
+RepeatForever::RepeatForever(cocos2d::Node *target, IIntervalPtr tween) : Player(this, target), _tween(tween) {}
 
-cocos2d::ActionInterval *RepeatForever23::generateAction()
+cocos2d::ActionInterval *RepeatForever::generateAction()
 {
     auto action = _tween->generateAction();
 

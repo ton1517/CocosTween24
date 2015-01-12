@@ -1,36 +1,36 @@
-#ifndef __CocosTween23__Repeat23__
-#define __CocosTween23__Repeat23__
+#ifndef __TweenCC__Repeat__
+#define __TweenCC__Repeat__
 
 #include <cocos2d.h>
 
-#include "IInterval23.hpp"
-#include "Player23.hpp"
+#include "IInterval.hpp"
+#include "Player.hpp"
 
-namespace tween23
+namespace tweencc
 {
-class Repeat23;
-typedef std::shared_ptr<Repeat23> Repeat23Ptr;
+class Repeat;
+typedef std::shared_ptr<Repeat> RepeatPtr;
 
-class Repeat23 : public IInterval23, public Player23, public std::enable_shared_from_this<Repeat23>
+class Repeat : public IInterval, public Player, public std::enable_shared_from_this<Repeat>
 {
 public:
-    static Repeat23Ptr create(cocos2d::Node *target, unsigned int times, IFiniteTime23Ptr tween);
+    static RepeatPtr create(cocos2d::Node *target, unsigned int times, IFiniteTimePtr tween);
 
-    Repeat23(cocos2d::Node *target, unsigned int times, IFiniteTime23Ptr tween);
-    virtual ~Repeat23() = default;
+    Repeat(cocos2d::Node *target, unsigned int times, IFiniteTimePtr tween);
+    virtual ~Repeat() = default;
 
     cocos2d::ActionInterval *generateAction() override;
 
     CC_SYNTHESIZE(unsigned int, _times, Times);
 
 private:
-    IFiniteTime23Ptr _tween;
+    IFiniteTimePtr _tween;
 
-    Repeat23(const Repeat23&)           = delete;
-    Repeat23(Repeat23&&)                = delete;
-    Repeat23&operator=(const Repeat23&) = delete;
-    Repeat23&operator=(Repeat23&&)      = delete;
+    Repeat(const Repeat&)           = delete;
+    Repeat(Repeat&&)                = delete;
+    Repeat&operator=(const Repeat&) = delete;
+    Repeat&operator=(Repeat&&)      = delete;
 };
 } // namespace
 
-#endif /* defined(__CocosTween23__Repeat23__) */
+#endif /* defined(__TweenCC__Repeat__) */

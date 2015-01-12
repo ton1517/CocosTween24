@@ -1,34 +1,34 @@
-#ifndef __CocosTween23__Visible23__
-#define __CocosTween23__Visible23__
+#ifndef __TweenCC__Visible__
+#define __TweenCC__Visible__
 
 #include <cocos2d.h>
 
-#include "IInterval23.hpp"
-#include "Player23.hpp"
+#include "IInterval.hpp"
+#include "Player.hpp"
 
-namespace tween23
+namespace tweencc
 {
-class Visible23;
-typedef std::shared_ptr<Visible23> Visible23Ptr;
+class Visible;
+typedef std::shared_ptr<Visible> VisiblePtr;
 
-class Visible23 : public IInterval23, public Player23
+class Visible : public IInterval, public Player
 {
 public:
-    static Visible23Ptr create(cocos2d::Node *target, bool visible);
+    static VisiblePtr create(cocos2d::Node *target, bool visible);
 
-    Visible23(cocos2d::Node *target, bool visible);
-    virtual ~Visible23() = default;
+    Visible(cocos2d::Node *target, bool visible);
+    virtual ~Visible() = default;
 
     cocos2d::ActionInterval *generateAction() override;
 
 private:
-    Visible23(const Visible23&)           = delete;
-    Visible23(Visible23&&)                = delete;
-    Visible23&operator=(const Visible23&) = delete;
-    Visible23&operator=(Visible23&&)      = delete;
+    Visible(const Visible&)           = delete;
+    Visible(Visible&&)                = delete;
+    Visible&operator=(const Visible&) = delete;
+    Visible&operator=(Visible&&)      = delete;
 
     bool _visible;
 };
 } // namespace
 
-#endif /* defined(__CocosTween23__Visible23__) */
+#endif /* defined(__TweenCC__Visible__) */

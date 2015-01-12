@@ -1,31 +1,31 @@
-#ifndef __CocosTween23__Sequence23__
-#define __CocosTween23__Sequence23__
+#ifndef __TweenCC__Sequence__
+#define __TweenCC__Sequence__
 
 #include <cocos2d.h>
 
-#include "IInterval23.hpp"
-#include "Player23.hpp"
+#include "IInterval.hpp"
+#include "Player.hpp"
 
-namespace tween23
+namespace tweencc
 {
-class Sequence23;
-typedef std::shared_ptr<Sequence23> Sequence23Ptr;
+class Sequence;
+typedef std::shared_ptr<Sequence> SequencePtr;
 
-class Sequence23 : public IInterval23, public Player23, public std::enable_shared_from_this<Sequence23>
+class Sequence : public IInterval, public Player, public std::enable_shared_from_this<Sequence>
 {
 public:
-    static Sequence23Ptr create(cocos2d::Node *target);
+    static SequencePtr create(cocos2d::Node *target);
 
-    explicit Sequence23(cocos2d::Node *target);
-    virtual ~Sequence23() = default;
+    explicit Sequence(cocos2d::Node *target);
+    virtual ~Sequence() = default;
 
     cocos2d::ActionInterval *generateAction() override;
 
-    Sequence23Ptr addTweens(IFiniteTime23Ptr tween);
-    Sequence23Ptr addTweens(const std::vector<IFiniteTime23Ptr> &tweens);
+    SequencePtr addTweens(IFiniteTimePtr tween);
+    SequencePtr addTweens(const std::vector<IFiniteTimePtr> &tweens);
 
     template <class... Args>
-    Sequence23Ptr addTweens(IFiniteTime23Ptr tween, Args... args)
+    SequencePtr addTweens(IFiniteTimePtr tween, Args... args)
     {
         addTweens(tween);
         addTweens(args...);
@@ -34,13 +34,13 @@ public:
     }
 
 private:
-    std::vector<IFiniteTime23Ptr> _tweens;
+    std::vector<IFiniteTimePtr> _tweens;
 
-    Sequence23(const Sequence23&)           = delete;
-    Sequence23(Sequence23&&)                = delete;
-    Sequence23&operator=(const Sequence23&) = delete;
-    Sequence23&operator=(Sequence23&&)      = delete;
+    Sequence(const Sequence&)           = delete;
+    Sequence(Sequence&&)                = delete;
+    Sequence&operator=(const Sequence&) = delete;
+    Sequence&operator=(Sequence&&)      = delete;
 };
 } // namespace
 
-#endif /* defined(__CocosTween23__Sequence23__) */
+#endif /* defined(__TweenCC__Sequence__) */

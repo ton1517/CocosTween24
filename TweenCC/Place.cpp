@@ -1,15 +1,15 @@
-#include "Place23.hpp"
+#include "Place.hpp"
 
-namespace tween23
+namespace tweencc
 {
-Place23Ptr Place23::create(cocos2d::Node *target, const cocos2d::Vec2 &pos)
+PlacePtr Place::create(cocos2d::Node *target, const cocos2d::Vec2 &pos)
 {
-    return std::move(std::make_shared<Place23>(target, pos));
+    return std::move(std::make_shared<Place>(target, pos));
 }
 
-Place23::Place23(cocos2d::Node *target, const cocos2d::Vec2 &pos) : Player23(this, target), _pos(pos) {}
+Place::Place(cocos2d::Node *target, const cocos2d::Vec2 &pos) : Player(this, target), _pos(pos) {}
 
-cocos2d::ActionInterval *Place23::generateAction()
+cocos2d::ActionInterval *Place::generateAction()
 {
     return cocos2d::TargetedAction::create(getTarget(), cocos2d::Place::create(_pos));
 }

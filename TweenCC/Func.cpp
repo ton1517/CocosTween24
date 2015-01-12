@@ -1,17 +1,17 @@
-#include "Func23.hpp"
+#include "Func.hpp"
 
-namespace tween23
+namespace tweencc
 {
-Func23Ptr Func23::create(const std::function<void()> &func)
+FuncPtr Func::create(const std::function<void()> &func)
 {
-    auto f23 = std::make_shared<Func23>(func);
+    auto f = std::make_shared<Func>(func);
 
-    return std::move(f23);
+    return std::move(f);
 }
 
-Func23::Func23(const std::function<void()> &func) : _func(func) {}
+Func::Func(const std::function<void()> &func) : _func(func) {}
 
-cocos2d::ActionInstant *Func23::generateAction()
+cocos2d::ActionInstant *Func::generateAction()
 {
     return cocos2d::CallFunc::create(_func);
 }

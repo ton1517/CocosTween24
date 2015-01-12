@@ -1,29 +1,29 @@
-#ifndef __CocosTween23__IInterval23__
-#define __CocosTween23__IInterval23__
+#ifndef __TweenCC__IInterval__
+#define __TweenCC__IInterval__
 
 #include <cocos2d.h>
 
-#include "IFiniteTime23.hpp"
+#include "IFiniteTime.hpp"
 
-namespace tween23
+namespace tweencc
 {
-class IInterval23;
-typedef std::shared_ptr<IInterval23> IInterval23Ptr;
+class IInterval;
+typedef std::shared_ptr<IInterval> IIntervalPtr;
 
-class IInterval23 : public IFiniteTime23
+class IInterval : public IFiniteTime
 {
 public:
-    IInterval23()          = default;
-    virtual ~IInterval23() = default;
+    IInterval()          = default;
+    virtual ~IInterval() = default;
 
     virtual cocos2d::ActionInterval *generateAction() = 0;
 
 private:
-    IInterval23(const IInterval23&)           = delete;
-    IInterval23(IInterval23&&)                = delete;
-    IInterval23&operator=(const IInterval23&) = delete;
-    IInterval23&operator=(IInterval23&&)      = delete;
+    IInterval(const IInterval&)           = delete;
+    IInterval(IInterval&&)                = delete;
+    IInterval&operator=(const IInterval&) = delete;
+    IInterval&operator=(IInterval&&)      = delete;
 };
 } // namespace
 
-#endif /* defined(__CocosTween23__IInterval23__) */
+#endif /* defined(__TweenCC__IInterval__) */

@@ -1,17 +1,17 @@
-#include "Visible23.hpp"
+#include "Visible.hpp"
 
-namespace tween23
+namespace tweencc
 {
-Visible23Ptr Visible23::create(cocos2d::Node *target, bool visible)
+VisiblePtr Visible::create(cocos2d::Node *target, bool visible)
 {
-    auto v23 = std::make_shared<Visible23>(target, visible);
+    auto v = std::make_shared<Visible>(target, visible);
 
-    return std::move(v23);
+    return std::move(v);
 }
 
-Visible23::Visible23(cocos2d::Node *target, bool visible) : Player23(this, target), _visible(visible) {}
+Visible::Visible(cocos2d::Node *target, bool visible) : Player(this, target), _visible(visible) {}
 
-cocos2d::ActionInterval *Visible23::generateAction()
+cocos2d::ActionInterval *Visible::generateAction()
 {
     cocos2d::ActionInstant *action;
     if (_visible) {

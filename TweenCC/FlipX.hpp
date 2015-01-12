@@ -1,34 +1,34 @@
-#ifndef __CocosTween23__FlipX23__
-#define __CocosTween23__FlipX23__
+#ifndef __TweenCC__FlipX__
+#define __TweenCC__FlipX__
 
 #include <cocos2d.h>
 
-#include "IInterval23.hpp"
-#include "Player23.hpp"
+#include "IInterval.hpp"
+#include "Player.hpp"
 
-namespace tween23
+namespace tweencc
 {
-class FlipX23;
-typedef std::shared_ptr<FlipX23> FlipX23Ptr;
+class FlipX;
+typedef std::shared_ptr<FlipX> FlipXPtr;
 
-class FlipX23 : public IInterval23, public Player23
+class FlipX : public IInterval, public Player
 {
 public:
-    static FlipX23Ptr create(cocos2d::Node *target, bool x);
+    static FlipXPtr create(cocos2d::Node *target, bool x);
 
-    FlipX23(cocos2d::Node *target, bool x);
-    virtual ~FlipX23() = default;
+    FlipX(cocos2d::Node *target, bool x);
+    virtual ~FlipX() = default;
 
     cocos2d::ActionInterval *generateAction() override;
 
 private:
-    FlipX23(const FlipX23&)           = delete;
-    FlipX23(FlipX23&&)                = delete;
-    FlipX23&operator=(const FlipX23&) = delete;
-    FlipX23&operator=(FlipX23&&)      = delete;
+    FlipX(const FlipX&)           = delete;
+    FlipX(FlipX&&)                = delete;
+    FlipX&operator=(const FlipX&) = delete;
+    FlipX&operator=(FlipX&&)      = delete;
 
     bool _flipX;
 };
 } // namespace
 
-#endif /* defined(__CocosTween23__FlipX23__) */
+#endif /* defined(__TweenCC__FlipX__) */

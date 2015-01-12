@@ -1,33 +1,33 @@
-#ifndef __CocosTween23__Wait23__
-#define __CocosTween23__Wait23__
+#ifndef __TweenCC__Wait__
+#define __TweenCC__Wait__
 
 #include <cocos2d.h>
 
-#include "IInterval23.hpp"
+#include "IInterval.hpp"
 
-namespace tween23
+namespace tweencc
 {
-class Wait23;
-typedef std::shared_ptr<Wait23> Wait23Ptr;
+class Wait;
+typedef std::shared_ptr<Wait> WaitPtr;
 
-class Wait23 : public IInterval23
+class Wait : public IInterval
 {
 public:
-    static Wait23Ptr create(float waitTime);
+    static WaitPtr create(float waitTime);
 
-    explicit Wait23(float waitTime);
-    virtual ~Wait23() = default;
+    explicit Wait(float waitTime);
+    virtual ~Wait() = default;
 
     cocos2d::ActionInterval *generateAction() override;
 
     CC_SYNTHESIZE_READONLY(float, _waitTime, WaitTime);
 
 private:
-    Wait23(const Wait23&)           = delete;
-    Wait23(Wait23&&)                = delete;
-    Wait23&operator=(const Wait23&) = delete;
-    Wait23&operator=(Wait23&&)      = delete;
+    Wait(const Wait&)           = delete;
+    Wait(Wait&&)                = delete;
+    Wait&operator=(const Wait&) = delete;
+    Wait&operator=(Wait&&)      = delete;
 };
 } // namespace
 
-#endif /* defined(__CocosTween23__Wait23__) */
+#endif /* defined(__TweenCC__Wait__) */

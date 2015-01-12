@@ -1,156 +1,156 @@
-#include "cocosTween23.hpp"
+#include "TweenCC.hpp"
 
-namespace tween23
+namespace tweencc
 {
 #pragma mark tween
 
-Tween23Ptr tween(cocos2d::Node *target, float duration, Ease23 easing)
+TweenPtr tween(cocos2d::Node *target, float duration, Ease easing)
 {
-    auto t23 = Tween23::create(target, duration, easing);
+    auto t = Tween::create(target, duration, easing);
 
-    return std::move(t23);
+    return std::move(t);
 }
 
 #pragma mark sequence
 
-Sequence23Ptr sequence(cocos2d::Node *target, const std::vector<IFiniteTime23Ptr> &tweens)
+SequencePtr sequence(cocos2d::Node *target, const std::vector<IFiniteTimePtr> &tweens)
 {
-    auto s23 = Sequence23::create(target);
-    s23->addTweens(tweens);
+    auto s = Sequence::create(target);
+    s->addTweens(tweens);
 
-    return std::move(s23);
+    return std::move(s);
 }
 
-IInterval23Ptr sequence(const std::vector<IFiniteTime23Ptr> &tweens)
+IIntervalPtr sequence(const std::vector<IFiniteTimePtr> &tweens)
 {
     return std::move(sequence(nullptr, tweens));
 }
 
 #pragma mark spawn
 
-Spawn23Ptr spawn(cocos2d::Node *target, const std::vector<IFiniteTime23Ptr> &tweens)
+SpawnPtr spawn(cocos2d::Node *target, const std::vector<IFiniteTimePtr> &tweens)
 {
-    auto s23 = Spawn23::create(target);
-    s23->addTweens(tweens);
+    auto s = Spawn::create(target);
+    s->addTweens(tweens);
 
-    return std::move(s23);
+    return std::move(s);
 }
 
-IInterval23Ptr spawn(const std::vector<IFiniteTime23Ptr> &tweens)
+IIntervalPtr spawn(const std::vector<IFiniteTimePtr> &tweens)
 {
     return std::move(spawn(nullptr, tweens));
 }
 
 #pragma mark repeat
 
-Repeat23Ptr repeat(cocos2d::Node *target, unsigned int times, IFiniteTime23Ptr tween)
+RepeatPtr repeat(cocos2d::Node *target, unsigned int times, IFiniteTimePtr tween)
 {
-    auto r23 = Repeat23::create(target, times, tween);
+    auto r = Repeat::create(target, times, tween);
 
-    return std::move(r23);
+    return std::move(r);
 }
 
-IInterval23Ptr repeat(unsigned int times, IFiniteTime23Ptr tween)
+IIntervalPtr repeat(unsigned int times, IFiniteTimePtr tween)
 {
     return std::move(repeat(nullptr, times, tween));
 }
 
-Repeat23Ptr repeat(cocos2d::Node *target, unsigned int times, const std::vector<IFiniteTime23Ptr> &tweens)
+RepeatPtr repeat(cocos2d::Node *target, unsigned int times, const std::vector<IFiniteTimePtr> &tweens)
 {
-    auto s23 = sequence(target, tweens);
-    auto r23 = Repeat23::create(target, times, std::move(s23));
+    auto s = sequence(target, tweens);
+    auto r = Repeat::create(target, times, std::move(s));
 
-    return std::move(r23);
+    return std::move(r);
 }
 
-IInterval23Ptr repeat(unsigned int times, const std::vector<IFiniteTime23Ptr> &tweens)
+IIntervalPtr repeat(unsigned int times, const std::vector<IFiniteTimePtr> &tweens)
 {
     return std::move(repeat(nullptr, times, tweens));
 }
 
 #pragma mark repeat forever
 
-RepeatForever23Ptr repeatForever(cocos2d::Node *target, IInterval23Ptr tween)
+RepeatForeverPtr repeatForever(cocos2d::Node *target, IIntervalPtr tween)
 {
-    auto r23 = RepeatForever23::create(target, tween);
+    auto r = RepeatForever::create(target, tween);
 
-    return std::move(r23);
+    return std::move(r);
 }
 
-RepeatForever23Ptr repeatForever(cocos2d::Node *target, const std::vector<IFiniteTime23Ptr> &tweens)
+RepeatForeverPtr repeatForever(cocos2d::Node *target, const std::vector<IFiniteTimePtr> &tweens)
 {
-    auto s23 = sequence(target, tweens);
-    auto r23 = RepeatForever23::create(target, std::move(s23));
+    auto s = sequence(target, tweens);
+    auto r = RepeatForever::create(target, std::move(s));
 
-    return std::move(r23);
+    return std::move(r);
 }
 
 #pragma mark lag
 
-Lag23Ptr lag(cocos2d::Node *target, float waitTime, const std::vector<IFiniteTime23Ptr> &tweens)
+LagPtr lag(cocos2d::Node *target, float waitTime, const std::vector<IFiniteTimePtr> &tweens)
 {
-    auto l23 = Lag23::create(target, waitTime);
-    l23->addTweens(tweens);
+    auto l = Lag::create(target, waitTime);
+    l->addTweens(tweens);
 
-    return std::move(l23);
+    return std::move(l);
 }
 
-IInterval23Ptr lag(float waitTime, const std::vector<IFiniteTime23Ptr> &tweens)
+IIntervalPtr lag(float waitTime, const std::vector<IFiniteTimePtr> &tweens)
 {
     return std::move(lag(nullptr, waitTime, tweens));
 }
 
 #pragma mark wait
 
-Wait23Ptr wait(float waitTime)
+WaitPtr wait(float waitTime)
 {
-    return std::move(Wait23::create(waitTime));
+    return std::move(Wait::create(waitTime));
 }
 
 #pragma mark func
 
-Func23Ptr func(const std::function<void()> &func)
+FuncPtr func(const std::function<void()> &func)
 {
-    return std::move(Func23::create(func));
+    return std::move(Func::create(func));
 }
 
 #pragma mark action
 
-Action23Ptr action(cocos2d::Node *target, cocos2d::FiniteTimeAction *action)
+ActionPtr action(cocos2d::Node *target, cocos2d::FiniteTimeAction *action)
 {
-    return std::move(Action23::create(target, action));
+    return std::move(Action::create(target, action));
 }
 
 #pragma mark visible
 
-Visible23Ptr visible(cocos2d::Node *target, bool visible)
+VisiblePtr visible(cocos2d::Node *target, bool visible)
 {
-    return std::move(Visible23::create(target, visible));
+    return std::move(Visible::create(target, visible));
 }
 
-ToggleVisibility23Ptr toggleVisibility(cocos2d::Node *target)
+ToggleVisibilityPtr toggleVisibility(cocos2d::Node *target)
 {
-    return std::move(ToggleVisibility23::create(target));
+    return std::move(ToggleVisibility::create(target));
 }
 
 #pragma mark remove
 
-Remove23Ptr remove(cocos2d::Node *target)
+RemovePtr remove(cocos2d::Node *target)
 {
-    return std::move(Remove23::create(target));
+    return std::move(Remove::create(target));
 }
 
 #pragma mark place
 
-Place23Ptr place(cocos2d::Node *target, const cocos2d::Vec2 &pos)
+PlacePtr place(cocos2d::Node *target, const cocos2d::Vec2 &pos)
 {
-    return std::move(Place23::create(target, pos));
+    return std::move(Place::create(target, pos));
 }
 
 #pragma mark flip
 
-FlipX23Ptr flipX(cocos2d::Node *target, bool x)
+FlipXPtr flipX(cocos2d::Node *target, bool x)
 {
-    return std::move(FlipX23::create(target, x));
+    return std::move(FlipX::create(target, x));
 }
 } // namespace

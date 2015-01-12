@@ -1,32 +1,32 @@
-#ifndef __CocosTween23__ToggleVisibility23__
-#define __CocosTween23__ToggleVisibility23__
+#ifndef __TweenCC__ToggleVisibility__
+#define __TweenCC__ToggleVisibility__
 
 #include <cocos2d.h>
 
-#include "IInterval23.hpp"
-#include "Player23.hpp"
+#include "IInterval.hpp"
+#include "Player.hpp"
 
-namespace tween23
+namespace tweencc
 {
-class ToggleVisibility23;
-typedef std::shared_ptr<ToggleVisibility23> ToggleVisibility23Ptr;
+class ToggleVisibility;
+typedef std::shared_ptr<ToggleVisibility> ToggleVisibilityPtr;
 
-class ToggleVisibility23 : public IInterval23, public Player23
+class ToggleVisibility : public IInterval, public Player
 {
 public:
-    static ToggleVisibility23Ptr create(cocos2d::Node *target);
+    static ToggleVisibilityPtr create(cocos2d::Node *target);
 
-    ToggleVisibility23(cocos2d::Node *target);
-    virtual ~ToggleVisibility23() = default;
+    ToggleVisibility(cocos2d::Node *target);
+    virtual ~ToggleVisibility() = default;
 
     cocos2d::ActionInterval *generateAction() override;
 
 private:
-    ToggleVisibility23(const ToggleVisibility23&)           = delete;
-    ToggleVisibility23(ToggleVisibility23&&)                = delete;
-    ToggleVisibility23&operator=(const ToggleVisibility23&) = delete;
-    ToggleVisibility23&operator=(ToggleVisibility23&&)      = delete;
+    ToggleVisibility(const ToggleVisibility&)           = delete;
+    ToggleVisibility(ToggleVisibility&&)                = delete;
+    ToggleVisibility&operator=(const ToggleVisibility&) = delete;
+    ToggleVisibility&operator=(ToggleVisibility&&)      = delete;
 };
 } // namespace
 
-#endif /* defined(__CocosTween23__ToggleVisibility23__) */
+#endif /* defined(__TweenCC__ToggleVisibility__) */

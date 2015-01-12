@@ -1,27 +1,27 @@
-#ifndef __CocosTween23__IAction23__
-#define __CocosTween23__IAction23__
+#ifndef __TweenCC__IAction__
+#define __TweenCC__IAction__
 
 #include <cocos2d.h>
 
-namespace tween23
+namespace tweencc
 {
-class IAction23;
-typedef std::shared_ptr<IAction23> IAction23Ptr;
+class IAction;
+typedef std::shared_ptr<IAction> IActionPtr;
 
-class IAction23
+class IAction
 {
 public:
-    IAction23()          = default;
-    virtual ~IAction23() = default;
+    IAction()          = default;
+    virtual ~IAction() = default;
 
     virtual cocos2d::Action *generateAction() = 0;
 
 private:
-    IAction23(const IAction23&)           = delete;
-    IAction23(IAction23&&)                = delete;
-    IAction23&operator=(const IAction23&) = delete;
-    IAction23&operator=(IAction23&&)      = delete;
+    IAction(const IAction&)           = delete;
+    IAction(IAction&&)                = delete;
+    IAction&operator=(const IAction&) = delete;
+    IAction&operator=(IAction&&)      = delete;
 };
 } // namespace
 
-#endif /* defined(__CocosTween23__IAction23__) */
+#endif /* defined(__TweenCC__IAction__) */

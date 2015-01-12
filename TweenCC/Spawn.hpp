@@ -1,31 +1,31 @@
-#ifndef __CocosTween23__Spawn23__
-#define __CocosTween23__Spawn23__
+#ifndef __TweenCC__Spawn__
+#define __TweenCC__Spawn__
 
 #include <cocos2d.h>
 
-#include "IInterval23.hpp"
-#include "Player23.hpp"
+#include "IInterval.hpp"
+#include "Player.hpp"
 
-namespace tween23
+namespace tweencc
 {
-class Spawn23;
-typedef std::shared_ptr<Spawn23> Spawn23Ptr;
+class Spawn;
+typedef std::shared_ptr<Spawn> SpawnPtr;
 
-class Spawn23 : public IInterval23, public Player23, public std::enable_shared_from_this<Spawn23>
+class Spawn : public IInterval, public Player, public std::enable_shared_from_this<Spawn>
 {
 public:
-    static Spawn23Ptr create(cocos2d::Node *target);
+    static SpawnPtr create(cocos2d::Node *target);
 
-    explicit Spawn23(cocos2d::Node *target);
-    virtual ~Spawn23() = default;
+    explicit Spawn(cocos2d::Node *target);
+    virtual ~Spawn() = default;
 
     cocos2d::ActionInterval *generateAction() override;
 
-    Spawn23Ptr addTweens(IFiniteTime23Ptr tween);
-    Spawn23Ptr addTweens(const std::vector<IFiniteTime23Ptr> &tweens);
+    SpawnPtr addTweens(IFiniteTimePtr tween);
+    SpawnPtr addTweens(const std::vector<IFiniteTimePtr> &tweens);
 
     template <class... Args>
-    Spawn23Ptr addTweens(IFiniteTime23Ptr tween, Args... args)
+    SpawnPtr addTweens(IFiniteTimePtr tween, Args... args)
     {
         addTweens(tween);
         addTweens(args...);
@@ -34,13 +34,13 @@ public:
     }
 
 private:
-    std::vector<IFiniteTime23Ptr> _tweens;
+    std::vector<IFiniteTimePtr> _tweens;
 
-    Spawn23(const Spawn23&)           = delete;
-    Spawn23(Spawn23&&)                = delete;
-    Spawn23&operator=(const Spawn23&) = delete;
-    Spawn23&operator=(Spawn23&&)      = delete;
+    Spawn(const Spawn&)           = delete;
+    Spawn(Spawn&&)                = delete;
+    Spawn&operator=(const Spawn&) = delete;
+    Spawn&operator=(Spawn&&)      = delete;
 };
 } // namespace
 
-#endif /* defined(__CocosTween23__Spawn23__) */
+#endif /* defined(__TweenCC__Spawn__) */

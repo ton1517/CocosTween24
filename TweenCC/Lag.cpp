@@ -1,18 +1,18 @@
-#include "Lag23.hpp"
-#include "Wait23.hpp"
+#include "Lag.hpp"
+#include "Wait.hpp"
 
-namespace tween23
+namespace tweencc
 {
-Lag23Ptr Lag23::create(cocos2d::Node *target, float waitTime)
+LagPtr Lag::create(cocos2d::Node *target, float waitTime)
 {
-    auto s23 = std::make_shared<Lag23>(target, waitTime);
+    auto s = std::make_shared<Lag>(target, waitTime);
 
-    return std::move(s23);
+    return std::move(s);
 }
 
-Lag23::Lag23(cocos2d::Node *target, float waitTime) : Player23(this, target), _waitTime(waitTime) {}
+Lag::Lag(cocos2d::Node *target, float waitTime) : Player(this, target), _waitTime(waitTime) {}
 
-cocos2d::ActionInterval *Lag23::generateAction()
+cocos2d::ActionInterval *Lag::generateAction()
 {
     cocos2d::Vector<cocos2d::FiniteTimeAction *> actions(_tweens.size());
     for (auto tween : _tweens) {
@@ -22,17 +22,17 @@ cocos2d::ActionInterval *Lag23::generateAction()
     return cocos2d::Sequence::create(actions);
 }
 
-Lag23Ptr Lag23::addTweens(IFiniteTime23Ptr tween)
+LagPtr Lag::addTweens(IFiniteTimePtr tween)
 {
     if (_tweens.size() > 0) {
-        _tweens.push_back(Wait23::create(_waitTime));
+        _tweens.push_back(Wait::create(_waitTime));
     }
     _tweens.push_back(tween);
 
     return shared_from_this();
 }
 
-Lag23Ptr Lag23::addTweens(const std::vector<IFiniteTime23Ptr> &tweens)
+LagPtr Lag::addTweens(const std::vector<IFiniteTimePtr> &tweens)
 {
     for (auto &tween : tweens) {
         addTweens(tween);

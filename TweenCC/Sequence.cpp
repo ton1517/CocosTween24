@@ -1,17 +1,17 @@
-#include "Sequence23.hpp"
+#include "Sequence.hpp"
 
-namespace tween23
+namespace tweencc
 {
-Sequence23Ptr Sequence23::create(cocos2d::Node *target)
+SequencePtr Sequence::create(cocos2d::Node *target)
 {
-    auto s23 = std::make_shared<Sequence23>(target);
+    auto s = std::make_shared<Sequence>(target);
 
-    return std::move(s23);
+    return std::move(s);
 }
 
-Sequence23::Sequence23(cocos2d::Node *target) : Player23(this, target) {}
+Sequence::Sequence(cocos2d::Node *target) : Player(this, target) {}
 
-cocos2d::ActionInterval *Sequence23::generateAction()
+cocos2d::ActionInterval *Sequence::generateAction()
 {
     cocos2d::Vector<cocos2d::FiniteTimeAction *> actions(_tweens.size());
     for (auto tween : _tweens) {
@@ -21,14 +21,14 @@ cocos2d::ActionInterval *Sequence23::generateAction()
     return cocos2d::Sequence::create(actions);
 }
 
-Sequence23Ptr Sequence23::addTweens(IFiniteTime23Ptr tween)
+SequencePtr Sequence::addTweens(IFiniteTimePtr tween)
 {
     _tweens.push_back(tween);
 
     return shared_from_this();
 }
 
-Sequence23Ptr Sequence23::addTweens(const std::vector<IFiniteTime23Ptr> &tweens)
+SequencePtr Sequence::addTweens(const std::vector<IFiniteTimePtr> &tweens)
 {
     for (auto &tween : tweens) {
         addTweens(tween);

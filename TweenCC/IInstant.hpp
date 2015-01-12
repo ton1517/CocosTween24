@@ -1,29 +1,29 @@
-#ifndef __CocosTween23__IInstant23__
-#define __CocosTween23__IInstant23__
+#ifndef __TweenCC__IInstant__
+#define __TweenCC__IInstant__
 
 #include <cocos2d.h>
 
-#include "IFiniteTime23.hpp"
+#include "IFiniteTime.hpp"
 
-namespace tween23
+namespace tweencc
 {
-class IInstant23;
-typedef std::shared_ptr<IInstant23> IInstant23Ptr;
+class IInstant;
+typedef std::shared_ptr<IInstant> IInstantPtr;
 
-class IInstant23 : public IFiniteTime23
+class IInstant : public IFiniteTime
 {
 public:
-    IInstant23()          = default;
-    virtual ~IInstant23() = default;
+    IInstant()          = default;
+    virtual ~IInstant() = default;
 
     virtual cocos2d::ActionInstant *generateAction() = 0;
 
 private:
-    IInstant23(const IInstant23&)           = delete;
-    IInstant23(IInstant23&&)                = delete;
-    IInstant23&operator=(const IInstant23&) = delete;
-    IInstant23&operator=(IInstant23&&)      = delete;
+    IInstant(const IInstant&)           = delete;
+    IInstant(IInstant&&)                = delete;
+    IInstant&operator=(const IInstant&) = delete;
+    IInstant&operator=(IInstant&&)      = delete;
 };
 } // namespace
 
-#endif /* defined(__CocosTween23__IInstant23__) */
+#endif /* defined(__TweenCC__IInstant__) */

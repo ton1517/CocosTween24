@@ -1,33 +1,33 @@
-#ifndef __CocosTween23__Func23__
-#define __CocosTween23__Func23__
+#ifndef __TweenCC__Func__
+#define __TweenCC__Func__
 
 #include <cocos2d.h>
 
-#include "IInstant23.hpp"
+#include "IInstant.hpp"
 
-namespace tween23
+namespace tweencc
 {
-class Func23;
-typedef std::shared_ptr<Func23> Func23Ptr;
+class Func;
+typedef std::shared_ptr<Func> FuncPtr;
 
-class Func23 : public IInstant23
+class Func : public IInstant
 {
 public:
-    static Func23Ptr create(const std::function<void()> &func);
+    static FuncPtr create(const std::function<void()> &func);
 
-    explicit Func23(const std::function<void()> &func);
-    virtual ~Func23() = default;
+    explicit Func(const std::function<void()> &func);
+    virtual ~Func() = default;
 
     cocos2d::ActionInstant *generateAction() override;
 
 private:
-    Func23(const Func23&)           = delete;
-    Func23(Func23&&)                = delete;
-    Func23&operator=(const Func23&) = delete;
-    Func23&operator=(Func23&&)      = delete;
+    Func(const Func&)           = delete;
+    Func(Func&&)                = delete;
+    Func&operator=(const Func&) = delete;
+    Func&operator=(Func&&)      = delete;
 
     const std::function<void()> &_func;
 };
 } // namespace
 
-#endif /* defined(__CocosTween23__Func23__) */
+#endif /* defined(__TweenCC__Func__) */

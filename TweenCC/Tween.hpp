@@ -90,6 +90,9 @@ public:
     #pragma mark delay
     TweenPtr delay(float delayTime);
 
+    #pragma mark update
+    TweenPtr onUpdate(const std::function<void(float)> &func);
+
     #pragma mark property
     CC_SYNTHESIZE_READONLY(float, _duration, Duration);
     CC_SYNTHESIZE_READONLY(Ease, _easing, Easing);

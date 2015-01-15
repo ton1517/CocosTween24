@@ -1,5 +1,7 @@
 #include "Tween.hpp"
 
+#include "UpdateFuncAction.hpp"
+
 namespace tweencc
 {
 #pragma mark----- static -----
@@ -418,6 +420,16 @@ TweenPtr Tween::$tint(const cocos2d::Color3B &color)
 TweenPtr Tween::delay(float delayTime)
 {
     _delayTime = delayTime;
+
+    return shared_from_this();
+}
+
+#pragma mark update
+
+TweenPtr Tween::onUpdate(const std::function<void(float)> &func)
+{
+    auto action = UpdateFuncAction::create(_duration, func);
+    addAction(action);
 
     return shared_from_this();
 }

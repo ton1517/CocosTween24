@@ -153,4 +153,9 @@ FlipXPtr flipX(cocos2d::Node *target, bool x)
 {
     return std::move(FlipX::create(target, x));
 }
+
+FlipYPtr flipY(cocos2d::Node *target, bool y)
+{
+    return std::move(FlipY::create(target, y));
+}
 } // namespace

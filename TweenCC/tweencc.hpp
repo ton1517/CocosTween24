@@ -18,6 +18,7 @@
 #include "Remove.hpp"
 #include "Place.hpp"
 #include "FlipX.hpp"
+#include "FlipY.hpp"
 
 namespace tweencc
 {
@@ -163,6 +164,7 @@ PlacePtr place(cocos2d::Node *target, const cocos2d::Vec2 &pos);
 #pragma mark flip
 
 FlipXPtr flipX(cocos2d::Node *target, bool x);
+FlipYPtr flipY(cocos2d::Node *target, bool y);
 } // namespace
 
 #endif /* defined(__TweenCC__TweenCC__) */

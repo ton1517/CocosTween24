@@ -146,11 +146,6 @@ PlacePtr place(cocos2d::Node *target, const cocos2d::Vec2 &pos)
 
 #pragma mark flip
 
-FlipXPtr flipX(cocos2d::Node *target, bool x)
-{
-    return std::move(FlipX::create(target, x));
-}
-
 FlipYPtr flipY(cocos2d::Node *target, bool y)
 {
     return std::move(FlipY::create(target, y));

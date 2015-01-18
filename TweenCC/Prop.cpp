@@ -38,6 +38,14 @@ PropPtr Prop::visible(bool visible)
     return shared_from_this();
 }
 
+PropPtr Prop::toggleVisibility()
+{
+    auto action = cocos2d::ToggleVisibility::create();
+    addAction(action);
+
+    return shared_from_this();
+}
+
 #pragma mark----- private -----
 
 void Prop::addAction(cocos2d::FiniteTimeAction *action)

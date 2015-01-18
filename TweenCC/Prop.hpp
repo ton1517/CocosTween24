@@ -25,6 +25,7 @@ public:
 
     #pragma mark visible
     PropPtr visible(bool visible);
+    PropPtr toggleVisibility();
 
 private:
     cocos2d::Vector<cocos2d::FiniteTimeAction *> _actions;

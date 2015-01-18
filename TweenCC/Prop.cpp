@@ -46,6 +46,16 @@ PropPtr Prop::toggleVisibility()
     return shared_from_this();
 }
 
+#pragma mark flip
+
+PropPtr Prop::flipX(bool x)
+{
+    auto action = cocos2d::FlipX::create(x);
+    addAction(action);
+
+    return shared_from_this();
+}
+
 #pragma mark----- private -----
 
 void Prop::addAction(cocos2d::FiniteTimeAction *action)

@@ -27,6 +27,9 @@ public:
     PropPtr visible(bool visible);
     PropPtr toggleVisibility();
 
+    #pragma mark flip
+    PropPtr flipX(bool x);
+
 private:
     cocos2d::Vector<cocos2d::FiniteTimeAction *> _actions;
     void addAction(cocos2d::FiniteTimeAction *action);

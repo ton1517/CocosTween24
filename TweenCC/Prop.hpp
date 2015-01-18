@@ -23,6 +23,9 @@ public:
     #pragma mark IInterval interface
     cocos2d::ActionInterval *generateAction() override;
 
+    #pragma mark visible
+    PropPtr visible(bool visible);
+
 private:
     cocos2d::Vector<cocos2d::FiniteTimeAction *> _actions;
     void addAction(cocos2d::FiniteTimeAction *action);

@@ -132,11 +132,6 @@ ActionPtr action(cocos2d::Node *target, cocos2d::FiniteTimeAction *action)
 
 #pragma mark visible
 
-VisiblePtr visible(cocos2d::Node *target, bool visible)
-{
-    return std::move(Visible::create(target, visible));
-}
-
 ToggleVisibilityPtr toggleVisibility(cocos2d::Node *target)
 {
     return std::move(ToggleVisibility::create(target));

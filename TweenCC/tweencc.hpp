@@ -14,7 +14,6 @@
 #include "Wait.hpp"
 #include "Func.hpp"
 #include "Action.hpp"
-#include "Visible.hpp"
 #include "ToggleVisibility.hpp"
 #include "Remove.hpp"
 #include "Place.hpp"
@@ -153,8 +152,6 @@ FuncPtr func(const std::function<void()> &func);
 ActionPtr action(cocos2d::Node *target, cocos2d::FiniteTimeAction *action);
 
 #pragma mark visible
-
-VisiblePtr visible(cocos2d::Node *target, bool visible);
 
 ToggleVisibilityPtr toggleVisibility(cocos2d::Node *target);
 

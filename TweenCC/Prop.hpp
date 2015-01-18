@@ -29,6 +29,7 @@ public:
 
     #pragma mark flip
     PropPtr flipX(bool x);
+    PropPtr flipY(bool y);
 
 private:
     cocos2d::Vector<cocos2d::FiniteTimeAction *> _actions;

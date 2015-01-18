@@ -56,6 +56,14 @@ PropPtr Prop::flipX(bool x)
     return shared_from_this();
 }
 
+PropPtr Prop::flipY(bool y)
+{
+    auto action = cocos2d::FlipY::create(y);
+    addAction(action);
+
+    return shared_from_this();
+}
+
 #pragma mark----- private -----
 
 void Prop::addAction(cocos2d::FiniteTimeAction *action)

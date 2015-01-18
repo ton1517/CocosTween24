@@ -4,6 +4,7 @@
 #include <cocos2d.h>
 
 #include "Tween.hpp"
+#include "Prop.hpp"
 #include "Ease.hpp"
 #include "Sequence.hpp"
 #include "Spawn.hpp"
@@ -25,6 +26,10 @@ namespace tweencc
 #pragma mark tween
 
 TweenPtr tween(cocos2d::Node *target, float duration, Ease easing=Ease::Linear);
+
+#pragma mark prop
+
+PropPtr prop(cocos2d::Node *target);
 
 #pragma mark sequence
 

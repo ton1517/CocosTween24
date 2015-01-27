@@ -13,7 +13,7 @@ RepeatForever::RepeatForever(cocos2d::Node *target, IIntervalPtr tween) : Player
 
 cocos2d::ActionInterval *RepeatForever::generateAction()
 {
-    auto action = _tween->generateAction();
+    auto action = cocos2d::TargetedAction::create(getTarget(), _tween->generateAction());
 
     return cocos2d::RepeatForever::create(action);
 }

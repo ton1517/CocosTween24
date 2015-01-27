@@ -27,6 +27,7 @@ TweenPtr tween(float duration, Ease easing=Ease::Linear);
 #pragma mark prop
 
 PropPtr prop(cocos2d::Node *target);
+PropPtr prop();
 
 #pragma mark sequence
 

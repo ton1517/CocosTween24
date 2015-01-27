@@ -27,6 +27,13 @@ PropPtr prop(cocos2d::Node *target)
     return std::move(p);
 }
 
+PropPtr prop()
+{
+    auto p = Prop::create(nullptr);
+
+    return std::move(p);
+}
+
 #pragma mark sequence
 
 SequencePtr sequence(cocos2d::Node *target, const std::vector<IFiniteTimePtr> &tweens)

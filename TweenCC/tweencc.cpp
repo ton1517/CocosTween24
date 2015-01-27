@@ -155,4 +155,9 @@ PlacePtr place(cocos2d::Node *target, const cocos2d::Vec2 &pos)
 {
     return std::move(Place::create(target, pos));
 }
+
+IFiniteTimePtr place(const cocos2d::Vec2 &pos)
+{
+    return std::move(Place::create(nullptr, pos));
+}
 } // namespace

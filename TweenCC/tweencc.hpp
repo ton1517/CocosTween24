@@ -157,6 +157,7 @@ RemovePtr remove(cocos2d::Node *target);
 #pragma mark place
 
 PlacePtr place(cocos2d::Node *target, const cocos2d::Vec2 &pos);
+IFiniteTimePtr place(const cocos2d::Vec2 &pos);
 } // namespace
 
 #endif /* defined(__TweenCC__TweenCC__) */

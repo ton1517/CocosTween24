@@ -25,22 +25,22 @@ public:
     cocos2d::ActionInterval *generateAction() override;
 
     #pragma mark position
-    TweenPtr x(float x);
-    TweenPtr $x(float $x);
-    TweenPtr y(float y);
-    TweenPtr $y(float $y);
+    //    TweenPtr x(float x);
+    //    TweenPtr $x(float $x);
+    //    TweenPtr y(float y);
+    //    TweenPtr $y(float $y);
     TweenPtr xy(float x, float y);
     TweenPtr $xy(float $x, float $y);
     TweenPtr xy(const cocos2d::Vec2 &pos);
     TweenPtr $xy(const cocos2d::Vec2 &pos);
 
     #pragma mark scale
-    TweenPtr scaleX(float sx);
-    TweenPtr $scaleX(float $sx);
-    TweenPtr scaleY(float sy);
-    TweenPtr $scaleY(float $sy);
-    TweenPtr scaleZ(float sz);
-    TweenPtr $scaleZ(float $sz);
+    //    TweenPtr scaleX(float sx);
+    //    TweenPtr $scaleX(float $sx);
+    //    TweenPtr scaleY(float sy);
+    //    TweenPtr $scaleY(float $sy);
+    //    TweenPtr scaleZ(float sz);
+    //    TweenPtr $scaleZ(float $sz);
     TweenPtr scale(float s);
     TweenPtr $scale(float $s);
     TweenPtr scale(float sx, float sy);
@@ -49,10 +49,10 @@ public:
     TweenPtr $scale(float $sx, float $sy, float $sz);
 
     #pragma mark rorate
-    TweenPtr rotateX(float angleX);
-    TweenPtr $rotateX(float $angleX);
-    TweenPtr rotateY(float angleY);
-    TweenPtr $rotateY(float $angleX);
+    //    TweenPtr rotateX(float angleX);
+    //    TweenPtr $rotateX(float $angleX);
+    //    TweenPtr rotateY(float angleY);
+    //    TweenPtr $rotateY(float $angleX);
     TweenPtr rotate(float angle);
     TweenPtr $rotate(float angle);
     TweenPtr rotate(float angleX, float angleY);

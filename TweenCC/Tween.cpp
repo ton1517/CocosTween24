@@ -29,39 +29,39 @@ cocos2d::ActionInterval *Tween::generateAction()
 
 #pragma mark position
 
-TweenPtr Tween::x(float x)
-{
-    auto pos    = getTarget()->getPosition();
-    auto action = cocos2d::MoveTo::create(_duration, cocos2d::Point(x, pos.y));
-    addAction(action);
-
-    return shared_from_this();
-}
-
-TweenPtr Tween::$x(float $x)
-{
-    auto action = cocos2d::MoveBy::create(_duration, cocos2d::Point($x, 0));
-    addAction(action);
-
-    return shared_from_this();
-}
-
-TweenPtr Tween::y(float y)
-{
-    auto pos    = getTarget()->getPosition();
-    auto action = cocos2d::MoveTo::create(_duration, cocos2d::Point(pos.x, y));
-    addAction(action);
-
-    return shared_from_this();
-}
-
-TweenPtr Tween::$y(float $y)
-{
-    auto action = cocos2d::MoveBy::create(_duration, cocos2d::Point(0, $y));
-    addAction(action);
-
-    return shared_from_this();
-}
+// TweenPtr Tween::x(float x)
+// {
+//    auto pos    = getTarget()->getPosition();
+//    auto action = cocos2d::MoveTo::create(_duration, cocos2d::Point(x, pos.y));
+//    addAction(action);
+//
+//    return shared_from_this();
+// }
+//
+// TweenPtr Tween::$x(float $x)
+// {
+//    auto action = cocos2d::MoveBy::create(_duration, cocos2d::Point($x, 0));
+//    addAction(action);
+//
+//    return shared_from_this();
+// }
+//
+// TweenPtr Tween::y(float y)
+// {
+//    auto pos    = getTarget()->getPosition();
+//    auto action = cocos2d::MoveTo::create(_duration, cocos2d::Point(pos.x, y));
+//    addAction(action);
+//
+//    return shared_from_this();
+// }
+//
+// TweenPtr Tween::$y(float $y)
+// {
+//    auto action = cocos2d::MoveBy::create(_duration, cocos2d::Point(0, $y));
+//    addAction(action);
+//
+//    return shared_from_this();
+// }
 
 TweenPtr Tween::xy(float x, float y)
 {
@@ -97,53 +97,53 @@ TweenPtr Tween::$xy(const cocos2d::Vec2 &pos)
 
 #pragma mark scale
 
-TweenPtr Tween::scaleX(float sx)
-{
-    auto action = cocos2d::ScaleTo::create(_duration, sx, getTarget()->getScaleY());
-    addAction(action);
-
-    return shared_from_this();
-}
-
-TweenPtr Tween::$scaleX(float $sx)
-{
-    auto action = cocos2d::ScaleBy::create(_duration, $sx, 0);
-    addAction(action);
-
-    return shared_from_this();
-}
-
-TweenPtr Tween::scaleY(float sy)
-{
-    auto action = cocos2d::ScaleTo::create(_duration, getTarget()->getScaleX(), sy);
-    addAction(action);
-
-    return shared_from_this();
-}
-
-TweenPtr Tween::$scaleY(float $sy)
-{
-    auto action = cocos2d::ScaleBy::create(_duration, 0, $sy);
-    addAction(action);
-
-    return shared_from_this();
-}
-
-TweenPtr Tween::scaleZ(float sz)
-{
-    auto action = cocos2d::ScaleTo::create(_duration, getTarget()->getScaleX(), getTarget()->getScaleY(), sz);
-    addAction(action);
-
-    return shared_from_this();
-}
-
-TweenPtr Tween::$scaleZ(float $sz)
-{
-    auto action = cocos2d::ScaleBy::create(_duration, 0, 0, $sz);
-    addAction(action);
-
-    return shared_from_this();
-}
+// TweenPtr Tween::scaleX(float sx)
+// {
+//    auto action = cocos2d::ScaleTo::create(_duration, sx, getTarget()->getScaleY());
+//    addAction(action);
+//
+//    return shared_from_this();
+// }
+//
+// TweenPtr Tween::$scaleX(float $sx)
+// {
+//    auto action = cocos2d::ScaleBy::create(_duration, $sx, 0);
+//    addAction(action);
+//
+//    return shared_from_this();
+// }
+//
+// TweenPtr Tween::scaleY(float sy)
+// {
+//    auto action = cocos2d::ScaleTo::create(_duration, getTarget()->getScaleX(), sy);
+//    addAction(action);
+//
+//    return shared_from_this();
+// }
+//
+// TweenPtr Tween::$scaleY(float $sy)
+// {
+//    auto action = cocos2d::ScaleBy::create(_duration, 0, $sy);
+//    addAction(action);
+//
+//    return shared_from_this();
+// }
+//
+// TweenPtr Tween::scaleZ(float sz)
+// {
+//    auto action = cocos2d::ScaleTo::create(_duration, getTarget()->getScaleX(), getTarget()->getScaleY(), sz);
+//    addAction(action);
+//
+//    return shared_from_this();
+// }
+//
+// TweenPtr Tween::$scaleZ(float $sz)
+// {
+//    auto action = cocos2d::ScaleBy::create(_duration, 0, 0, $sz);
+//    addAction(action);
+//
+//    return shared_from_this();
+// }
 
 TweenPtr Tween::scale(float s)
 {
@@ -195,37 +195,37 @@ TweenPtr Tween::$scale(float $sx, float $sy, float $sz)
 
 #pragma mark rotate
 
-TweenPtr Tween::rotateX(float angleX)
-{
-    auto action = cocos2d::RotateTo::create(_duration, angleX, getTarget()->getRotationSkewY());
-    addAction(action);
-
-    return shared_from_this();
-}
-
-TweenPtr Tween::$rotateX(float $angleX)
-{
-    auto action = cocos2d::RotateBy::create(_duration, $angleX, 0);
-    addAction(action);
-
-    return shared_from_this();
-}
-
-TweenPtr Tween::rotateY(float angleY)
-{
-    auto action = cocos2d::RotateTo::create(_duration, getTarget()->getRotationSkewX(), angleY);
-    addAction(action);
-
-    return shared_from_this();
-}
-
-TweenPtr Tween::$rotateY(float $angleY)
-{
-    auto action = cocos2d::RotateBy::create(_duration, 0, $angleY);
-    addAction(action);
-
-    return shared_from_this();
-}
+// TweenPtr Tween::rotateX(float angleX)
+// {
+//    auto action = cocos2d::RotateTo::create(_duration, angleX, getTarget()->getRotationSkewY());
+//    addAction(action);
+//
+//    return shared_from_this();
+// }
+//
+// TweenPtr Tween::$rotateX(float $angleX)
+// {
+//    auto action = cocos2d::RotateBy::create(_duration, $angleX, 0);
+//    addAction(action);
+//
+//    return shared_from_this();
+// }
+//
+// TweenPtr Tween::rotateY(float angleY)
+// {
+//    auto action = cocos2d::RotateTo::create(_duration, getTarget()->getRotationSkewX(), angleY);
+//    addAction(action);
+//
+//    return shared_from_this();
+// }
+//
+// TweenPtr Tween::$rotateY(float $angleY)
+// {
+//    auto action = cocos2d::RotateBy::create(_duration, 0, $angleY);
+//    addAction(action);
+//
+//    return shared_from_this();
+// }
 
 TweenPtr Tween::rotate(float angle)
 {

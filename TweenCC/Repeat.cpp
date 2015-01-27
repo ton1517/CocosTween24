@@ -15,8 +15,13 @@ Repeat::Repeat(cocos2d::Node *target, unsigned int times, IFiniteTimePtr tween) 
 
 cocos2d::ActionInterval *Repeat::generateAction()
 {
-    auto action = _tween->generateAction();
+    cocos2d::ActionInterval *action = cocos2d::Repeat::create(_tween->generateAction(), _times);
 
-    return cocos2d::Repeat::create(action, _times);
+    auto target = getTarget();
+    if (target) {
+        action = cocos2d::TargetedAction::create(target, action);
+    }
+
+    return action;
 }
 } // namespace

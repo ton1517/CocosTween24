@@ -18,7 +18,14 @@ cocos2d::ActionInterval *Sequence::generateAction()
         actions.pushBack(tween->generateAction());
     }
 
-    return cocos2d::Sequence::create(actions);
+    cocos2d::ActionInterval *action = cocos2d::Sequence::create(actions);
+
+    auto target = getTarget();
+    if (target) {
+        action = cocos2d::TargetedAction::create(target, action);
+    }
+
+    return action;
 }
 
 SequencePtr Sequence::addTweens(IFiniteTimePtr tween)

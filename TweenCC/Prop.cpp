@@ -17,10 +17,14 @@ Prop::Prop(cocos2d::Node *target) : Player(this, target) {}
 
 cocos2d::ActionInterval *Prop::generateAction()
 {
-    auto action         = cocos2d::Spawn::create(_actions);
-    auto targetedAction = cocos2d::TargetedAction::create(getTarget(), action);
+    cocos2d::ActionInterval *action = cocos2d::Spawn::create(_actions);
 
-    return targetedAction;
+    auto target = getTarget();
+    if (target) {
+        action = cocos2d::TargetedAction::create(getTarget(), action);
+    }
+
+    return action;
 }
 
 #pragma mark visible

@@ -149,6 +149,11 @@ RemovePtr remove(cocos2d::Node *target)
     return std::move(Remove::create(target));
 }
 
+IFiniteTimePtr remove()
+{
+    return std::move(Remove::create(nullptr));
+}
+
 #pragma mark place
 
 PlacePtr place(cocos2d::Node *target, const cocos2d::Vec2 &pos)

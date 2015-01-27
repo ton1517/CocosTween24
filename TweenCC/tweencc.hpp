@@ -153,6 +153,7 @@ IFiniteTimePtr action(cocos2d::FiniteTimeAction *action);
 #pragma mark remove
 
 RemovePtr remove(cocos2d::Node *target);
+IFiniteTimePtr remove();
 
 #pragma mark place
 

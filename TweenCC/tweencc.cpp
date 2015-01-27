@@ -137,6 +137,11 @@ ActionPtr action(cocos2d::Node *target, cocos2d::FiniteTimeAction *action)
     return std::move(Action::create(target, action));
 }
 
+IFiniteTimePtr action(cocos2d::FiniteTimeAction *action)
+{
+    return std::move(Action::create(nullptr, action));
+}
+
 #pragma mark remove
 
 RemovePtr remove(cocos2d::Node *target)

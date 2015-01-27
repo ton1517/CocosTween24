@@ -148,6 +148,7 @@ FuncPtr func(const std::function<void()> &func);
 #pragma mark action
 
 ActionPtr action(cocos2d::Node *target, cocos2d::FiniteTimeAction *action);
+IFiniteTimePtr action(cocos2d::FiniteTimeAction *action);
 
 #pragma mark remove
 

@@ -22,9 +22,13 @@ cocos2d::ActionInterval *Tween::generateAction()
     cocos2d::ActionInterval *action = cocos2d::Spawn::create(_actions);
     action = this->addDelay(action);
     action = this->addEasing(action);
-    auto targetedAction = cocos2d::TargetedAction::create(getTarget(), action);
 
-    return targetedAction;
+    auto target = getTarget();
+    if (target) {
+        action = cocos2d::TargetedAction::create(target, action);
+    }
+
+    return action;
 }
 
 #pragma mark position

@@ -3,7 +3,7 @@
 
 #include <cocos2d.h>
 
-#include "IInterval.hpp"
+#include "IFiniteTime.hpp"
 #include "Player.hpp"
 
 namespace tweencc
@@ -11,7 +11,7 @@ namespace tweencc
 class Remove;
 typedef std::shared_ptr<Remove> RemovePtr;
 
-class Remove : public IInterval, public Player
+class Remove : public IFiniteTime, public Player
 {
 public:
     static RemovePtr create(cocos2d::Node *target);
@@ -19,7 +19,7 @@ public:
     Remove(cocos2d::Node *target);
     virtual ~Remove() = default;
 
-    cocos2d::ActionInterval *generateAction() override;
+    cocos2d::FiniteTimeAction *generateAction() override;
 
 private:
     Remove(const Remove&)           = delete;

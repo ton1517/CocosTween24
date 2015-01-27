@@ -11,6 +11,13 @@ TweenPtr tween(cocos2d::Node *target, float duration, Ease easing)
     return std::move(t);
 }
 
+TweenPtr tween(float duration, Ease easing)
+{
+    auto t = Tween::create(nullptr, duration, easing);
+
+    return std::move(t);
+}
+
 #pragma mark prop
 
 PropPtr prop(cocos2d::Node *target)

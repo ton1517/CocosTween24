@@ -3,7 +3,7 @@
 
 #include <cocos2d.h>
 
-#include "IInterval.hpp"
+#include "IFiniteTime.hpp"
 #include "Player.hpp"
 
 namespace tweencc
@@ -11,7 +11,7 @@ namespace tweencc
 class Place;
 typedef std::shared_ptr<Place> PlacePtr;
 
-class Place : public IInterval, public Player
+class Place : public IFiniteTime, public Player
 {
 public:
     static PlacePtr create(cocos2d::Node *target, const cocos2d::Vec2 &pos);
@@ -19,7 +19,7 @@ public:
     Place(cocos2d::Node *target, const cocos2d::Vec2 &pos);
     virtual ~Place() = default;
 
-    cocos2d::ActionInterval *generateAction() override;
+    cocos2d::FiniteTimeAction *generateAction() override;
 
 private:
     Place(const Place&)           = delete;

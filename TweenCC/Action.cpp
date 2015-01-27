@@ -11,8 +11,15 @@ ActionPtr Action::create(cocos2d::Node *target, cocos2d::FiniteTimeAction *actio
 
 Action::Action(cocos2d::Node *target, cocos2d::FiniteTimeAction *action) : Player(this, target), _action(action) {}
 
-cocos2d::ActionInterval *Action::generateAction()
+cocos2d::FiniteTimeAction *Action::generateAction()
 {
-    return cocos2d::TargetedAction::create(getTarget(), _action->clone());
+    auto                       target = getTarget();
+    cocos2d::FiniteTimeAction *action = _action->clone();
+
+    if (target) {
+        action = cocos2d::TargetedAction::create(target, action);
+    }
+
+    return action;
 }
 } // namespace

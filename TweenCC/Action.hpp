@@ -3,7 +3,7 @@
 
 #include <cocos2d.h>
 
-#include "IInterval.hpp"
+#include "IFiniteTime.hpp"
 #include "Player.hpp"
 
 namespace tweencc
@@ -11,7 +11,7 @@ namespace tweencc
 class Action;
 typedef std::shared_ptr<Action> ActionPtr;
 
-class Action : public IInterval, public Player
+class Action : public IFiniteTime, public Player
 {
 public:
     static ActionPtr create(cocos2d::Node *target, cocos2d::FiniteTimeAction *action);
@@ -19,7 +19,7 @@ public:
     explicit Action(cocos2d::Node *target, cocos2d::FiniteTimeAction *action);
     virtual ~Action() = default;
 
-    cocos2d::ActionInterval *generateAction() override;
+    cocos2d::FiniteTimeAction *generateAction() override;
 
 private:
     Action(const Action&)           = delete;

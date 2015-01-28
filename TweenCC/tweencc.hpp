@@ -22,6 +22,7 @@ namespace tweencc
 #pragma mark tween
 
 TweenPtr tween(cocos2d::Node *target, float duration, Ease easing=Ease::Linear);
+TweenPtr tween(const std::vector<cocos2d::Node *> &targets, float duration, Ease easing=Ease::Linear);
 TweenPtr tween(float duration, Ease easing=Ease::Linear);
 
 #pragma mark prop

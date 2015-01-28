@@ -9,6 +9,7 @@ class Player
 {
 public:
     explicit Player(IAction *tweener, cocos2d::Node *target);
+    explicit Player(IAction *tweener, const std::vector<cocos2d::Node *> &targets);
     virtual ~Player() = default;
 
     virtual void play();
@@ -16,10 +17,13 @@ public:
 
     cocos2d::Node *getTarget();
 
+    std::vector<cocos2d::Node *> getTargets();
+
 private:
-    IAction       *_tweener;
-    cocos2d::Node   *_target;
-    cocos2d::Action *_playingAction;
+    IAction *_tweener;
+
+    std::vector<cocos2d::Node *>   _targets;
+    std::vector<cocos2d::Action *> _playingActions;
 
     Player(const Player&)           = delete;
     Player(Player&&)                = delete;

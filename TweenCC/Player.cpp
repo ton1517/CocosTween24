@@ -2,23 +2,38 @@
 
 namespace tweencc
 {
-Player::Player(IAction *tweener, cocos2d::Node *target) : _tweener(tweener), _target(target) {}
+Player::Player(IAction *tweener, cocos2d::Node *target) : _tweener(tweener), _targets({target}) {}
+Player::Player(IAction *tweener, const std::vector<cocos2d::Node *> &targets) : _tweener(tweener), _targets(targets) {}
 
 void Player::play()
 {
-    _playingAction = _tweener->generateAction();
-    _target->runAction(_playingAction);
+    for (int i = 0; i < _targets.size(); i++) {
+        auto target = _targets[i];
+        auto action = _tweener->generateAction();
+        target->runAction(action);
+
+        _playingActions.push_back(action);
+    }
 }
 
 void Player::stop()
 {
-    if (_playingAction && !_playingAction->isDone()) {
-        _target->stopAction(_playingAction);
+    for (int i = 0; i < _playingActions.size(); i++) {
+        auto target = _targets[i];
+        auto action = _playingActions[i];
+        if (action && !action->isDone()) {
+            target->stopAction(action);
+        }
     }
 }
 
 cocos2d::Node *Player::getTarget()
 {
-    return _target;
+    return _targets[0];
+}
+
+std::vector<cocos2d::Node *> Player::getTargets()
+{
+    return _targets;
 }
 } // namespace

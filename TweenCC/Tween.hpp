@@ -16,9 +16,11 @@ class Tween : public IInterval, public Player, public std::enable_shared_from_th
 {
 public:
     static TweenPtr create(cocos2d::Node *target, float duration, Ease easing);
+    static TweenPtr create(const std::vector<cocos2d::Node *> &targets, float duration, Ease easing);
 
     #pragma mark constructor & destructor
     Tween(cocos2d::Node *target, float duration, Ease easing);
+    Tween(const std::vector<cocos2d::Node *> &targets, float duration, Ease easing);
     virtual ~Tween() = default;
 
     #pragma mark IInterval interface

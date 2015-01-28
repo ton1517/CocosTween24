@@ -13,9 +13,17 @@ TweenPtr Tween::create(cocos2d::Node *target, float duration, Ease easing)
     return std::move(t);
 }
 
+TweenPtr Tween::create(const std::vector<cocos2d::Node *> &targets, float duration, Ease easing)
+{
+    auto t = std::make_shared<Tween>(targets, duration, easing);
+
+    return std::move(t);
+}
+
 #pragma mark----- public -----
 
 Tween::Tween(cocos2d::Node *target, float duration, Ease easing) : Player(this, target), _duration(duration), _easing(easing) {}
+Tween::Tween(const std::vector<cocos2d::Node *> &targets, float duration, Ease easing) : Player(this, targets), _duration(duration), _easing(easing) {}
 
 cocos2d::ActionInterval *Tween::generateAction()
 {
@@ -23,12 +31,21 @@ cocos2d::ActionInterval *Tween::generateAction()
     action = this->addDelay(action);
     action = this->addEasing(action);
 
-    auto target = getTarget();
-    if (target) {
-        action = cocos2d::TargetedAction::create(target, action);
+    if (getTarget() == nullptr) {
+        return action;
     }
 
-    return action;
+    auto targets = getTargets();
+    if (targets.size() == 1) {
+        return cocos2d::TargetedAction::create(targets[0], action);
+    }
+
+    cocos2d::Vector<cocos2d::FiniteTimeAction *> actions;
+    for (auto target : targets) {
+        actions.pushBack(cocos2d::TargetedAction::create(target, action->clone()));
+    }
+
+    return cocos2d::Spawn::create(actions);
 }
 
 #pragma mark position

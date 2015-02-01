@@ -13,6 +13,11 @@ Wait::Wait(float waitTime) : _waitTime(waitTime) {}
 
 cocos2d::ActionInterval *Wait::generateAction()
 {
+    return generateActionWithoutTarget();
+}
+
+cocos2d::ActionInterval *Wait::generateActionWithoutTarget()
+{
     return cocos2d::DelayTime::create(_waitTime);
 }
 } // namespace

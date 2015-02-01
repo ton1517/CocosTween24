@@ -20,6 +20,7 @@ public:
     virtual ~Remove() = default;
 
     cocos2d::FiniteTimeAction *generateAction() override;
+    cocos2d::FiniteTimeAction *generateActionWithoutTarget() override;
 
 private:
     Remove(const Remove&)           = delete;

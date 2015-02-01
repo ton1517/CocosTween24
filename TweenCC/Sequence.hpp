@@ -20,6 +20,7 @@ public:
     virtual ~Sequence() = default;
 
     cocos2d::ActionInterval *generateAction() override;
+    cocos2d::ActionInterval *generateActionWithoutTarget() override;
 
     SequencePtr addTweens(IFiniteTimePtr tween);
     SequencePtr addTweens(const std::vector<IFiniteTimePtr> &tweens);

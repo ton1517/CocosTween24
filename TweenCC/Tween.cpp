@@ -27,9 +27,7 @@ Tween::Tween(const std::vector<cocos2d::Node *> &targets, float duration, Ease e
 
 cocos2d::ActionInterval *Tween::generateAction()
 {
-    cocos2d::ActionInterval *action = cocos2d::Spawn::create(_actions);
-    action = this->addDelay(action);
-    action = this->addEasing(action);
+    cocos2d::ActionInterval *action = generateActionWithoutTarget();
 
     if (getTarget() == nullptr) {
         return action;
@@ -46,6 +44,15 @@ cocos2d::ActionInterval *Tween::generateAction()
     }
 
     return cocos2d::Spawn::create(actions);
+}
+
+cocos2d::ActionInterval *Tween::generateActionWithoutTarget()
+{
+    cocos2d::ActionInterval *action = cocos2d::Spawn::create(_actions);
+    action = this->addDelay(action);
+    action = this->addEasing(action);
+
+    return action;
 }
 
 #pragma mark position

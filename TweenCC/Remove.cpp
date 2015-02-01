@@ -11,7 +11,7 @@ Remove::Remove(cocos2d::Node *target) : Player(this, target) {}
 
 cocos2d::FiniteTimeAction *Remove::generateAction()
 {
-    cocos2d::FiniteTimeAction *action = cocos2d::RemoveSelf::create();
+    cocos2d::FiniteTimeAction *action = generateActionWithoutTarget();
 
     auto target = getTarget();
     if (target) {
@@ -19,5 +19,10 @@ cocos2d::FiniteTimeAction *Remove::generateAction()
     }
 
     return action;
+}
+
+cocos2d::FiniteTimeAction *Remove::generateActionWithoutTarget()
+{
+    return cocos2d::RemoveSelf::create();
 }
 } // namespace

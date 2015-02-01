@@ -20,6 +20,7 @@ public:
     virtual ~Repeat() = default;
 
     cocos2d::ActionInterval *generateAction() override;
+    cocos2d::ActionInterval *generateActionWithoutTarget() override;
 
     CC_SYNTHESIZE(unsigned int, _times, Times);
 

@@ -13,13 +13,18 @@ Action::Action(cocos2d::Node *target, cocos2d::FiniteTimeAction *action) : Playe
 
 cocos2d::FiniteTimeAction *Action::generateAction()
 {
-    auto                       target = getTarget();
-    cocos2d::FiniteTimeAction *action = _action->clone();
+    cocos2d::FiniteTimeAction *action = generateActionWithoutTarget();
 
+    auto target = getTarget();
     if (target) {
         action = cocos2d::TargetedAction::create(target, action);
     }
 
     return action;
+}
+
+cocos2d::FiniteTimeAction *Action::generateActionWithoutTarget()
+{
+    return _action->clone();
 }
 } // namespace

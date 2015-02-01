@@ -20,6 +20,7 @@ public:
     virtual ~Place() = default;
 
     cocos2d::FiniteTimeAction *generateAction() override;
+    cocos2d::FiniteTimeAction *generateActionWithoutTarget() override;
 
 private:
     Place(const Place&)           = delete;

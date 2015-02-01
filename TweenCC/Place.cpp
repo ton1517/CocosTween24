@@ -11,7 +11,7 @@ Place::Place(cocos2d::Node *target, const cocos2d::Vec2 &pos) : Player(this, tar
 
 cocos2d::FiniteTimeAction *Place::generateAction()
 {
-    cocos2d::FiniteTimeAction *action = cocos2d::Place::create(_pos);
+    cocos2d::FiniteTimeAction *action = generateActionWithoutTarget();
 
     auto target = getTarget();
     if (target) {
@@ -19,5 +19,10 @@ cocos2d::FiniteTimeAction *Place::generateAction()
     }
 
     return action;
+}
+
+cocos2d::FiniteTimeAction *Place::generateActionWithoutTarget()
+{
+    return cocos2d::Place::create(_pos);
 }
 } // namespace

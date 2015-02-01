@@ -9,7 +9,7 @@ void Player::play()
 {
     for (int i = 0; i < _targets.size(); i++) {
         auto target = _targets[i];
-        auto action = _tweener->generateAction();
+        auto action = _tweener->generateActionWithoutTarget();
         target->runAction(action);
 
         _playingActions.push_back(action);

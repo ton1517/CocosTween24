@@ -20,6 +20,7 @@ public:
     virtual ~RepeatForever() = default;
 
     cocos2d::ActionInterval *generateAction() override;
+    cocos2d::ActionInterval *generateActionWithoutTarget() override;
 
 private:
     IIntervalPtr _tween;

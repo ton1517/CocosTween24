@@ -17,4 +17,9 @@ cocos2d::ActionInterval *RepeatForever::generateAction()
 
     return cocos2d::RepeatForever::create(action);
 }
+
+cocos2d::ActionInterval *RepeatForever::generateActionWithoutTarget()
+{
+    return cocos2d::RepeatForever::create(_tween->generateAction());
+}
 } // namespace

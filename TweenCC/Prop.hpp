@@ -22,6 +22,7 @@ public:
 
     #pragma mark IInterval interface
     cocos2d::ActionInterval *generateAction() override;
+    cocos2d::ActionInterval *generateActionWithoutTarget() override;
 
     #pragma mark visible
     PropPtr visible(bool visible);

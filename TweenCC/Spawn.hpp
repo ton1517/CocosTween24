@@ -20,6 +20,7 @@ public:
     virtual ~Spawn() = default;
 
     cocos2d::ActionInterval *generateAction() override;
+    cocos2d::ActionInterval *generateActionWithoutTarget() override;
 
     SpawnPtr addTweens(IFiniteTimePtr tween);
     SpawnPtr addTweens(const std::vector<IFiniteTimePtr> &tweens);

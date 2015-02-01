@@ -13,6 +13,11 @@ Func::Func(const std::function<void()> &func) : _func(func) {}
 
 cocos2d::ActionInstant *Func::generateAction()
 {
+    return generateActionWithoutTarget();
+}
+
+cocos2d::ActionInstant *Func::generateActionWithoutTarget()
+{
     return cocos2d::CallFunc::create(_func);
 }
 } // namespaces

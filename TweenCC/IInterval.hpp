@@ -17,6 +17,7 @@ public:
     virtual ~IInterval() = default;
 
     virtual cocos2d::ActionInterval *generateAction() = 0;
+    virtual cocos2d::ActionInterval *generateActionWithoutTarget() = 0;
 
 private:
     IInterval(const IInterval&)           = delete;

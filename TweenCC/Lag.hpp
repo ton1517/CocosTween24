@@ -20,6 +20,7 @@ public:
     virtual ~Lag() = default;
 
     cocos2d::ActionInterval *generateAction() override;
+    cocos2d::ActionInterval *generateActionWithoutTarget() override;
 
     LagPtr addTweens(IFiniteTimePtr tween);
     LagPtr addTweens(const std::vector<IFiniteTimePtr> &tweens);

@@ -20,6 +20,7 @@ public:
     virtual ~Action() = default;
 
     cocos2d::FiniteTimeAction *generateAction() override;
+    cocos2d::FiniteTimeAction *generateActionWithoutTarget() override;
 
 private:
     Action(const Action&)           = delete;

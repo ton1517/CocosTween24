@@ -19,6 +19,7 @@ public:
     virtual ~Wait() = default;
 
     cocos2d::ActionInterval *generateAction() override;
+    cocos2d::ActionInterval *generateActionWithoutTarget() override;
 
     CC_SYNTHESIZE_READONLY(float, _waitTime, WaitTime);
 

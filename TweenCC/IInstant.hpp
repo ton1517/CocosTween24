@@ -17,6 +17,7 @@ public:
     virtual ~IInstant() = default;
 
     virtual cocos2d::ActionInstant *generateAction() = 0;
+    virtual cocos2d::ActionInstant *generateActionWithoutTarget() = 0;
 
 private:
     IInstant(const IInstant&)           = delete;

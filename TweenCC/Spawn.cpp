@@ -13,18 +13,23 @@ Spawn::Spawn(cocos2d::Node *target) : Player(this, target) {}
 
 cocos2d::ActionInterval *Spawn::generateAction()
 {
-    cocos2d::Vector<cocos2d::FiniteTimeAction *> actions(_tweens.size());
-    for (auto tween : _tweens) {
-        actions.pushBack(tween->generateAction());
-    }
-
-    cocos2d::ActionInterval *action = cocos2d::Spawn::create(actions);
+    cocos2d::ActionInterval *action = generateActionWithoutTarget();
 
     auto target = getTarget();
     if (target) {
         action = cocos2d::TargetedAction::create(target, action);
     }
     return action;
+}
+
+cocos2d::ActionInterval *Spawn::generateActionWithoutTarget()
+{
+    cocos2d::Vector<cocos2d::FiniteTimeAction *> actions(_tweens.size());
+    for (auto tween : _tweens) {
+        actions.pushBack(tween->generateAction());
+    }
+
+    return cocos2d::Spawn::create(actions);
 }
 
 SpawnPtr Spawn::addTweens(IFiniteTimePtr tween)

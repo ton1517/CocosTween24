@@ -13,12 +13,7 @@ Sequence::Sequence(cocos2d::Node *target) : Player(this, target) {}
 
 cocos2d::ActionInterval *Sequence::generateAction()
 {
-    cocos2d::Vector<cocos2d::FiniteTimeAction *> actions(_tweens.size());
-    for (auto tween : _tweens) {
-        actions.pushBack(tween->generateAction());
-    }
-
-    cocos2d::ActionInterval *action = cocos2d::Sequence::create(actions);
+    cocos2d::ActionInterval *action = generateActionWithoutTarget();
 
     auto target = getTarget();
     if (target) {
@@ -26,6 +21,16 @@ cocos2d::ActionInterval *Sequence::generateAction()
     }
 
     return action;
+}
+
+cocos2d::ActionInterval *Sequence::generateActionWithoutTarget()
+{
+    cocos2d::Vector<cocos2d::FiniteTimeAction *> actions(_tweens.size());
+    for (auto tween : _tweens) {
+        actions.pushBack(tween->generateAction());
+    }
+
+    return cocos2d::Sequence::create(actions);
 }
 
 SequencePtr Sequence::addTweens(IFiniteTimePtr tween)

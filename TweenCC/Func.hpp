@@ -19,6 +19,7 @@ public:
     virtual ~Func() = default;
 
     cocos2d::ActionInstant *generateAction() override;
+    cocos2d::ActionInstant *generateActionWithoutTarget() override;
 
 private:
     Func(const Func&)           = delete;

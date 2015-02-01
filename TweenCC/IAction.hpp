@@ -15,6 +15,7 @@ public:
     virtual ~IAction() = default;
 
     virtual cocos2d::Action *generateAction() = 0;
+    virtual cocos2d::Action *generateActionWithoutTarget() = 0;
 
 private:
     IAction(const IAction&)           = delete;

@@ -25,6 +25,7 @@ public:
 
     #pragma mark IInterval interface
     cocos2d::ActionInterval *generateAction() override;
+    cocos2d::ActionInterval *generateActionWithoutTarget() override;
 
     #pragma mark position
     //    TweenPtr x(float x);

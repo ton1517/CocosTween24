@@ -17,7 +17,7 @@ Prop::Prop(cocos2d::Node *target) : Player(this, target) {}
 
 cocos2d::ActionInterval *Prop::generateAction()
 {
-    cocos2d::ActionInterval *action = cocos2d::Spawn::create(_actions);
+    cocos2d::ActionInterval *action = generateActionWithoutTarget();
 
     auto target = getTarget();
     if (target) {
@@ -25,6 +25,11 @@ cocos2d::ActionInterval *Prop::generateAction()
     }
 
     return action;
+}
+
+cocos2d::ActionInterval *Prop::generateActionWithoutTarget()
+{
+    return cocos2d::Spawn::create(_actions);
 }
 
 #pragma mark visible
